@@ -2,7 +2,7 @@ import pytesseract
 import cv2
 from pytesseract.pytesseract import Output
 
-img = cv2.imread('D:\\work\\tesseract\\testing\\scan009.jpg')
+img = cv2.imread('D:\\Code\\python\\workspace\\YieldBookDataTools\\Text Mining\\YieldBook1965_010.jpg')
 img = cv2.resize(img, None, fx=1.5, fy=1.5, interpolation=cv2.INTER_CUBIC)
 img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 img = cv2.fastNlMeansDenoising(img,None,7,21,10)
