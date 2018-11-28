@@ -1,6 +1,7 @@
 from PIL import Image, ImageFilter
 from pylab import *
 import rof
+import cv2
 import pytesseract
 
 ims = Image.open('D:\\work\\tesseract\\testing\\scan009.jpg').convert('L')
