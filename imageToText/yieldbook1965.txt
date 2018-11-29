@@ -1,0 +1,25 @@
+65/A/1|CROPPED SECTIONS|Cultivations, etc.  CROPPED SECTIONS  Ground chalk applied|Sept 9, 1964
+65/A/1|CROPPED SECTIONS|Ploughed  Oct 9 - 14, Dung applied|Oct 13
+65/A/1|CROPPED SECTIONS|Autum fertilisers applied|Oct 19
+65/A/1|CROPPED SECTIONS|Seed drilled at 180 1b|Oct 26
+65/A/1|CROPPED SECTIONS|Spring fertilisers applied|Apr 26, 1965
+65/A/1|CROPPED SECTIONS|Second dressing of nitrate of soda applied to plot 16|My 10
+65/A/1|CROPPED SECTIONS|Sprayed* with MCRA at 1.13 1b and dicamba at 0,08 1b in 34 gals|May 11
+65/A/1|CROPPED SECTIONS|Combine harvested|Sept 21
+65/A/1|CROPPED SECTIONS|Variety|Squarehead's Master 13/4 (Rothamsted seed from Broadbalk field)
+65/A/1|FALLOW SECTION|FALLOW SECTION  (IV) Ploughed|Oct 9 - 14, 1964, Nov 30, July 21, 1965
+65/A/1|BROADBALK WILDERNESS|BROADBALK WILDERNESS  Cultivations, etec.  Ungrazed meadow (north)  Shrubs grubbed out|Nov 3 - 19, 1964
+65/A/1|BROADBALK WILDERNESS|Grazed meadow (centre)  Grazed by sheep  Apr 26 - May 4, 1965, My 22 - 28, June 15 - 25, July 19 - 29, Aug 18 - 31, Oct 4 - Nov 4, Grass topped|May 3, May 28, June 25, July 29, Sept 1
+65/A/2||Cultivations, etc.  Quinquennial chalk supplement applied to series A, C and plot 5A  Sept 26, 1964, Dung applied, all plots ploughed|Nov 3
+65/A/2||Fertilisers applied, seed drilled at 160 1b|Apr 1, 1965
+65/A/2||Sprayed with mecoprop/2,4-D (Methoxone Extra at 6 pints in 34 gals)|May 14
+65/A/2||Nitrate of soda applied to plot LAAS|May 20
+65/A/2||Combine harvested|Sept S
+65/A/3
+WHEAT||Cultivations, efCet= Cropped plots  Ploughed|Sept 17, 1964
+65/A/3
+WHEAT||Seed drilled at 190 1b|Cet 26
+65/A/3
+WHEAT||Combine harvested|Sept 21
+65/A/3
+WHEAT||Fallowed plots  Ploughed 3 times|Sept 17, 1964, July 19, 1965, Aug 13

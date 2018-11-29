@@ -78,9 +78,10 @@ for fname in fileList:
                                 if(part.strip().isupper()):
                                     if (part != specialSection):
                                         specialSection = part.strip()
-                                    idx = parts.index(part)
-                                    parts = parts[:idx]
-                                    partsLen = len(parts)
+                                    #idx = parts.index(part)
+                                    #if (idx > 0) :
+                                    #    parts = parts[:idx]
+                                    #    partsLen = len(parts)
                             
                         if(partsLen == 2):
                             outfile.write(curEx + "|" + specialSection + "|" + parts[0].strip() + "|" + parts[1].strip())
