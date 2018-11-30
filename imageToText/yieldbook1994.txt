@@ -1,0 +1,530 @@
+94/R/BK/1|All sections|P applied.|21~oct-93|T
+94/R/BK/1|All sections|K, Na and Mg applied.|25-Oct-93|T
+94/R/BK/1|All sections|FYM applied.|26-Oct-93|T
+94/R/BK/1|All sections|Ploughed.|28-Oct-93|B
+94/R/BK/1|All sections|Rotary harrowed, twice.|02-Nov-93|B
+94/R/BK/1|W. wheat|Straw chopped {section 0 only).|19-Aug-93|T
+94/R/BK/1|W. wheat|Autumn N treatments applied.|21-oct-93|T
+94/R/BK/1|W. wheat|Rotary harrowed, Apollo, dressed Fonofos Seed Treatment, drilled at 380 seeds per m’.|03-Nov-93|T
+94/R/BK/1|W. wheat|Draza at 5.5 kg, (except section 6).|21-Dec-93|T
+94/R/BK/1|W. wheat|Spring N treatments applied.|18-Apr-94|T
+94/R/BK/1|W. wheat|Ally at 30 g with Cheetah Super at 3.0 1 and Starane 2|09-May-94|T
+94/R/BK/1|W. wheat|Sportak 45 at 0.7 1 with Standen Tridemorph at 0.5 1 and|09-May-94|T
+94/R/BK/1|W. wheat|Starane 2 at 1.5 1 in 200 1.|13-Jun-94|T
+94/R/BK/1|W. wheat|Halo at 2.0 1 with Mallard 750 Ec at 1.0 1 in 200 1|13-Jun-94|fT
+94/R/BK/1|W. wheat|Hostathion at 840 ml in 200 1 (except section 6).|15-Jun-94|T
+94/R/BK/1|W. wheat|Delsene M Powder at 2.5 kg with Mistral at 0.5 1 in|28-Jun-94|©
+94/R/BK/1|W. wheat|Combine harvested.|22-Aug-94|T
+94/R/BK/1|Potatoes|Spring N treatments applied.|18-Apr-94|T
+94/R/BK/1|Potatoes|Heavy spring-tine cultivated twice, rotary harrowed, planted Estima, dressed Fungazil 100 SL.|28-Apr-94|T
+94/R/BK/1|Potatoes|Rotary ridged.|16-May-94|T
+94/R/BK/1|Potatoes|Farmon PDO at 2.06 1 with Retalin at 5.06 1 in 200 1.|23-May-94|T
+94/R/BK/1|Potatoes|Dithane 945 at 1.7 ka with Intracrop BLA at 0.2 1 in|23-Jun-94|PT
+94/R/BK/1|Potatoes|Dithane $45 at 1.7 kg with Pirimicarb 50 DG at 0.28 kg|67-Jul-94|T
+94/R/BK/1|Potatoes|Ashlade Mancozeb FL at 2.5 1 with Intracrop BLA at 0.2 1|25-Jul-94|T
+94/R/BK/1|Potatoes|Ashlade Mancozeb FL at 2.5 1 with Intracrop BLA at 0.2 1|15-Aug-94|T
+94/R/BK/1|Potatoes|Ashliade Mancozeb FL at 2.5 1 with Intracrop BLA at 0.2 1|30-Aug-94|T
+94/R/BK/1|Potatoes|Chiltern Super-Tin 4L at 560 ml with Reglone at 4.0 1 in|26-Sep-94|fT
+94/R/BK/1|Potatoes|Lifted.|06-Oct-94|T
+94/R/BK/1|Fallow|Heavy spring-tine cultivated, twice.|28-Apr-94|T ;
+94/R/BK/1|Fallow|Cuitivated by rotary grubber.|28-Apr-94|TB
+94/R/BK/1|Fallow|Cultivated by rotary grubber.|77-Jul-94|T
+94/R/BK/1|Fallow|Areas of wheat harvested in 1991, 1492 and 1993|77-Jul-94|(1) Correction
+94/R/HB/2||P applied.|19-Nov-93|T
+94/R/HB/2||Si and K applied.|22-Nov-93|T
+94/R/HB/2||FYM applied.|15-Dec-93|T
+94/R/HB/2||Ploughed.|16-Dec-93|B
+94/R/HB/2||Spring-tine cultivated twice, rotary harrowed, Alexis, dressed Baytan, drilled at 350 seeds per m*, rolled.|14-Mar-94|B
+94/R/HB/2||N applied.|27-Apr-94|T
+94/R/HB/2||Duplosan New System CMPP at 2.0 1 with Vindex at 1.4 1|27-May-94|B
+94/R/HB/2||Derosal WDG at 312 g with Dorin at 1.0 1 in’ 260 1.|23-Jun-94|B
+94/R/HB/2||Combine harvested.|09-Aug-94|B
+94/R/WF/3|Wheat plot|Ploughed.|20-Oct-93|T
+94/R/WF/3|Wheat plot|Spring-tine cultivated, rotary harrowed, Apolle, dressed|28-Oct-93|T
+94/R/WF/3|Wheat plot|Ally at 30 g with Cheetah Super at 3.0 1 and Starane 2|09-May-94|T
+94/R/WF/3|+ | |Halo at 2.0 1 with Mallard 750 EC at 0.5 1 in 200 1.|13-3Jun-94|TB
+94/R/WF/3|+ | |Hostathion at &40 mi in 200 1.|17-Jun-94|T
+94/R/WF/3|+ | |Combine harvested.|22-Aug-94|T
+94/R/WF/3|Fallow plot|Ploughed.|20-Oct-93|T
+94/R/WF/3|Fallow plot|Cultivated by rotary grubber.|16-Jun-94|T
+94/R/WF/3|Fallow plot|Cultivated by rotary grubber.|08-Jul-94|T
+94/R/EX/4|P test|Muriate of potash at 167 kg.|15-Oct-93|T
+94/R/EX/4|K test|Triple superphosphate at 319 kg.|15-Gct-93|7
+94/R/EX/4|All plots|Ploughed.|20-Oct-93|B
+94/R/EX/4|All plots|Spring-tine cultivated twice, rotary harrowed, Mercia, , dressed Cerevax, drilled at 380 seeds per mm.|22-oct-93|B
+94/R/EX/4|All plots|34.5% N at 568 kg.|12-Apr-94|B
+94/R/EX/4|All plots|Ally at 30 g with Cheetah Super at 3.0 1 and Starane 2|09-May-94|B
+94/R/EX/4|All plots|Halo at 2.0 1 with New 5C Cycocel at 2.5 1 in 200 1.|09-May-94|B
+94/R/EX/4|All plots|Halo at 2.0 1 with Mallard 750 Ec at 0.5 1] in 200 1.|13-Jun-94|B
+94/R/EX/4|All plots|Hostathion at 840 ml in 200 1.|17-Jun-94|B
+94/R/EX/4|All plots|Combine harvested..|16-Aug-94|B
+94/R/PG/5||P applied.|19-Nov-93|T
+94/R/PG/5||K, Na, Mg and Si applied.|24-Nov-93|T
+94/R/PG/5|21-Jan-94 |Chalk applicatiecn finished.|08-Feb-94|T
+94/R/PG/5|21-Jan-94 |N applied. .|21-Apr-94|T
+94/R/PG/5|21-Jan-94 |First sample cut. Remaining area cut for hay (started).|27-Jun-94|B
+94/R/PG/5|21-Jan-94 |Remaining area cut fer hay (finished). Hay turned.|28-Jun-94|Bo
+94/R/PG/5|21-Jan-94 |Hay turned.|29-Jun-94|B
+94/R/PG/5|21-Jan-94 |Hay turned and rowed up.|30-Jun-94|BKB
+94/R/PG/5|21-Jan-94 |Hay baled.|01-Jul-94|B
+94/R/PG/5|29-Nov-94 2|Second sample cut, herbage removed (finished).|30-Nov-94|B
+94/R/BN/7||P applied.|19-Nov-93|T
+94/R/BN/7||K applied.|23-Nov-93|T
+94/R/BN/7||Mg applied.|25-Nov-93|1T
+94/R/BN/7||N applied to sections 3, 4, 5 and 6.|18-Mar-94|T
+94/R/BN/7||Flat relled.|30-Mar-94|B
+94/R/BN/7||Cut.|10-Jun-94|B
+94/R/BN/7||Herbage cut on remainder of plot. Herbage removed.|11-Jun-94|B
+94/R/BN/7||N applied to sections 3, 4, 5 and 6.|14-Jun-94|T
+94/R/BN/7||Topped. No yields taken.|19-Oct-94|B
+94/R/GC/8||First cut, hand weeded.|07-Jun-94|B
+94/R/GC/8||Second cut, hand weeded.|02-Aug-94|B
+94/R/GC/8||Third cut.|02-Nov-94|B
+94/W/RN/3|LLC1} |Roundup at 5.33 1 in 200 1.|19-Aug-93|P
+94/W/RN/3|LLC1} |Ploughed.|10-Sep-93|7
+94/W/RN/3|LLC1} |Rotary harrowed.|24-Sep-92|T
+94/W/RN/3|LLC1} |50% Bundy meadow fescue and 50%|24-Sep-92|LN1 and LLNI only
+94/W/RN/3|LLC1} |First cut.|08-Jun-94|T
+94/W/RN/3|LLC1} |Produce removed.|10-Jun-94|T
+94/W/RN/3|LLC1} |; Chain harrowed.|15-Jun-94|Tf
+94/W/RN/3|LLC1} |Second cut.|02-Sep-94|T
+94/W/RN/3|LLC1} |Remainder of plot cut.|03-Oct-94|7
+94/W/RN/3|LLC1} |Produce removed.|64 Oct-94|T
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|First cut.|08-Jun-94|T
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|Produce removed.|10-Jun-94|T
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|Chain harrowed.|15-dun-94|To
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|Second cut.|02-Sep-94|T
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|Remainder of plot cut.|03-Oct-94|P
+94/W/RN/3|Grass leys, 2nd to 8th years (ROTATION LN2-3, LLN2-8)|Produce removed.|04-Oct-94|2
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|First cut.|08-Jun-94|T
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Produce removed.|16-Jun-94|To
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Muriate of potash at 80 kg.|14-Jun-94|T
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Chain harrowed.|1S-Jun-94|fT
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Second cut.|02-Sep-94|T
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Remainder of plot cut.|03-Oct-94|TB
+94/W/RN/3|Clover/grass Leys, 2nd to 8th years (ROTATION LC2-3 and LLC2-8)|Produce removed.|04-Oct-34|BP
+94/W/RN/3|S. barley, 1st and 2nd treatment crops (ROTATION AB)|Ploughed.|15-Mar-94|T
+94/W/RN/3|S. barley, 1st and 2nd treatment crops (ROTATION AB)|Rotary harrowed, Alexis dressed Panoctine Plus drilled|21-Mar-94|Tf
+94/W/RN/3|S. barley, 1st and 2nd treatment crops (ROTATION AB)|Vindex at 1.1 1 with Duplesan New System CMPP at 2.0 1|19-May-94|T
+94/W/RN/3|S. barley, 1st and 2nd treatment crops (ROTATION AB)|Radar at 0.5 1 in 200 1.|12-Jun-94|T
+94/W/RN/3|S. barley, 1st and 2nd treatment crops (ROTATION AB)|Combine harvested.|21-Aug-94|T
+94/W/RN/3|W. beans, 3rd treatment crop (ROTATION AF and AB)|Carbetamex at 3.0 kg in 200 1.|10-Feb-94|T
+94/W/RN/3|W. beans, 3rd treatment crop (ROTATION AF and AB)|Rovryal Flo at 1.5 1 with Bravo at 1.0 1 in 200 1.|09-May-94|fT
+94/W/RN/3|W. beans, 3rd treatment crop (ROTATION AF and AB)|Rovral Flo at 1.5 1 with Bravo at 1.0 1 in 3200 1.|12-Jun-94|T +
+94/W/RN/3|W. beans, 3rd treatment crop (ROTATION AF and AB)|Combine harvested.|19-Aug-94|T
+94/W/RN/3|Fallow, lst and 2nd treatment years {ROTATION AF)|Heavy spring-tine cultivated.|19-Apr-94|T
+94/W/RN/3|Fallow, lst and 2nd treatment years {ROTATION AF)|Rotary cultivated.|27-Jun-94|T
+94/W/RN/3|W. wheat, Ist test crop (W)|Ploughed.|21-Oct-93|T
+94/W/RN/3|W. wheat, Ist test crop (W)|N70, 140 and 210; Applied as 27% N.|19-Apr-94|T
+94/W/RN/3|W. wheat, Ist test crop (W)|Oxytril CM at 1.5 1 with Duplosan New System CMPP at|01-May-94|©
+94/W/RN/3|W. wheat, Ist test crop (W)|Cyclone at 1.6 1 with Mistral at 0.5-1 in 200 1.|30-May-93|©
+94/W/RN/3|14-Jun-94 |Combine harvested.|15-Aug-94|T
+94/W/RN/3|W. rye, 2nd test crop (R)|Roundup at 5.33 1 in 200 1.|19-Aug-93|T
+94/W/RN/3|W. rye, 2nd test crop (R)|Bolomite at 5 t. Ploughed.|21-Oct-93|T
+94/W/RN/3|W. rye, 2nd test crop (R)|Vindex at 1.4 1 with Starane 2 at @.5 1 and New 5¢|01-May-94|f
+94/W/RN/3|W. rye, 2nd test crop (R)|Radar at 0.5 1 in 260 1.|29-May-94|T
+94/W/RN/12||Ploughed.|10-Sep-93|B
+94/W/RN/12||Rotary harrowed, Mercia, dressed Panoctine, drilled at|16-Oct-93|B
+94/W/RN/12||Oxytril CM at 1.5 1 with Duplosan New System CMPP at|16-Oct-93|Bo
+94/W/RN/12||Vytel Liquid Chelated Manganese (chelated Mn as Mn EDTA|24-May-94|Bo
+94/W/RN/12||Cyclone at 1.@ 1 with Mistral at 0.5 1 in 200 1.|30-May-94|Bi
+94/W/RN/12||Hostathion at ¢.84 1 in 200 1.|14-Jun-94|B
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Ploughed.|16-Oct-93|B
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Bisced.|19-Oct-93|B
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Spring-tine cultivated, CH304/70 drilled at 40 seeds|26-Oct-93|Bo
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Cpogard 500 FW at 2.8 1 in 200 1.|26-Oct-93|B
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Atlas Simazine at 1.6 1 in 200 i.|16-Feb-94|B
+94/R/CS/10 and 94/W/CS/10|Sawyers I (R}|Barclay Gallup at 4.0 1 in 200 1.|06-Sep-94|B
+94/R/CS/10 and 94/W/CS/10|16-Sep-93 |Rotary harrowed, CH304/70 drilled at 40 seeds per m’.|24-Sep-93|B
+94/R/CS/10 and 94/W/CS/10|16-Sep-93 |Atlas Simazine at i.0 1 in 200 1.|18-Feb-94|B
+94/R/CS/10 and 94/W/CS/10|16-Sep-93 |Sportak 45 at 1.5 1 in 206 1.|09-May-94|B
+94/R/CS/140||Ploughed.|03-Nov-93|B
+94/R/CS/140||Spring-tine cultivated, rotary harrowed, Alexis|17-Mar-94|B
+94/R/CS/140||34.5% N at 428 kq.|19-Apr-94|B
+94/R/CS/140||Oxytril CM at 1.5 1 with Duplosan New System CMPP at|02-Jun-94|Bo
+94/R/CS/140||Combine harvested.|08-Aug-94|B
+94/R/CS/309 and 94/W/CS/309||Sting CT at 2.0 1 in 200 1.|18-Sep-93|B
+94/R/CS/309 and 94/W/CS/309||Disced, spring-tine cultivated.|19-Oct-93|B
+94/R/CS/309 and 94/W/CS/309||Optimol at 15 kq-.|17-Nov-93|Bo
+94/R/CS/309 and 94/W/CS/309||34.5% N at 118 kg.|09-Mar-94|B
+94/R/CS/309 and 94/W/CS/309||34.5% N at 448 kg.|12-Apr-94|B
+94/R/CS/309 and 94/W/CS/309||Starane 2 at 0.75 1 with Wildcat at 1.25 1 in 200 1.|12-Apr-94|B
+94/R/CS/309 and 94/W/CS/309||Halo at 2.0 1 with Tripart Brevis at 2.5 1 in 200 1.|12-Apr-94|B
+94/R/CS/309 and 94/W/CS/309||Ally at 30 g with Cheetah Super at 3.0 1 and Starane 2|19-May-94|B
+94/R/CS/309 and 94/W/CS/309||Bombardier at 1.0 1 with Cyclone at 1.6 1 in 200 lL.|31-May-94|B
+94/R/CS/309 and 94/W/CS/309||Combine harvested.|65-Aug-94|B
+94/R/CS/309 and 94/W/CS/309||Scythe at 4.0 1 in 200 1.|19-Oct-93|B
+94/R/CS/309 and 94/W/CS/309||Draza at 5.5 kg.|28-Feb-94|B
+94/R/CS/309 and 94/W/CS/309||34.5% N at 116 kg.|14-Mar-94|B
+94/R/CS/309 and 94/W/CS/309||34.5% N at 348 kg.|04-May-94|B
+94/R/CS/309 and 94/W/CS/309||Ally at 30 g with Oxytril CM at 1.0 1 and Halo at 1.5 1|06-May-94|B
+94/R/CS/309 and 94/W/CS/309||Cyclone at 1.0 1 with Bravo 500 at 1.6 1 in 200 1.|30-May-94|B
+94/R/CS/309 and 94/W/CS/309||Hostathion at 0.84 1 in 200 1.|14-Jun-94|B
+94/R/CS/309 and 94/W/CS/309||Halo at 2.0 1 in 200 1.|28-Jun-94|B
+94/R/CS/309 and 94/W/CS/309||Combine harvested.|16-Aug-94|B
+94/R/CS/311||Straw chopped with trailed chopper.||STRAW CHOPPED
+94/R/CS/311||Heavy spring-tine cultivated.|26-Oct-94 1|B +
+94/R/CS/311||Heavy spring-tine cultivated, rotary harrowed, Soissons, dr ed Cerevax, drilled at 380 seeds per m*.|27-Oct-93|Bo
+94/R/CS/311||Draza at 5.5 ka.|28-Oct-93|B
+94/R/CS/311||Briotril Plus 19/19 at 2.0 1 with Hytane 500 SC at 2.0 i|19-Apr-94|B
+94/R/CS/311||Cyclone at 1.0 1 with Mallard 750 EC at 0.5 1 in 200 1.|19-Apr-94|B
+94/R/CS/311||Combine harvested.|06-Aug-94|B
+94/R/CS/323|09-Sep-93 |Spring-tine cultivated.|23-Sep-93|B
+94/R/CS/323|09-Sep-93 |Glytex at 2.25 kg in 200 1.|23-Sep-93|B
+94/R/CS/323|09-Sep-93 ||08-Mar-94 ; T|CROPSEQ W. barley, oats, triticale and wheat plots
+94/R/CS/323|09-Sep-93 |Mistral at 6.5 1 with Radar at 0.5 1 in 200 1|31-May-94|EB
+94/R/CS/326 and 94/W/CS/326||Straw and stubble chopped.||&
+94/R/CS/326 and 94/W/CS/326||Ploughed.|2?-Sep-93|B
+94/R/CS/326 and 94/W/CS/326||; Disced, spring-tine cultivated.|19-Gct-93|B
+94/R/CS/326 and 94/W/CS/326||Kotary harrowed, Soissons, dressed Cerevax, drilled at|26-Oct-93|B
+94/R/CS/326 and 94/W/CS/326||Optimel at 15 kg.|17-Nov-93|B
+94/R/CS/326 and 94/W/CS/326||24.5% N at 118 kg.|69-Mar-94|B ;
+94/R/CS/326 and 94/W/CS/326||34.5% N at 448 kg.|12-Apr-94|B
+94/R/CS/326 and 94/W/CS/326||Starane 2 at ¢.75 1 with Wildcat at 1.25 1 in 206 1.|12-Apr-94|B
+94/R/CS/326 and 94/W/CS/326||Halo at 2.0 1 with Tripart Brevis at 2.5 1 in 200 1.|01-May-94|B
+94/R/CS/326 and 94/W/CS/326||Ally at 30 g with Cheetah Super at 1.5 1 and Starane 2|24-May-94|B
+94/R/CS/326 and 94/W/CS/326||Bombardier at 1.0 1 with Cyclone at 1.¢ 1 in 200 1.|31-May-94|B
+94/R/CS/326 and 94/W/CS/326||Combine harvested.|06-Aug-94|B
+94/R/CS/326 and 94/W/CS/326||Straw and stubble chopped.|20-Aug-93|B
+94/R/CS/326 and 94/W/CS/326||Tine cultivated to 10 cm.|22-Sep-93|B
+94/R/CS/326 and 94/W/CS/326||Scythe at 4.0 1 in 200 1.|19-Oct-93|Bo
+94/R/CS/326 and 94/W/CS/326||Rotary harrowed, Soissons, dressed Panoctine, driiled at|20-Oct-93|B
+94/R/CS/326 and 94/W/CS/326||Draza at 5.5 kg.|28-Feb-9394|B
+94/R/CS/326 and 94/W/CS/326||34.5% N at 116 ka.|14-Mar-94|B
+94/R/CS/326 and 94/W/CS/326||34.5% N at 348 kg.|04-May-94|B
+94/R/CS/326 and 94/W/CS/326||Ally at 30 g with Oxytril CM at 1.0 1 and Halo at 1.5 1|06-May-94|Bo
+94/R/CS/326 and 94/W/CS/326||Cyclone at 1.0 1 with Bravo 500 at 1.0 l in 200 1.|30-May-94|B
+94/R/CS/326 and 94/W/CS/326||Hostathion at 0.84 1 in 200 1.|14-Jun-94|B
+94/R/CS/326 and 94/W/CS/326||Combine harvested.|16-Aug-94|B
+94/R/CS/326 and 94/W/CS/326||Ploughed.|13-Sep-93|B
+94/R/CS/326 and 94/W/CS/326||Heavy spring-tine cultivated,|21-Oct-93|B
+94/R/CS/326 and 94/W/CS/326|T ; INOC4+SDT All plots except NONE O W|Draza at 5.5 kg.|21-Dec-93|B
+94/R/CS/326 and 94/W/CS/326|T ; INOC4+SDT All plots except NONE O W|34.5% N at 128 ka.|09-Mar-94|B
+94/R/CS/326 and 94/W/CS/326|T ; INOC4+SDT All plots except NONE O W|34.5% N at 448 kg.|19-Apr-94|B
+94/R/CS/326 and 94/W/CS/326|T ; INOC4+SDT All plots except NONE O W|Halo at 2.0 1 with New 5C Cycocel at 2.5 1 in 200 1.|19-Apr-94|B
+94/R/CS/326 and 94/W/CS/326|T ; INOC4+SDT All plots except NONE O W|34.53 MN at 100 kg.|20-May-94|Bo
+94/R/CS/326 and 94/W/CS/326||Hostathion at 840 ml in 200 1.|17-Jun-94|B
+94/R/CS/326 and 94/W/CS/326||Cyclone at 1.¢ 1 with Mallard 750 Ec at 0.5 1 in 200 1.|23-Jun-94|B
+94/W/CS/347|Treatment phase|Cut.|01-Jun-94|T ; CROPS RY LF, RY+CL LF, R¥+CL RE, RY+N RE, TU LF
+94/W/CS/347|Treatment phase|Cuttings removed.|01-Jun-94|T ; CROPS RY+CL RE, RY+N RE
+94/W/CS/347|Test phase|Sting CT at 8.0 1] in 200 1.|02-Sep-93|TB
+94/W/CS/347|08-Sep-93 |Spring-tine cultivated.|20-Oct-93|T
+94/W/CS/347|08-Sep-93 |Rotary harrowed twice, Cadenza, dressed Cerevax, drilled|23-Oct-93|T
+94/W/CS/347|08-Sep-93 |Glytex at 2.25 1 in 200 1.|02-Nov-93|T
+94/W/CS/347||Ally at 30 g with Starane 2 at 0.75 ] in 200 1.|30-May-94|T
+94/W/CS/347||Cyclone at 1.0 1 with Mistral at 0.50 1 in 200 1.|30-May-94|T
+94/W/CS/347||Aphox at 280 g in 200 1.|08-Jul-94|T
+94/W/CS/347||Combine harvested.|20-Aug-94|T
+94/R/CS/354||Ploughed.|13-Sep-93|B
+94/R/CS/354||Rotary harrowed.|23-Sep-93|B
+94/R/CS/354||Draza at 5.5 kg.|21-Dec-93|B
+94/R/CS/354||34.5% N at 118 kg.|10-Mar-94|B
+94/R/CS/354||34.5% N at 448 ka.|19-Apr-94|B
+94/R/CS/354||Hytane 500 SC at 3.0 1 with Starane 2 at 0.75 1 and|01-May-94|B
+94/R/CS/354||34.5% N at 100 kg.|19-May-94|B
+94/R/CS/354||Halo at 2.0 1 with Mallard 750 Ec at 6.5 1 in 200 1.|13-Jun-94|B
+94/R/CS/354||Hostathion at 840 ml in 200 1.|17-Jun-94|B
+94/R/CS/354||Glyphogan at 4.0 1 in 200 1.|29-Jul-94|B
+94/R/CS/354||Combine harvested.|16-Aug-94|B
+94/R/CS/355||Ploughed.|28-Sep-93|B
+94/R/CS/355||Heavy spring-tine cultivated.|20-Oct-93|B
+94/R/CS/355||Disced.|21-Oct-93|B
+94/R/CS/355||Heavy spring-tine cultivated.|26-Oct-93|B
+94/R/CS/355||Rotary harrowed twice, Mercia, dressed Cerevax, drilled|29-Oct-93|B
+94/R/CS/355||Draza at 5.5 kg.|21-Dec-93|B
+94/R/CS/355||Starane 2 at 6.75 1 with Wildcat at 1.25 1 in 200 1.|19-Apr-94|B
+94/R/CS/355||Halo at 2.0 1 with Tripart Brevis at 2.5 1 in 200 1.|01-May-94|B
+94/R/CS/355||Cyclone at 1.6 1 with Mallard 750 EC at 0.5 1 in 200 1.|41-May-94|B
+94/R/CS/355||Hostathion at 640 ml in 200 1.|13-Jun-94|B
+94/R/CS/355||Glyphogan at 4.0 1 in 200 1.|29-Jul-94|B
+94/R/CS/355||Combine harvested.|15-Aug-94|B
+94/W/CS/375||Ploughed.|16-Sep-93|B
+94/W/CS/375||Rotary harrowed, Mercia, undressed, drilled at 325 seeds|18-Oct-93|B
+94/W/CS/375||34.5% N at 116 kg.|14-Mar-94|B
+94/W/CS/375||34.5% N at 464 kg.|28-Apr-94|B
+94/W/CS/375||Ally at 30 g with Oxytril CM at 1.0 1 and Halo at 1.5 1|09-May-94|B
+94/W/CS/375||Cyclone at 1.0 1 with Mistral at 0.5 1 in 200 1.|30-May-94|B
+94/W/CS/375||Hostathion at 0.84 1 in 200 1.|14-Jun-94|B
+94/W/CS/375||Combine harvested.|15-Aug-94|B
+94/W/CS/386||Deep tine cultivated.|24-Aug-93|B
+94/W/CS/386||Dolomite at 7.5 t.|11-Sep-93|B
+94/W/CS/386||Ploughed.|15-Sep-93|B
+94/W/CS/386||Retary harrowed, Puffin, dressed Panoctine Plus, drilled|16-Oct-93|B
+94/W/CS/386||34.5% N at 464 kg.|14-Apr-94|B
+94/W/CS/386||Oxytril CM at 1.5 1 with Duplosan New system CMPP at|01-May-94|B
+94/W/CS/386||Radar at 0.5 1 with Mistral at 0.5 1 in 200 1.|29-May-94|B
+94/W/CS/386||Combine harvested.|26-Jul-94|B
+94/R/CS/399||Ploughed.|13-Sep-93|B
+94/R/CS/399||Rotary harrowed, Puffin, dressed Cerevax Extra, drilled|08-Oct-93|B
+94/R/CS/399||Optimol at 15 kg.|12-Nov-93|B
+94/R/CS/399||34.5% N at 346 kg.|19-Apr-94|B
+94/R/CS/399||Briotril Plus 19/19 at 2.0 1 with Hytane 500 SC at 2.0 1|19-Apr-94|Bo
+94/R/CS/399||Radar at 0.5 1 with Standon Tridemorph 750 at 0.5 1 in|06-May-94|B
+94/R/CS/399||Mistral at 0.5 1 with Radar at 0.5 1 in 200 1.|31-May-94|B
+94/R/CS/399||Combine harvested.|25-Jul-94|B
+94/R/CS/408||Hytane 500 Sc at 4.0 1 in 220 1.|02-Feb-94|B
+94/R/CS/408||Scythe at 5.0 1 in 220 1.|08-Apr-94|B
+94/R/CS/408||Muriate of potash at 233 kg.|06-May-94|B
+94/R/CS/408||Cut|22-Peb-95|B
+94/R/CS/411||Gramoxone 106 at 3.0 1 in 220 1.|06-Jan-94|B
+94/R/CS/411||Gesaprim 500 SC at 3.0 1 in 220 1.|02-Feb-94|B
+94/R/CS/411||Cut.|07-Mar-95|B
+94/R/CS/429||Ploughed.|13-Sep-93|B
+94/R/CS/429|15-Oct-93 ; B |Draza at 5.5 kg.|14-Dec-93|B
+94/R/CS/429|15-Oct-93 ; B |27% N at 222 kg.|14-Dec-93|T ; N60
+94/R/CS/429|15-Oct-93 ; B |Combine harvested.|23-Aug-94|B
+94/R/WW/1||Ploughed and furrow pressed.|24-Aug-93|B
+94/R/WW/1||Rolled.|27-Aug-93|B
+94/R/WW/1||Triple superphosphate at 213 kg.|15-Oct-93|B
+94/R/WW/1||Spring-tine cultivated.|18-Oct-93|B
+94/R/WW/1||Rotary harrowed, Hereward, dressed Cerevax, drilled at|23-Oct-93|B
+94/R/WW/1||Halo at 2.0 1 with Tripart Brevis at 2.5 1 in 200 1.|01-May-94|B
+94/R/WW/1||Ally at 30 g with Cheetah Super at 3.0 1 and Starane 2|09-May-94|B
+94/R/WW/1||; Cyclone at 1.0 1 with Mallard 750 Ec at 6.5 1 in 200 1.|23-Jun-94|B
+94/R/WW/1||Combine harvested.|22-Aug-94|B
+94/W/WW/1||Ploughed.|20-Sep-93|B
+94/W/WW/1||Rotary harrowed, Hereward, dressed Cerevax, drilled at|16-Oct-93|B
+94/W/WW/1||27% N at 415 kg.|13-Apr-94|B
+94/W/WW/1||27% N at 415 kq.|27-Apr-94|B
+94/W/WW/1||Oxytril CM at 1.5 1 with Duplosan New System CMPP at|01-May-94|B
+94/W/WW/1||Cyclone at 1.0 1 with Mistral at 0.5 1 in 200 1.|30-May-94|B
+94/W/WW/1||Hostathion at 0.84 1 in 200 1.|14-Jun-94|B
+94/W/WW/1||Combine harvested.|22-Aug-94|B
+94/R/WW/2||Rotary cultivated with Bomford Dynadrive.|10-Aug-93|B
+94/R/WW/2||Deep tine cultivated with vibrating tines 60 cm apart, 45 cm deep.|13-Aug-93|B
+94/R/WW/2||Rolled.|24-Aug-93|B
+94/R/WW/2||Ploughed.|15-Sep-93|B
+94/R/WW/2||Rotary harrowed.|18-Oct-93|B
+94/R/WW/2||Retary harrowed, Mercia, dressed Cerevax, drilled at 380|19-Oct-93|B
+94/R/WW/2||34.5% N at 448 kg.|11-Apr-94|B
+94/R/WW/2||Halo at 2.0 1 with Tripart Brevis at 2.5 1 in 200 1.|01-May-94|B
+94/R/WW/2||Cyclone at 1.0 1 with Mallard 750 Ec at 0.5 1 in 200 1.|31-May-94|B
+94/R/WW/2||Durshan 48E at 800 ml in 200 1.|16-Jun-94|B
+94/R/WW/2||Combine harvested.|15-Aug-94|B
+94/R/WW/3||Ploughed.|10-Sep-93|B
+94/R/WW/3||Spring-tine cultivated, twice.|23-Sep-93|B
+94/R/WW/3||Rotary harrowed.|24-Sep-93|B
+94/R/WW/3||Draza at 5.5 kg.|21-Dec-93|B
+94/R/WW/3||27% N at 259 kg.|21-Dec-93|SPRING N B
+94/R/WW/3||27% N at 519 kg.|21-Dec-93|SPRING NC DE F and G
+94/R/WW/3||Ally at 30 g with Cheetah Super at 1.5 1 and Starane 2||B
+94/R/WW/3||Halo at 2.0 1 with Mallard 750 EC at 6.5 1 in 200 1.|13-Jun-94|B
+94/R/WW/3|17-Jun-94 |Combine harvested.|16-Aug-94|B
+94/R/BW/1||Ploughed.|09-Sep-93|B
+94/R/BW/1||Rotary harrowed, Puffin, dressed Cerevax Extra, drilled|22-Sep-93|B
+94/R/BW/1||Trick oil radish broadcast at 3.0 kg.|22-Sep-93|T ; CROP R1
+94/R/BW/1||Draza at 5.5 kg.|28-Oct-93|B
+94/R/BW/1|08-Mar-94 |34.5% N at 435 kg.|14-Apr-94|B
+94/R/BW/1|08-Mar-94 |Starane 2 at 0.75 1 with Tigress at 2.5 1 in 200 1.|09-May-94|B
+94/R/BW/1|08-Mar-94 |Mistral at 0.5 1 with Radar at 0.5 1 in 200 1.|31-May-94|B
+94/R/BW/1|08-Mar-94 |Combine harvested.|26-3u1-94|B
+$4/R/BS/1||Ploughed.|03-Nev-93|B
+$4/R/BS/1||Rotary harrowed.|18-Apr-94|B
+$4/R/BS/1|B |34.5% N at 435 kg.|10-May-94|B
+$4/R/BS/1|B |Logran 20 WG at 37.5 g in 220 1.|10-May-94|@ ; HERBCIDE H3
+$4/R/BS/1|B |Derosal WDG at 312.5 g with Dorin at 1.0 1 in 260 1.|23-Jun-94|B
+$4/R/BS/1|B |Combine harvested.|09~Aug-94|B
+94/W/BS/1||Ploughed.|09-Feb-$4|B
+94/W/BS/1||Rotary harrowed, Alexis, dre|21-Mar-94|B
+94/W/BS/1||Petassium chloride applied at|21-Mar-94|SULPHUR Si, Sl, SZ, S3
+94/W/BS/1||34.5% N at 248 kg.|21-Mar-94|Bo
+94/W/BS/1||Vindex at 1.1 1 with Duplesan New System CMPP at 20) 2|19-May-94|B
+94/R/RAW/3||Cultivated by rotary grubber.|19-Jui-93|B
+94/R/RAW/3||Deep tine cultivated with vibrating tines 60 cm apart, 45 cm deep.|29-Jul-93|B
+94/R/RAW/3||Rolled.|02-Aug-93|B
+94/R/RAW/3||Ploughed and furrow pressed, rolled.|18-Aug-93|B
+94/R/RAW/3||Rotary harrowed, Envol, dressed Lindex-Plus FS, drilled|23-Sep-93|B
+94/R/RAW/3||Draza at 5.5 kg.|07-Oct-93|B
+94/R/RAW/3||34.5% N at 162 kq.|0&-Mar-34|B
+94/R/RAW/3||34.5% N at 346 kq.|11-Apr-94|B
+94/R/RAW/3||Combine harvested.|08-Aug-94|B
+94/W/RAW/3||Ploughed.|23-Aug-93|B
+94/W/RAW/3||Rolled.|24-Bug-33|Bs
+94/W/RAW/3||Rotary harrowed, Libravo, dressed Lindex-Plus FS, drilled at 7.6 kg.|07-Sep-93|B
+94/W/RAW/3||27% N at 50 kg.|30-Sep-93|B
+94/W/RAW/3||Carbetamex at 2.0 kg with Benazalox at 1.25 kg in 200 1.|10-Feb-94|B
+94/W/RAW/3||Combine harvested.|0S-Aug-94|B
+94/R/RAW/6||Cultivated by rotary grubber.|19-Jul-93|B
+94/R/RAW/6||Deep tine cultivated with vibrating tines, 60 cm apart, 45 cm deep.|29-Jul-93 ;|B
+94/R/RAW/6||Rolled.|02-Aug-93|B
+94/R/RAW/6||Ploughed and furrow pressed, rolled.|18-Aug-93|B
+94/R/RAW/6||Rotary harrowed.|67-Sep-93|B
+94/R/RAW/6||Weed seeds broadcast by|67-Sep-93|SPECIES SM, GA, VA, SA, LP, PR
+94/R/RAW/6||Rotary harrowed twice, Falcon, dressed Lindex-Plus FS, drilled at 120 seeds per m.|67-Sep-93|B
+94/R/RAW/6||Draza at 5.5 kg.|07-Oct-93|B
+94/R/RAW/6||34.5% N at 162 kg.|08-Mar-94|B
+94/R/RAW/6||34.5% N at 346 kg.||B
+94/R/RAW/6||Landgold Diquat at 3.0 1 with Vassgre Spreader at 300 ml|21-Jul-94|B
+94/R/RAW/6||Combine harvested.|29-Jul-94|B
+94/R/RAW/7||Cultivated with rotary grubber.|19-Jul-93|B
+94/R/RAW/7||Deep tine cultivated with vibrating tines, 60 cm apart|29-Jul-93|B
+94/R/RAW/7||Rolled.|02-Aug-93|B
+94/R/RAW/7||Ploughed and furrow pressed, rolled.|18-Aug-93|B
+94/R/RAW/7||Rotary harrowed.|22-Sep-93|B
+94/R/RAW/7||Draza at 5.5 kg.|07-Oct-93|B
+94/R/RAW/7||Carbetamex at 3.¢ kg in 200 1.|31-Jan-94|B
+94/R/RAW/7||34.5% N at 162 kg.|08-Mar-94|B
+94/R/RAW/7||34.5% N at 346 kg.|11-Apr-94|B
+94/R/RAW/7||Landgold Diquat at 3.0 1 with Vassgro Spreader at 300 ml|21-Jul-94|B
+94/R/RAW/7||Combine harvested.|27-Jul-94|B
+94/R/RAW/8||Cultivated with rotary grubber.|19-Jul-93|Bo
+94/R/RAW/8||Deep tine cultivated with vibrating tines 60 cm apart|29-Jul-93|B
+94/R/RAW/8||Rolled.|02-Aug-93|B
+94/R/RAW/8||||
+94/R/RAW/8||Draza at 5.5 kg.|07-Oct-93|B
+94/R/RAW/8||34.5% N at 162 kg.|08-Mar-94|B
+94/R/RAW/8||34.5% N at 346 kg.|11-Apr-94|B
+94/R/RAW/8||Fastac at 200 ml in 200 1.|19-May-94|T ; SOW DATE SL
+94/R/RAW/8||Landgold Diquat at 3.0 1 with Vassgro Spreader at 300 ml|21-Jul-94|B
+94/R/RAW/8||Combine harvested,|27-3u1-94|B
+94/R/RAW/10||Cultivated by rotary grubber.|19-Jul-93|B
+94/R/RAW/10||Deep tine cuitivated with vibrating tines 60 cm apart, 45 cm deep.|29-Jul-93|B
+94/R/RAW/10||Rolled.|02-Aug-93|B
+94/R/RAW/10||Ploughed and furrow pressed, rolled.|18-Aug-93|B
+94/R/RAW/10||Disced twice, rotary harrowed twice.|25-Aug-93|B
+94/R/RAW/10||Draza at 5.5 kg.|07-Oct-93|B
+94/R/RAW/10||Infected straw applied.|14-Oct-93 ; T|FUNGINOC INOC 1, INOC 2
+94/R/RAW/10||Benazalox at 0.75 1 with Butisan S at i.5 1 in 200 1.|04-Nov-93|B
+94/R/RAW/10||34.5% N at 162 kg.|08-Mar-94|B
+94/R/RAW/10||34.5% N at 346 kg.|11-Apr-94|B
+94/R/RAW/10||Landgold Digquat at 3.0 1 with Vassgro Spreader at 400 ml|14-Jul-94|B
+94/R/RAW/10||Combine harvested.|21-Jul-94|B
+94/R/RAS/1||Ploughed.|30-Sep-93|B
+94/R/RAS/1|26-Mar-94 |Spring-tine cultivated twice. j|20-Apr-94|B +
+94/R/RAS/1|26-Mar-94 |Rotary harrowed, Starlight, dressed Lindex Plus PS, drilled at 166 seeds per m*.|21-Apr-94|B
+94/R/RAS/1|26-Mar-94 |Butisan §S at 1.5 1 in 200 1.|22-Apr-94|B
+94/R/RAS/1|26-Mar-94 |34.5% N at 348 kg.|04-May-94|B
+94/R/RAS/1|26-Mar-94 |Benazalox at 1.0 kg in 200 1.|02-Jun-94|B
+94/R/RAS/1|26-Mar-94 |Fastac at 200 mi in 200 1.|17-Jun-94|B
+94/R/RAS/1|26-Mar-94 |Inoculation started.|29-Jun-94|T ; INOCULTN BF
+94/R/RAS/1|26-Mar-94 |Combine harvested.|24-Aug-94|B
+94/R/RAS/3||Ploughed.|04-Nov-93|B
+94/R/RAS/3||Spring-tine cultivated, rotary harrowed, Starlight, dressed Lindex-Plus FS, drilled at 200 seeds per m*.|18-Apr-94|B
+94/R/RAS/3||Butisan S at 1.5 1 in 200 1.|19-Apr-94|B
+94/R/RAS/3||34.5% N at 248 kg.|10-May-94|B
+94/R/RAS/3||Combine harvested.|24-Aug-94|B
+94/R/BEW/2||Ploughed, spring-tine cultivated.|29-Oct-93|B
+94/R/BEW/2||Rotary harrowed.|01-Nov-93|B
+94/R/BEW/2||Rotary harrowed, Punch drilled at 25 seeds per m’.|02-Nov-93|B
+94/R/BEW/2||34.5% N at 145 kg.|02-Nov-93|B
+94/R/BEW/2||; Basagran at 1.5 1 in 200 1.|01-Mar-94|B
+94/R/BEW/2||Hoegrass at 3.0 1 in 200 1.|10-Mar-94|B
+94/R/BEW/2||Bombardier at 1.5 1 with Ronilan FL at 0.5 1 in 300 1.|06-May-94|B
+94/R/BEW/2||Hand harvested.|23-Aug-94|B
+94/R/BEW/3||Punch broadcast at 25 seeds per m*, ploughed, spring-|29-Oct-93|B
+94/R/BEW/3||Carbetamex at 3.0 kg in 200 1.|31-Jan-94|B
+94/R/BEW/3||Bombardier at 1.5 1 with Ronilan FL at 0.5 1 in 300 1.|06-May-94|B
+94/R/BEW/3||Combine harvested.|18-Aug-94|T
+94/R/BES/2||Roundup at 3.0 1 in 200 1.|01-Nov-93|B
+94/R/BES/2|18-Nov-93 ; B |Heavy spring-tine cultivated, rotary harrowed, Alfred|10-Mar-94|B
+94/R/BES/2|18-Nov-93 ; B |Opegard 506 SC at 3.4 1 in 200 1.|11-Mar-94|B
+94/R/BES/2|18-Nov-93 ; B |Bravo 500 at 1.0 I with Rovral Flo at 1.5 1 and|11-Jul-94|B
+94/R/BES/2|18-Nov-93 ; B |Combine harvested.|18-Aug-94|B
+94/R/BES/3||Deep tine cultivated.|29-Nov-93|B
+94/R/BES/3||Scythe at 2.0 1 in 200 1.|21-Mar-94|B
+94/R/BES/3||Oxytril CM at 1.5 1 with Starane 2 at 1.0 1 in 200 1.|26-Mar-94|B
+94/R/BES/3||Heavy spring-tine cultivated, spring-tine cultivated.|30-Mar-94|B
+94/R/BES/3||Bombardier at 1.6 1 with Rovral Flo at 1.5 1 and|08-Jul-94|B
+94/R/BES/3||Combine harvested.|18-Aug-94|T
+94/R/BES/4||Deep tine cultivated twice.|04-Nov-93|B
+94/R/BES/4||Scythe at 2.0 1 in 200 1.|21-Mar-94|B
+94/R/BES/4||Oxytril CM at 1.5 1 with Starane 2 at 1.0 1 in 200 1.|26-Mar-94|B
+94/R/BES/4||Heavy spring-tine cultivated.|31-Mar-94|B
+94/R/BES/4||Spring-tine cultivated.|19-Apr-94|B
+94/R/BES/4||Rotary harrowed.|20-Apr-94|B
+94/R/BES/4||Rotary harrowed, Alfred drilled at 60 seeds per m.|20-Apr-94|B
+94/R/BES/4||Harrowed.|20-Apr-94|B
+94/R/BES/4||Ripcord at 250 ml in 200 1.|12-May-94|B
+94/R/BES/4||Basagran at 3.0 1 in 200 1.|02-Jun-94|B
+94/R/BES/4||Bombardier at 1.0 1 with Rovral Flo at 1.5 1 and|08-Jul-94|B
+94/R/BES/4||Hand harvested.|15-Aug-94|B
+94/R/LP/2||Ploughed and furrow pressed.|31-Aug-93|B
+94/R/LP/2||Rolled, rotary harrowed.|01-Sep-93|B
+94/R/LP/2||Sportak 45 at 1.11 in 220 1.|23-Dec-9393|B
+94/R/LP/2||Atlas Simazine at 1.0 1 in 200 1.|16-Feb-94|B
+94/R/LP/2||Atlas Dimethoate 40 at 850 ml in 260 1.|08-Jul-94|B
+94/R/LP/3||Ploughed and furrow pressed.|31-Aug-93|B
+94/R/LP/3||Rotary harrowed.|23-Sep-93|B
+94/R/LP/3||Atlas Simazine at 1.0 1 in 200 1.|16-Feb-94|B
+94/R/LP/3||Pirimicarb 50 DG at 0.28 kg with Vassaro|12-Jul-94|T ; SUM INS IA
+94/R/LP/3||Atlas Dimethoate 406 at 0.85 1 in 220 1.|12-Jul-94|SUM INS ID
+94/R/LP/3||Combine harvested.|12-Jul-94|B
+94/R/LP/9||Sting CT at 4.0 1 in 200 1.|01-Nov-93|B
+94/R/LP/9||Bloughed.|04-Nov-33|Bo
+94/R/LP/9||Rotary harrowed, CH304/73 drilled at 60|14-Mar-94 . T|SOW DATE M
+94/R/SU/1||; Sting CT at 4.0 1 in 200 1.|01-Nov-93|B
+94/R/SU/1||Ploughed.|66-Dec-93|B
+94/R/SU/1||Heavy spring-tine cultivated.|27-Apr-94|B
+94/R/SU/1||Rotary harrowed.|28-Apr-94|B
+94/R/SU/1||34.5% N at 145 kg.|03-May-94|B
+94/R/SU/1||Rolled.|04-May-94|B
+94/R/SU/1||Stomp 400 at 5.0 1 in 200 1.|06-May-94|Bo
+94/R/SU/1||Decig at 300 ml in 200 1.|20-May-94|B
+94/R/SU/1||Laser at 2.25 1 with Actipron at 1.8 1 in 220 1.|13-Jun-94|B
+94/R/SU/1||Hand harvested, threshed by stationary|24-Aug-94|T ; CULTIVAR 345
+94/R/SU/1||Hand harvested, threshed by|02-Sep-94|T ; CULTIVAR AV, AL, AGC
+94/R/SU/2||Ploughed.|08-Mar-94|Bo
+94/R/SU/2||Heavy spring-tine cultivated.|14-Mar-94|B
+94/R/SU/2||Heavy spring-tine cultivated.|17-Mar-94|B
+94/R/SU/2||Rolled.|24-Mar-94|B
+94/R/SU/2||34.5% N at 145 ka.|03-May-94|B
+94/R/SU/2||Rolled.|04-May-94|B
+94/R/SU/2||Stemp 490 at. 5.0 1 in 220 1.|06-May-94|B
+94/R/SU/2||Bacterium and fungicide powder|06-May-94|BEE ADDN BB, BF
+94/R/SU/2||Irrigated.|22-Jul-94|B
+94/R/SU/2||Irrigated.|25-Jul-94|B
+94/R/SU/2||Irrigated.|27-Jul-94|B
+94/R/SU/2||Irrigated.|02-Aug-94|B
+94/R/SU/2||Reglone at 3.0 1 with Vassgrow Spreader at 400 ml in|06-Sep-94|B
+94/R/SU/2||Hand harvested, threshed by stationary combine.|68-Sep-94|B
+94/R/LN/1||FYM at 25 t.|12-Nov-93|Bo
+94/R/LN/1||Ploughed.|02-Dec-93|B
+94/R/LN/1||Spring-tine cultivated.|20-Apr-94|B
+94/R/LN/1||Rotary harrowed, Antares, dressed Prelude 20LF, drilled|20-Apr-94|Bo
+94/R/LN/1||Relled.|21-Apr-94|B
+94/R/LN/1||34.5% N at 220 kg.|10-May-94|B
+94/R/LN/1||Ripcord at 250 ml in 200 1.|12-May-94|B
+94/R/LN/1||Dow Shield at 0.5 1 in 200 L.|13-Jun-94|B +
+94/R/LN/1||Combine harvested.|13-Sep-94|B
+94/R/LN/2||Ploughed.|03-Dec-93|B
+94/R/LN/2||Rotary harrowed.|25-Apr-94|B
+94/R/LN/2|B |Ripeord at 250 ml in 266 1.|12-May-94|B
+94/R/LN/2|B |24.5% N at 220 kg.|18-May-94|B
+94/R/LN/2|B |Dow Shield at 6.5 1] in 200 1.|13-Jun-94|B
+94/R/LN/2|B |Hand harvested.|06-Sep-94|B
+94/R/LN/6||Ploughed.|03-Dec-93|B
+94/R/LN/6||Rotary harrowed.|26-Apr-94|B
+94/R/LN/6||Rotary harrowed, Antares, dressed Prelude 20LF, drilled|26-Apr-94|B
+94/R/LN/6||Ripcord at 250 mi in 200 1.|12-May-94|B
+94/R/LN/6||34.5% N at 220 kg.|18-May-94|B
+94/R/LN/6||Dow Shield at 6.5 1 in 200 1.|13-Jun-94|B
+94/R/LN/6||Hand harvested.|02-Sep-94|B
+94/R/P/4||Ploughed.|29-Nov-93|B
+94/R/P/4||Heavy spring-tine cultivated twice, rotary harrowed, ridged, potatoes hand planted. Ridges split back.|25-Apr-94|B
+94/R/P/4|16-May-94 |Farmon PDQ at 2.0 1] with Rotalin at 5.0 1 in 200 1.|23-May-94|B
+94/R/P/4|16-May-94 |Dithane 945 at 1.7 kg with Intracrop BLA at 0.2 lin|23-Jun-94|B
+94/R/P/4||Dithane $45 at 1.7 kg with Pirimicarb 50 DG at 0.28 kg|07-Jul-94|B
+94/R/P/4||Ashlade Mancozeb FL at 2.5 1 with Intracrop BLA at 0.2 1|25-Jul-94|B
+94/R/P/4||Ashlade Mancozeb FL at 2.5 1 with Intracrop BLA at|15-Aug-94|B.
+94/R/P/4||Ashlade Mancozeb FL at 2.5 1 with Intracrop BLA at|30-Aug-94|B
+94/R/P/4||Haulm mechanically destroyed.|24-Sep-94|B
+94/W/SB/1||Scythe at 3.0 1 in 200 1.|63-Apr-94|B
+94/W/SB/1||Rotary harrowed, Saxon dressed Thiram, drilled at 9.3|22-Apr-94|B
+94/W/SB/1||34.5% N at 87 kg.|25-Apr-94|B
+94/W/SB/1||Goltix at 1.7 kg with Adder at 1.7 1 in 200 1.|09-May-94|B
+94/W/SB/1||Goltix at 1.7 kg with Adder at 1.7 1 in 200 1.|12-Jun-94|B
+94/W/SB/1||Inter-row cultivated.|08-Jul-94|Bo
+94/W/SB/1||; Hand lifted.|21-Dec-94|&
+94/R/M/1||Deep tine cultivated with vibrating tines 60 cm apart, 45 cm deep.|30-Jul-93|B
+94/R/M/1||Ploughed.|13-Aug-93|B
+94/R/M/1||Rolled.|77-Aug-93|B
+94/R/M/1||Scythe at 2.0 1 with Vassgro Spreader at 200 ml in|06-Sep-93|B
+94/R/M/1||Ripcord at 250 ml in 220 1.|12-Nov-93|T ; INSCTCDE C
+94/R/M/1||34.5% N at 118 kg.|09-Mar-94|B
+94/R/M/1||34.5% N at 346 kg.|19-Apr-94|B
+94/R/M/1||Briotril Plus 19/19 at 2.0 1 with Hytane 500 SC at 2.0 1|19-Apr-94|B
+94/R/M/1||Radar at 0.5 1 with Standon Tridemorph 750 at 0.5 1 in|06-May-94|B
+94/R/M/1||Mistral at 0.5 1 with Radar at 0.5 1 in 200 1.|31-May-94|B
+94/R/M/1|B |Halo at 2.0 1 with Mallard 750 Ec at 6.5 1 in 200 1.|13-Jun-94|B
+94/R/M/1|B |Hostathion at 840 ml in 200 1.|17-Jun-94|B
+94/R/M/1|B |Combine harvested.|16-Aug-94|B

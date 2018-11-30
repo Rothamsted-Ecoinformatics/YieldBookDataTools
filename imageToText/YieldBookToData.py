@@ -30,7 +30,11 @@ def getExperimentCode(testString):
     m = re.match(".{1,2}/.{1,2}?/", testString, flags=0) #Looks for the experiment code pattern
     if (m != None):
         thisEx = testString.split(".")[0] # removes the 'page' component of the experiment code
+        print(thisEx)
         thisEx = thisEx.split(" ")[0] # removes anything else in case of no page component
+        print(thisEx)
+        thisEx = thisEx.split("\n")[0] # removes anything else in case of no page component
+        print(thisEx)
     else:
         thisEx = ""
     return thisEx
@@ -38,13 +42,13 @@ def getExperimentCode(testString):
 #try:
 page = 1
 outfile = open("yieldbook1965.txt", "w+", 1)
-fileList = os.listdir("D:\\work\\yieldbooks\\YieldBook1965\\FullSize")
+fileList = os.listdir("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\1965\\FullSize")
 sorted(fileList)
 for fname in fileList:
     if fname.endswith(".jpg"): 
         print("processing document " + fname)
         print("document is page " + str(page))
-        img = enhance("D:\\work\\yieldbooks\\YieldBook1965\\FullSize\\" + fname)
+        img = enhance("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\1965\\FullSize\\" + fname)
 
         scan = pytesseract.image_to_string(img, lang='eng', config='--dpi 300 --psm 4',nice=0,output_type=Output.DICT)
         
@@ -89,24 +93,9 @@ for fname in fileList:
                         elif(partsLen > 2):
                             outfile.write(curEx + "|" + specialSection + "|" + " ".join(parts[0:partsLen-1]) + "|" + parts[partsLen-1].strip())
                             outfile.write("\n")
-                    #print(job)
             
-            
-            
-            #for item in lines:
-            #    print(item)
-            #    print("----------")
-                
-                #look for a pattern of upper case which indicates a change in the cultivated thing 
-            #    outfile.write(item.strip())
-                
-            #    outfile.write("\n")
         page+=1
     #if (page == 50):
     #    break;
 print('done')
 outfile.close()
-
-
-#except:
-    #print("Unexpected error:", sys.exc_info()[0])   

@@ -1,25 +1,748 @@
 65/A/1|CROPPED SECTIONS|Cultivations, etc.  CROPPED SECTIONS  Ground chalk applied|Sept 9, 1964
-65/A/1|CROPPED SECTIONS|Ploughed  Oct 9 - 14, Dung applied|Oct 13
+65/A/1|CROPPED SECTIONS|Ploughed|Oct 9-14
+65/A/1|CROPPED SECTIONS|Dung applied|Oct 13
 65/A/1|CROPPED SECTIONS|Autum fertilisers applied|Oct 19
-65/A/1|CROPPED SECTIONS|Seed drilled at 180 1b|Oct 26
+65/A/1|CROPPED SECTIONS|Seed drilled at 180 lb|Oct 26
 65/A/1|CROPPED SECTIONS|Spring fertilisers applied|Apr 26, 1965
-65/A/1|CROPPED SECTIONS|Second dressing of nitrate of soda applied to plot 16|My 10
-65/A/1|CROPPED SECTIONS|Sprayed* with MCRA at 1.13 1b and dicamba at 0,08 1b in 34 gals|May 11
+65/A/1|CROPPED SECTIONS|Second dressing of nitrate of soda applied to plot 16|May 10
+65/A/1|CROPPED SECTIONS|Sprayed* with MCPA at 1.13 1b and dicamba at 0.08 lb in 34 gals|May 11
 65/A/1|CROPPED SECTIONS|Combine harvested|Sept 21
-65/A/1|CROPPED SECTIONS|Variety|Squarehead's Master 13/4 (Rothamsted seed from Broadbalk field)
-65/A/1|FALLOW SECTION|FALLOW SECTION  (IV) Ploughed|Oct 9 - 14, 1964, Nov 30, July 21, 1965
-65/A/1|BROADBALK WILDERNESS|BROADBALK WILDERNESS  Cultivations, etec.  Ungrazed meadow (north)  Shrubs grubbed out|Nov 3 - 19, 1964
-65/A/1|BROADBALK WILDERNESS|Grazed meadow (centre)  Grazed by sheep  Apr 26 - May 4, 1965, My 22 - 28, June 15 - 25, July 19 - 29, Aug 18 - 31, Oct 4 - Nov 4, Grass topped|May 3, May 28, June 25, July 29, Sept 1
-65/A/2||Cultivations, etc.  Quinquennial chalk supplement applied to series A, C and plot 5A  Sept 26, 1964, Dung applied, all plots ploughed|Nov 3
-65/A/2||Fertilisers applied, seed drilled at 160 1b|Apr 1, 1965
-65/A/2||Sprayed with mecoprop/2,4-D (Methoxone Extra at 6 pints in 34 gals)|May 14
-65/A/2||Nitrate of soda applied to plot LAAS|May 20
-65/A/2||Combine harvested|Sept S
-65/A/3
-WHEAT||Cultivations, efCet= Cropped plots  Ploughed|Sept 17, 1964
-65/A/3
-WHEAT||Seed drilled at 190 1b|Cet 26
-65/A/3
-WHEAT||Combine harvested|Sept 21
-65/A/3
-WHEAT||Fallowed plots  Ploughed 3 times|Sept 17, 1964, July 19, 1965, Aug 13
+65/A/1|CROPPED SECTIONS|Variety|Squmrehead's Master 17/4 (Rothamsted seed from Broadbalk field)
+65/A/1|FALLOW SECTION|FALLOW SECTION  (IV) Ploughed|Oct 9 - 14, 1964, Nov 3, July 21, 1965
+65/A/1|BROADBALK WILDERNESS|BROADBALK WILDERNESS  Cultivations, ete.  Ungrazed meadow (north)  Shrubs grubbed out|Nov 3 - 19, 1964
+65/A/1|BROADBALK WILDERNESS|Grazed meadow (centre)  Grazed by sheep|Apr 26 - My 4, 1965, May 22 - 28, June 15 - 25, July 19 - 29, Aug 18 - 31, Oct 4 - Nov 4
+65/A/1|BROADBALK WILDERNESS|Grass topped|May 3, May 28, June 25, July 29, Sept 1
+65/4/2||Cultivations, etc.  Quinquennial chalk supplement applied to series A, C and plot 5A|Sept 26, 1964
+65/4/2||Dung applied, all plots ploughed|Nov 3
+65/4/2||Fertilisers applied, seed drilled at 160 lb|Apr 1, 1965
+65/4/2||Sprayed with mecoprop/2,4-D (Methoxone Extra at 6 pints in 34 gals)|May 14
+65/4/2||Nitrate of soda applied to plot 4AAS|May 20
+65/4/2||Combine harvested|Sept 3
+65/4/3||Cultivations, etcet=- Cropped plots  Ploughed|Sept 17, 1964
+65/4/3||Seed drilled at 190 lb  Oct 26, Combine harvested|Sept 21
+65/4/3||Fallowed plots  Ploughed 3 times|Sept 17, 1964, July 19, 1965, Aug 13
+65/A/4||Cultivations, etc. ?- Grass  ‘'Nitro-Chalk' applied|Apr 1, 1965
+65/A/4||Cut 3 times for Silage|My 19, July 26, Oct 6
+65/A/4||Fallow  Ploughed|Oct 19, 1964
+65/A/4||Rotary cultivated|June 30, 1965
+65/A/4||Chisel ploughed|Aug 6
+65/A/5||Cultivations, etc.  Dung applied, all plots ploughed|Nov 9, 1964
+65/A/5||Mineral fertilisers applied|My 14, 1965
+65/A/5||Rotary cultivated|My 17
+65/A/5||FPloughed second time|July 21 - Aug 4.
+65/A/6||Cultivations, etc.  Dung applied to appropriate plots  Nov 10, 1964, Mineral fertilisers applied|Nov 27
+65/A/6||Growd chalk applied|Jan 6, 1965
+65/A/6||Nitrogenous fertilisers applied  lst dressing  Mr 10, 2nd dressing|Apr 13
+65/A/6||Cut twice|June 28 and Dec 35 The lengths trvested on sub-plots @, b, c and d varied slightly
+65/4/7||Cultivations, etc.  Ploughed|Nov 2, 1964
+65/4/7||Seed combine drilled at 160 lb|Mar 15, 1965
+65/4/7||Sprayed with MCR at 1.13 lb and dicamba at 0.08 lb in KO gals|May 22
+65/4/7||Combine lmrvested|Sept 1
+65/a/8||Cultivations, etc.  Soil loosened with forks, formlin applied|Apr 14, 1965
+65/a/8||K applied, seed drilled at 30 1b|May 27
+65/a/8||Cut|Oct 13
+65/a/8||Variety|Red Clover (Dorsetiensis) - inoculated seed
+65/4/9||Cultivations, etc.  All plots (excluding microplot area)  Ploughed  Sept 29, 196k, Chisel ploughed|Dec 16, 1964 and Apr 27, 1965
+65/4/9||All plots (excluding microplot area and area to be sown to mstard)  Chisel ploughed|July 28, 1965
+65/4/9||Ploughed|Oct 13
+65/4/9||Mustard  Seed broadcast, 0.42 ewt N applied as 'Nitro-Chalk'|June 28, 1965
+65/4/9||Crop destroyed mechanically|Oct 7
+65/4/9||Ploughed in|Oct 13.
+65/A/10||Cultivations, ecic. - Sugar beet  Dung applied|Sept 21, 1964
+65/A/10||Ploughed|Nov 10
+65/A/10||Bonemeal, superphosphate and muriate of potash applied|Mar 17, 1965
+65/A/10||Seed drilled|Apr 7
+65/A/10||DDI applied|May 7
+65/A/10||Singled|May 15 - 29
+65/A/10||Nitrate of soda applied|May 17
+65/A/10||Lifted|Oct 18
+65/A/10||Variety|Klein E
+65/A/10||Barley  Dung applied|Nov 3, 1964
+65/A/10||Ploughed|Nov 16
+65/A/10||SBonemeal, Superphosphate and muriate of potash applied|Mar 15, 1965
+65/A/10||Seed drilled at 150 lb|Mar 30
+65/A/10||Sprayed with hormonal weedkiller|My 12
+65/A/10||Nitrate of soda applied|My 17
+65/A/10||Combine harvested|Aug 31
+65/A/10||Variety|Proctor
+65/A/10||Fallow  Dung applied|Sept 22, 1964
+65/A/10||Ploughed|Nov 14
+65/A/10||Bonemeal, superphosphate and muriate of potash applied|Apr 3, 1965
+65/A/10||Ploughed 3 times|Apr 5, June 3 and July 19 31
+65/A/10||Winter wheat  Ploughed|July 28 - Aug 20, 1964
+65/A/10||Ding applied and Dloughed in|Sept 18
+65/A/10||Bonemeal, superphospmte and muriate of potash applied, seed drilled at 160 lb  Nov 6, Nitrate of soda applied|Mr 6, 1965
+65/A/10||Sprayed with hormmal weedkiller|May 12
+65/A/10||Combine ltmrvested|Aug 31
+65/A/10||Variety|Cappelle.
+65/A/11||Cultivations, etc.  Ploughed|Oct 28 - Nov 18, 1964
+65/A/11||Fertilisers applied|Mar 30, 1965
+65/A/11||Seed drilled at 150 lb|April
+65/A/11||Sprayed with hormonal weedkiller|May 12
+65/A/11||Combine harvested|Aug 31
+65/A/11||Variety|Proctor.
+65/B/1||Cultivations, etc.  HIGHFIELD ist year Treatment Crops  All-grass ley  Ploughed|Oct 16, 1%4
+65/B/1||Basal PK compound applied|Apr 5, 1965
+65/B/1||Seeds sown at 30 lb, 'Nitro-Chalk' applied|Apr 6
+65/B/1||in 40 gals|Jume 2
+65/B/1||Cut 3 times|July 2, Aug 5, Sept 9
+65/B/1||Clover-grass ley  FPloughed|Oct 16, 1964
+65/B/1||Basal PK compound applied|Apr 5, 1965
+65/B/1||Seeds sown at 33 Ib|Apr 6
+65/3/2||Cultivations, etc. -= Great Field IV (R) Winter wheat  Dug by hand|Sept 21, 1964
+65/3/2||P, K, Mg, Ca and S applied|Sept 24
+65/3/2||Seed drilled|Oct 6
+65/3/2||First N dressings applied (excluding additional plots), additional plots sprayed with mecoprop (Iso-Cornox at 6 pints in 100 gals)|Mer 31, 1965
+65/3/2||Second N dressings applied, all N applied to the additional Plots  May 4, Trace element spray applied|May 5
+65/3/2||Harvested|Aug 27
+65/3/2||  Kale  Dung applied, plots dug by hand|Nov 9, 1964
+65/3/2||PP, K, Mg, Ca and S applied|Feb 9 - 18, 1965
+65/3/2||First N dressings applied to additional plots, all N to reminder, seed drilled  Apr 4, Second N dressings applied to additional plots|May 26
+65/3/2||Magnesium-free calcium carbonate applied to additional plots at 48 cwt|May 27
+65/3/2||Trace element sprey applied|June 10
+65/3/2||Harvested|Oct 22
+65/3/2||Barley  Plots dug by hand  Nov 19, 1964, PP, K, Me, Ca ands applied|Feb 9, 1965
+65/3/2||All N applied, seed drilled|Mar 1
+65/3/2||Trace element spray applied  May 25, Harvested|Aug 13
+65/3/2||Variety|Proctor, Deba Abed on additional plots
+65/3/2||Grass-clover ley  Undersown in barley|Mar 10, 1964
+65/3/2||P, K, Me, Ca and S applied|Feb 9 - 18, 1965
+65/3/2||All N applied|Feb 23
+65/3/2||‘Trace element spray applied|My 5
+65/3/2||Magnesium-free calcium carbonate applied to additional plots at 8 ewt|My 27
+65/3/2||Additional plots cut 3 times  May 26, July 22, Oct 8, 1965, remainder 4 times|Oct 29, 1964, May 26, July 22, Oct 8, 1965.
+65/B/2||Cultivations, etc.?=- Formalin applied|Dec 8, 1964 in 4 1
+65/B/2||All manures (other than N) dug in|Apr 1, 195
+65/B/2||Seed sown|Apr 7
+65/B/2||es spray|Apr 29
+65/B/2||N top dressed|July 7, July 30, Aug 2
+65/B/2||Design|Seedbeds
+65/B/2||2 blocks of 3 plots split into 2 (unrandomised ) Area of each plot|0.0002 acre (1 sqwre yard)
+65/B/2||of viable seeds per plot|Sitka spruce 1800 Norway spruce 1500 No
+65/B/2||of transplants per species per plot|54
+65/B/2||NPK Me soluble N|'Nitro-Chalk 21' applied in three summer top dressings at 4.5 g.N per occasion for seedbeds, and 3 g.N per occasion for transplants
+65/B/2||PK|Potassic superphosphate (20% P205, 10% K20) at 9 g.P, 9 eK
+65/B/2||NPK Mg Slow-release + 'Nitro-Chalk’' N (part)|'Nitro-Chalk 21" applied in three summer top dressings at 4.5 g.N per occasion for seedbeds and 3 g.N per occasion for transplants
+65/B/2||NPK Mg|Magnesium ammonium phosphate supplying 2 g.N, 4.5 g.P, 3-5 gM Potassium metaphosphate supplying 4.5 g.P, 6 g.K
+65/B/2||Cultivations, etc.t- All manures (other than N) dug in|Apr 1, 1965
+65/B/2||Seed som|Apr 7
+65/B/2||pre-emergent spray|Apr 29
+65/B/2||N top dressed|July 7, July 3, Aug 24.
+65/B/2||Cultivations, etc.  Pand K fertilisers applied|Nov 20, 1964
+65/B/2||Groumd chalk applied to appropriate plots|Nov 30
+65/B/2||Férst N dressings applied|Feb 26, 1965
+65/B/2||Sample cuts taken 4 times|May 6, Jume 17, Aug 20, Oct 25
+65/B/2||Highfield IX (R), Dry Matter  ist cut  3.73 or 24.9% (26 a.f.) @nd cut  4.09 or 11.0% (26 da.f.) 3rd cut  4.48 or 10.6% (26 a.f.) kth cut  2.84 or 11.7% (26 a.f.) Total of 4 cuts  7.66 or 6.4% (26 a.r.) Stackyard Series C (W) Sitka spruce Bed 1  Mean height  0.201 or 7.6% (13 a.f.) Plant number|167.32 or 11.4% (13 a.f.)
+65/B/||Cultivations, etc.  Ploughed (plots not undersowm)|Oct 28, 1964
+65/B/||Green manure plots ploughed|Feb 4, 1965
+65/B/||*Nitro-Chalk' applied|lower Half - Mar 12, Upper Half - Mar 17
+65/B/||Seed drilled at 2.5 bushels, trefoil som at 3 lb, ryegrass at 40 lb|Mar 29
+65/B/||in 40 gals|May 11
+65/B/||Combine harvested|Aug 26
+65/B/||ESTIMTES GF PRODUCE (ROOPS AND TOPS) OF GREEN MANURE CROPS|CWE PER ACRE 1965 UPFER HAIF TO BARIEY 1964 NO Nl Ne N3 Mean DRY MATTER T 14.9 10.7 7.0 5.2 9.6 R 5.6 4.3 4.1 3.0 4.2 Mean 10.2 7.5 5.9 ki 6.9 NITROGEN T 0.414 0.280 0.161 0.126 0.245 R | 0.077 0.061 0.064 9.051 | 0.063 Mean | 0.246 0.170 0,112 9.088 | 0.154
+65/B/4||Cultivations, etc.|Treatment crops
+65/B/4||ley Ist year  Ploughed|Aug 24, 1964
+65/B/4||Seedbed fertilisers applied and seed som|Apr 1, 1965
+65/B/4||Compound fertiliser applied|June 16, Sept 9 - 21
+65/B/4||Grazed 8 circuits|Jue 2 - Nov 7
+65/B/4||ley nd year  Compound fertiliser applied|Mar 19, June 2, Sept 1
+65/B/4||Grazed 10 circuits|Apr 22 - Nov 3
+65/B/4||ley 3rd year  Compound fertiliser applied|Mar 19, Jume 22, Aug 23
+65/B/4||Grazed 9 circuits|Apr 30 - Oct 26
+65/B/4||Sainfoin lst year  Ploughed|Aug 24, 1964
+65/B/4||Fertilisers applied|Apr 5, 1965
+65/B/4||Seed drilled at 60 ib|Apr 7
+65/B/4||Cut twice|Aug 11, O&t 2
+65/B/4||Sainfoin 2nd year  NK fertiliser applied|Mar 19, 1965
+65/B/4||Cut twice|May 31, Aug 4
+65/B/4||Sprayed with pareqvet at 0.5 Ib ion in 40 gals|Aug 12
+65/B/4||Rotary cultivated|Aug 16
+65/B/4||Basal PK applied|Aug 18
+65/B/4||Re-drilled at 56 Ib|Aug 19
+65/B/4||Sainfoin 3rd year  Ploughed|Nov 9, 1964
+65/B/4||Fertilisers applied|Apr 5, 1965
+65/B/4||Seed drilled at 60 lb|Apr 7
+65/B/4||Cut twice|Avg 1, Oct 20
+65/B/4||Potatoes  Ploughed  Aug 24, 1964, Fertilisers applied, plots rotary cultivated|Apr 6, 1965
+65/B/4||Potatoes mchine planted|Apr 7
+65/B/4||Earthed up  June 14, Sprayed with mancozeb at 1.2 lb in 37 gals|July 5, July 16 and Aug 4
+65/B/4||Sprayed with diqvwat (Reglone at 4 Pints in 40 gals)|Aug 12
+65/B/4||Lifted|Aug 31
+65/B/4||Rye  Ploughed|Sept 29 - Oct 21, 1964
+65/B/4||Seed combine drilled at 150 Ib|Ot 22
+65/B/4||‘'Nitro-Chalk' applied|Mar 31, 1965
+65/B/4||Combine harvested  Sept 14, Seeds my  Seeds undersown in rye at 30 lb|Apr 8, 1964
+65/B/4||‘'Nitro- Chalk' and PK compoumd applied|Mar 19, 1965
+65/B/4||NK fertiliser epplied|Jue 2
+65/B/4||Cut twice|My 31, Aug 5
+65/B/4||Carrots  Ploughed|Sept 29, 1964
+65/B/4||Fertilisers applied|Apr 8, 1965
+65/B/4||Rotary cultivated, seed drilled at 3.5 lb|Apr 13
+65/B/4||Sprayed with menazon (Saphicol at 0.5 pints in 40 gals)|Jue 2, June 21
+65/B/4||Sugar beet  Dung equivalent K and milf corrective K (including all corrective K for plot 8 - areble/ley with dug applied|Nov 23, 1964
+65/B/4||Dung applied  Nov 24, All plots ploughed|Nov 25
+65/B/4||Fart of basal superphosphate applied, basal mriate of potesh and second half of corrective K applied|Feb 2, 1965
+65/B/5-1||Cultivations, etc. - leeks 1964-65 Series B|The crop was harvested early, without weighing, in premration for microplot experiment
+65/B/5-1||Carrots Series A  Ding applied, plots ploughed|Jan 19, 195
+65/B/5-1||Fertilisers applied|Apr 6
+65/B/5-1||Seed drilled at 2.5 lb|Apr 9
+65/B/5-1||Sprayed with menazon at 4 oz plus linuron at 10 oz in 40 gals|June 3
+65/B/5-1||Sprayed with menazon at 4 oz in 4O gals|Jume 21
+65/B/5-1||Lifted  1st harvest  July 21, 2nd tervest|Aug 2
+65/B/5-1||Globe beet Series B microplots  Plots ploughed|Jan 14, 1965
+65/B/5-1||Peat for digging in applied and all plots rotary cultivated|Mer 15
+65/B/5-1||Fertilisers and dug applied, all plots dug by hand|Apr 5
+65/B/5-1||Fallow area rotavated|Apr 22
+65/B/5-1||Seedbed peat apBlied and lightly worked in|Apr 27
+65/B/5-1||Seedbed fertilisers applied|May 6
+65/B/5-1||Seedbed worked with drags and levelled with rakes, rubbed and graded seed drilled at 30 lb|May 10
+65/B/5-1||Fallow area rotary cultivated|My 12
+65/B/5-1||Singled|Jue 1
+65/B/5-1||Hoed|Jume 15
+65/B/5-1||Sprayed with @ mixture of menazon, DDT, gamma BHC at 1.5 pints in 40 gals|Jme 21
+65/B/5-1||Hoed|Jue 29
+65/B/5-1||Fallow weeded and rotavated|July 30
+65/B/5-1||Lifted|Aug 3.
+65/B/6||Cultivations, etc.  Sugar beet  Ploughed|Oct 9, 1964
+65/B/6||Salt applied|Jan 5, 1965
+65/B/6||Basal compound and sulphate of ammonia applied|Mar 31
+65/B/6||Seed Grilled at 5 lb|Apr 2
+65/B/6||Singled (early plots)|May 17
+65/B/6||Singled (late plots)|Jue 2
+65/B/6||Lifted|Oct 5
+65/B/6||Spring wheat  Ground cl#lk applied|Nov 10, 1964
+65/B/6||Ploughed|Nov 11
+65/B/6||Seed combine Grilled at 180 Ib|Mar 29, 1965
+65/B/6||'Nitro-Chalk' applied|Mar 30
+65/B/6||Spreyed|My 11
+65/B/6||Combine lervesied|Sept 1h
+65/B/6||Variety|Oral
+65/B/6||Clover  Seed undersown in barley at 30 1b|Apr 27, 1%
+65/B/6||Basal compound fertiliser applied|Feb 3, 1965
+65/B/6||Cut 3 times|Jime 11, Aug 5, Oct 19
+65/B/6||Ryegrass  Ploughed|Nov 4, 1964
+65/B/6||Basal P and first dressings of NK compound applied|Mar 16, 1965
+65/B/6||Seed drilled at 40 lb|Mr 17
+65/B/6||Sprayed|May 10
+65/B/6||Cut five times|June LL, July 14, Aug 10, Sept 7, Oct 19
+65/B/6||Variety|Itelian.
+65/3/8||Cultivations, etc. - Winter beans  T plots rigid-tine cultivated 3 times|Oct 22, 1964
+65/3/8||P,A and reserve plots ploughed|Oct 23
+65/3/8||P,A and reserve plots disced|Oct 26
+65/3/8||T plots disced  Oct|27
+65/3/8||R plots rotary cultivated|Oct 29
+65/3/8||Seed drilled at 275 Ib|Nov 2
+65/3/8||X anady Plots sprayed|Nov 9
+65/3/8||Y plots sprayed|Mar 15, 1965
+65/3/8||Mand reserve plots tractor hoed|May 13
+65/3/8||11 ft at each end of all plots sprayed with menazon at 4 oz in 4O gals  June 14, and again at 6 oz in 37 gals|July 1
+65/3/8||Combine lmrvested|Sept 28
+65/3/8||Winter wheat  Sprayed with aminotriazole at 4 1b and ammonium thiocyanate at 3.7 Ib in 40 gals|Oct 24, 1964
+65/3/8||T plots rigid- tine cultivated 3 times|Dec 1
+65/3/8||P,A and reserve plots ploughed|Dec 2
+65/3/8||R plots rotary cultivated, P, T, A and reserve plots Spring-tine cultivated, seed drilled at 185 lb  Dec 22, All plots tmrrowed|Apr 13, 1%5
+65/3/8||‘'Nitro-Chalk' applied|Apr 15
+65/3/8||4H Sub plots and reserve plots sprayed with mecoprop/2, 4-p (Methoxone Extra at 7 pints in 40 gals)|May 6
+65/3/8||Combine farvested|Sept 13
+65/3/8||Potatoes  Sprayed with aminotriazole at 4 lb and ammonium thiocyanate at 3.7 lb in 40 gals|Oct 2h, 194
+65/3/8||T plots rigid-tine cultivated 3 times  Dec l, Pand reserve plots Ploughed|Dec 3
+65/3/8||R plots rotary cultivated  Dec 22, T,P and reserve plots spring-tine cultivated|Apr 6, 195
+65/B/9||Cultivations, etc.  Sugar beet  R plots rotary cultivated|Sept 29, 1964
+65/B/9||T plots rigid-tine cultivated twice|Nov 2
+65/B/9||P plots ploughed|Nov 19
+65/B/9||Salt applied|Jan 5, 1965
+65/B/9||Basal NPK applied, R plots rotary cultivated, T and P plots spring-tine cultivated|April
+65/B/9||All plots mMrrowed and rolled|Apr 2
+65/B/9||Seed drilled at 5 lb|Apr 3
+65/B/9||All plots tractor hoed|My 13 and Jume 4
+65/B/9||Singled  May 20, Lifted|Nov 4
+65/B/9||Barley  T plots rigid-tine cultivated, P plots ploughed|Nov 20, 1964
+65/B/9||R plots rotary cultivated|Nov 25
+65/B/9||‘'Nitro- Cralk' applied, all plots spring-tine Mmrrowed, seed drilled at 155 lb|Mr 11, 1965
+65/B/9||Sprayed|May 11
+65/B/9||Combine harvested|Aug 23
+65/B/9||Roots  1.768 or 9.1% (14 a.r.) Total sugar  7.05 or 9.8% (14 a.r.) Tops|0.940 or 10.0% (14 a.r.) Barley
+65/B/9||Grain|1.40 or 3.4% (8 a.f.) For erratum to 'Results' 61/B/11 see mge 65/3/9.3.
+65/B/||Cultivations, etc.  Potatoes  All plots ploughed|Dec 12, 1%0
+65/B/||P plots re- ploughed, T plots rigid-tine cultivated twice|Feb 24, 1961
+65/B/||P and T plots spring-tine cultivated twice|Mar 16
+65/B/||PandT plots rolled and then spring-tine cultivated twice, R plots rotary cultivated|Mr 23
+65/B/||Basal dressing applied, potatoes machine planted  Mar 24, #Siwazine applied on rolled bouts to X plots|Mar 31
+65/B/||Mand Y plots earthed up|Mey 2
+65/B/||Y plots earthed up and sprayed with simazine|My 19
+65/B/||X plots grubbed twice+|My 30
+65/B/||M and X+ plots earthed up  June 14, Sprayed with wmdiluted BOV at 12 gallos per acre|Sept 18
+65/B/||Lifted|Sept 21
+65/B/||Variety|Mijestic
+65/c/2||Cultivations, etc.  Ploughed|Oct 13, 1964
+65/c/2||All plots except winter wheat chisel ploughed|Dec 23
+65/c/2||Spring beans  Seed placement drilled at 200 1b (rows spaced at 10.5 ins)|Feb 18, 1965
+65/c/2||Sprayed|June 4
+65/c/2||Combine mrvested|Sept 29
+65/c/2||Qats  Seed combine drilled at 170 lb, 'Nitro-Chalk' applied|Mer 15, 1965
+65/c/2||Sprayed|May 19
+65/c/2||Combine mrvested|Sept 29
+65/c/2||Spring wheat  Seed combine drilled at 190 lb|Mar 30, 1965
+65/c/2||"Nitro-Chalk' applied|Mar 31
+65/c/2||Combine lmrvested|Sept 10
+65/c/2||Barley  'Nitro-Chalk' applied|Mar 15, 1965
+65/c/2||Seed combine drilled at 140 lb|Mar 29
+65/c/2||Sprayed|May 11
+65/c/2||Combine farvested|Sept 10
+65/c/2||Winter wheat  Seed combine drilled at 155 lb|Oct 23, 1964
+65/c/2||'Nitro-Chelk' applied|Mar 11, 1965
+65/c/2||Sprayed twice|Apr 23 and My 13
+65/c/2||Combine lmrvested|Sept 10
+65/C/3||Cultivations, etc.  Sawyers I (R)  Ploughed|Sept 18, 1964
+65/C/3||Fertilisers applied|Mar 1, 1965
+65/C/3||Seed drilled at 156 lb|Mar 17
+65/C/3||Sprayed|May 19
+65/C/3||Combine tmrvested|Sept 5
+65/C/3||Variety|Maris Badger
+65/C/3||Stackyard Series C (W)  Rotary cultivated|Oct 14 and 27, 1964
+65/C/3||Fertilisers applied, seed drilled at 140 lb|Mr 29, 1965
+65/C/3||Sprayed|May 11
+65/C/3||Combined lervested|Aug 28
+65/C/3||Variety|Maris Badger
+65/C/3||Grein  Sawyers I (R)  8.68 or 23.0% (15 a.f.) Stackyard Series C (W)|0.96 or 2.4% (15 a.f.)
+65/C/4||Cultivations, etc.  Whittlocks (R)  Chisel ploughed twice|Oct 5 and 6, 1964
+65/C/4||PK applied, seed drilled at 185 lb|Oct 22
+65/C/4||'Nitro-Chalk' applied - lst half dressing|Mar 31, 1965
+65/C/4||Sprayed, 'Nitro-Chalk' applied - 2nd half dressing|Apr 30
+65/C/4||Combine ltervested  Sept 14, Variety|Cappelle
+65/C/4||Previous crops|Spring wheat 1963, potatoes 1964.
+65/¢/5||Cultivations, etc.  Ploughed|Dec 10, 196+
+65/¢/5||R fertilisers applied to ploughed land, all plots rotary cultivated|Apr 1,195
+65/¢/5||B fertilisers applied, potatoes mchine planted|Apr 8
+65/¢/5||Sprayed (weedkiller )  My 10, fungicide|July 3 ami 16
+65/¢/5||Sprayed with diquat (Reglone at 4 pints in 3} gals)|Aug17
+65/¢/5||Lifted|Sept 28
+65/¢/5||Variety|King Edwerd
+65/¢/5||Previous crops|Winter wheat 1963, parley 190
+65/¢/5||Total tubers|0.933 or 8.5% (oh ar.)
+65/C/6||Cultivations, etc.  Rotary cultivated|Apr 5, 195
+65/C/6||First N and K dressings applied|Apr 7
+65/C/6||Grass resown|Apr 26, Sprayed with 2,4-D butoxyethylester at 7 oz a.e
+65/C/6||in 40 gis|June 2
+65/C/6||Cut twice|July 21, Oct 4
+65/C/7-1||Cultivations, etc.  Ploughed|Oct 23, 1964
+65/C/7-1||Winter wheat drilled at 160 lb|G&t 27
+65/C/7-1||‘Nitro-Chlk' applied to winter wheat|Mer 11, 1965
+65/C/7-1||(ts drilled at 170 lb, 'Mtro-Chalk' applied to cats|Mar 15
+65/C/7-1||Winter wheat sprayed|Apr 30
+65/C/7-1||Combine harvested|Winter wheat - Aug 26, cats - Sept 10
+65/¢/8||Cultivations, etc.  Ploughed|Oct 16, 1964
+65/¢/8||Seed drilled at 160 Ib|Oct 23
+65/¢/8||‘'Nitro-Chalk' applied|Apr 14, 1965
+65/¢/8||Sprayed|Apr 30
+65/¢/8||Combine tmrvested|Aug 26
+65/¢/8||-Variety|Cappelle
+65/C/9||Cultivations, etc.  Ploughed|Oct 12, 1964
+65/C/9||All plots except winter wheat chisel ploughed|Dec 23
+65/C/9||Winter wheat  Seed combine drilled at 160 lb|Oct 23
+65/C/9||'Nitro- Chalk' applied|Mr 11, 1965
+65/C/9||Sprayed with mecoprop/2,4-D (Methoxone Extra at 7 pints in 4O gals)|Apr 23
+65/C/9||Combine harvested|Sept 10
+65/C/9||Spring wheat  Seed combine drilled at 190 lb|Apr 2, 1965
+65/C/9||"Nitro-Chalk' applied|Apr 5
+65/C/9||Sprayed with mecoprop/2,4-p (Methoxone Extra at 6 pints in 40 gals)|My 13
+65/C/9||Combine harvested|Sept 10
+65/C/9||Oats  Seed combine drilled at 170 lb, 'Nitro-Chalk' applied|Mar 15, 1965
+65/C/9||Sprayed with MCPA at 1.13 lb and dicamba at 0.08 lb in 40 gals|May 19
+65/C/9||Combine mrvested|Sept 10
+65/C/9||Spring beans  Seed placement drilled at 200 Ib|Feb 18, 1965 (Rows spaced at 10.5 in)
+65/C/9||Sprayed with menazon (Saphicol at 0.5 pints in 40 gals)|June 4
+65/C/9||Combine harvested|Sept 29
+65/C/9||Variety|Garton's Pedigree Tic
+65/C/10||Cultivations, etc.  Ploughed|Dec 9, 1964
+65/C/10||‘'Nitro-Chealk' applied, seed drilled at 156 lb|Mar 29, 1965
+65/C/10||Sprayed|May 20
+65/C/10||Combine rearvested|Sept 1
+65/C/10||Variety|Mris Badger
+65/C/10||Grain  Sub plot|1.67 or 4.9% (14 a.r.)
+65/¢/11||Cultivations, etc.  Ploughed|Oct 26, 1964
+65/¢/11||Rotary cultivated|Mar 29, 1965
+65/¢/11||Insecticide sprays applied|Mr 30
+65/¢/11||Rotary cultivated second time|Mar 31
+65/¢/11||Seed drilled at 124 1b|Apr 2
+65/¢/11||Sprayed, weedkiller|May 19
+65/¢/11||Main experiment combine lmrvested|Sept 20
+65/¢/11||Subsidiary experiment hand harvested|Sept 21
+65/¢/11||Variety|Jufy I
+65/¢/12||Cultivations, etc.  Pl treatment sprayed with paraquat at 2 lb ion in 44 gis|Feb 20, 1965
+65/¢/12||Basal PK compound and 'Nitro- Chalk' applied|Mar 12
+65/¢/12||Cut 3 times|June 2, July 19, Oct 4k
+65/¢/12||Dry matter  Ist cut  3.08 or 7.3% (33 def.) 2nd cut  1.46 or 4.5% (33 a.f.) 3rd cut  1.68 or 7.0% (33 a.f.) Total of 3 cuts|3.81 or 3.9% (33 df.)
+65/C/13||Cultivations, etc.  A plots sprayed with paraquat|Nov 6, 1964
+65/C/13||8B Plots sprayed with paraquat, all P plots ploughed|Mr 25, 1965
+65/C/13||R plots rotary cultivated, all P plots ring rolled|Mr 29
+65/C/13||All P plots disc harrowed|Mar 30
+65/C/13||Al11R plots rotary cultivated, all P plots tarrowed|Apr 1
+65/C/13||drill at 168 lb|Apr 2
+65/C/13||All P plots terrowed and ring rolled|Apr 3
+65/C/13||GA and GB plots flat rolled|Apr 5
+65/C/13||Sprayed|May 22
+65/C/13||Combine harvested|Sept 15
+65/C/13||Variety|Maris Badger
+65/C/13||Previous crops|6 year grass and clover ley 1957/63, spring wheat 1964
+65/c/14||Cultivations, etc.  Potatoes  Ploughed|Dec 21 - Feb 17, 1964
+65/c/14||Basal PK compowmd applied|Apr 8, 1965
+65/c/14||‘'Nitro-Chalk' applied|Apr 12
+65/c/14||Rotary cultivated, potatoes planted|Apr 15
+65/c/14||Sprayed, weed- killer  May 13, fungicide|June 30, July 27, Aug 10
+65/c/14||Sprayed with undiluted BOY at 15 gals|Aug 27
+65/c/14||Lifted|Oct 21
+65/c/14||Previous crops|Barley 1963 and 1964
+65/c/14||Spring beans  Ploughed|Feb 17, 1965
+65/c/14||Seed placement drilled for C treatment|Mar 16
+65/c/14||Fertiliser broadcast for C treatment|Mar 17
+65/c/14||Seed placement drilled and fertiliser broadcast for W treatment  Mar 25, Sprayed, weedkiller  Mar 29, insecticide|June 11
+65/c/14||Combine lervested|Oct 6
+65/c/14||Variety|Gerton's Pedigree Tick
+65/c/14||Previous crops|Barley 1963 and 1%4
+65/c/14||RAINFALL AND IRRIGATIGN|INCHES Week- Rain Potatoes Beans ending A and C A and Cc 6 May 0.78 13 0.10 2 0.52 27 0.48 3 Jume 0.14 0.50 10 0.68 17 O.% 2k 0.69 1 July 9.07 & 0.33 1.00 £5 133 22 0.84 29 1.58 5 Avg 0.70 12 0,03 19 0.37 26 0.76 2 Sept 9.25 Total 10.59 1,00 0.50 Standard errors per plot
+65/c/14||Potatoes, total tubers  Pooled whole & strip  1.017 or 6.4% (9 d.f.) 1/6 plot  0.639 or 4.0% (21 a.f.) 1/12 plot  1.386 or 8.7% (28 a.f.) Spring beans, grain  Whole plot  0.70 or 2.5% (5 a.f.) Sub plot|2.12 or 7.6% (23 d.f.)
+65/c/15||Cultivations, etc.  Ist dressing of K applied|Aug 6, 1964
+65/c/15||Ploughed  Oct 9 - 26, Rotary cultivated, seed drilled at 206 lb  Nov 24, W applied - 1st half dressing  Apr 6, 1965, 2nd half dressing|May 13
+65/c/15||Sprayed|May 10
+65/c/15||Combine harvested|Sept 12
+65/c/15||Variety|Cappelle
+65/c/15||Previous crops|Barley 1962 and 1963
+65/c/16||Cultivations, etc.  Ploughed|Oct 22, 1963
+65/c/16||Rotary cultivated twice|Mar 9 and Apr 1, 1964
+65/c/16||Barley drilled at 1h0 1p|Apr 7
+65/c/16||Trefoil undersown at 30 1b and ryegrass at 40 Ib|Apr 9
+65/c/16||Sprayed|My 15
+65/c/16||Combine lrvested|Aug 27
+65/c/16||‘Nitro-Chalk' applied to RN plots|Sept LL
+65/c/16||A plots ploughed|Nov 13
+65/c/16||S plots ploughed|Feb 5, 1965
+65/c/16||Salt and mriate of potash applied|Feb 9
+65/c/16||Rotary cultivated|Aprl
+65/c/16||Rotary cultivated, basal PK compound applied|Apr lk
+65/c/16||‘'Nitro-Chalk' applied, seed drilled at 5 lb|Apr 15
+65/c/16||Singled|My 25
+65/c/16||lifted|Nov ll
+65/c/16||Varieties|Barley - Proctor, ryegrass - English Leafy Italian, trefoil - English (inoculated), sugar = - Klein E
+65/c/16||Previous crops|Potatoes 1961, spring wheat <
+65/C/17||Cultivations, etc.  Growd chalk applied at 38 cwt|Oct 1 - 12, 196k
+65/C/17||Chisel ploughed|Nov 2
+65/C/17||Seed drilled at 112 Ib|Mr 15, 1965
+65/C/17||Fertilisers broadcast|Mar 17
+65/C/17||Sprayed|My 10
+65/C/17||Combine fervested|Sept 21
+65/C/17||Variety|Mris Badger
+65/C/17||Previous crops|Winter wheat 1963, potatoes 1964
+65/C/18||Cultivations, etc.  Ploughed|Jan 19 - 26, 1965
+65/C/18||B fertilisers applied|Apr 13
+65/C/18||Rotary cultivated, A fertilisers applied|Apr 21
+65/C/18||Potatoes hand planted on the flet|Apr 21
+65/C/18||Sprayed (weedkiller)  My 7, fungicide/insecticide  July 5, July 16, fungicide|July 28, Aug 5
+65/C/18||Sprayed with diquat (Reglme at 4 pints in 40 gals)|Aug ll
+65/C/18||Lifted|Sept 20
+65/C/18||Variety|King Edward
+65/C/18||Previous crops|Permanent Grass mtil 1964
+65/C/19||Cultivations, etc.  Fertilisers for digging in applied|Mar 10
+65/C/19||Peat for digging in applied and plots dug|Mar 31 -April
+65/C/19||Seedbed peat applied|Apr 21
+65/C/19||Seedbed fertilisers applied and seedbed prerered|May 5
+65/C/19||Seed, rubbed and greded, drilled at 30 lb|May 6
+65/C/19||Singled first to 2'' spacing  Mey 27 and 31, then to 4"' spacing|Jme 28
+65/C/19||Spreyed with e mixture of menazon, DDI and game BHC at 1.5 fluid oz in 40 gals|My 21 and June 21
+65/C/19||= Lifted|Aug 12
+65/C/19||Variety|Detroit Globe
+65/C/20||Cultivations, etc.|lettuce
+65/C/20||Fertilisers for digging in applied|Mr 10, 1965
+65/C/20||All plots hand dug|Apr l
+65/C/20||Peat and Krilium applied and worked into the Seedbed  Apr 22, Fertilisers to seedbed applied and seedbed Prepared|My 5
+65/C/20||Lettuce seed drilled at 3 Ib|My 6
+65/C/20||Singled first to 4 inch spacing  Mey 21, then to 8 inch spacing  June 14, Sprayed with a mixture of menazon, DDT and game BHC at 1.5 pints in 4O gals and cottoned against birds|May 21
+65/C/20||Harvested|July 8
+65/C/20||Variety|Borough Wonder
+65/C/20||Seedbe@ fertilisers applied, prepared seedbed and seed Grilled at 30 lb|July 9, 1965
+65/C/20||Top dressing N applied|July 20
+65/C/20||Singled, first to 2 inch spacing  July 28, then to 4& inch Sfacing|Aug 13
+65/C/20||Sprayed with a mixture of menazon, DDI and game BHC at 1.5 pints in 4O gals|Aug 2
+65/C/20||Lifted|Oct 19
+65/C/20||Variety|Detroit Globe
+65/C/21||Cultivations, etc.  Ploughed|Oct 8, 1964
+65/C/21||Basal PK and treatment fertilisers applied, seed drilled at 30 lb|Apr 7, 1965
+65/C/21||Sprayed|May 31
+65/C/21||Cut 3 times|June 25, Aug 6, Oct 7
+65/C/21||Variety|S22
+65/C/21||NOPE|% N in grass was determined, Standard errors per plot
+65/C/21||Dry retter  ist cut  2.43 or 8.8% (27 d.f.) and cut  2.75 or 8.2% (27 af.) 3rd cut  1.78 or 12.1% (27 a.f.) Total of 3 cuts|4.61 or 6.1% (27 a.f.)
+65/C/22||Cultivations, etc.  Ground chalk applied|Feb 2, 1965
+65/C/22||PK dressings applied|Feb 22
+65/C/22||'Nitro-Chalk' applied|Mar 9
+65/C/22||Cut|May 18 (5/2 mly), Jme 23, Aug 9, Oct 27
+65/C/22||1st cut  3.48 or 13.5% (11 a.f.) 2nd cut  1.64 or 13.0% (11 a.f.) 3rd cut  2.45 or 13.3% (11 af.) Total of 3 cuts|6.10 or 10.7% (11 d.f.)
+65/C/23||Cultivations, etc.  Ploughed|Nov 17, 1964
+65/C/23||Seed drilled at 155 lb|Mar 29, 1965
+65/C/23||Sprayed|May 19
+65/C/23||Combine lmrvested|Sept 2
+65/C/23||Variety|Mis Badger
+65/C/23||Previous crops|Barley 1962, Spring beans 1963
+65/C/2h||Cultivations, etc.  Mand I treatments ploughed|Nov 16, 1964
+65/C/2h||P plots sprayed with preqvat|Nov 19
+65/C/2h||Treatments M and I disc- harrowed twice and terrowed, seed Grilled on all plots at 190 Ib|Nov 20
+65/C/2h||P treatment rolled, Mand I treatments harrowed|Nov 23
+65/C/2h||Ioxguil and diazinon applied|Nov 27
+65/C/2h||"Nitro-Cralk' applied|Apr 14, 1965
+65/C/2h||Sprayed|My 10
+65/C/2h||Combine harvested|Sept 20
+65/C/2h||Variety|Cappelle
+65/C/2h||Previous crop|Old grass
+65/c/25||Cultivations, etc.  Ploughed|Oct 14, 1964
+65/c/25||Barley  Seed drilled at 150 Ib|Oct 29, 1964
+65/c/25||= ‘'Nitro-Cralk' applied|Apr 13, 1965
+65/c/25||Sprayed|May 14
+65/c/25||Combine harvested|Aug 17
+65/c/25||Variety|Pioneer
+65/c/25||Qts  Seed drilled at 160 Ib|Oct 29, 1964
+65/c/25||'Nitro-Chalk' applied|Apr 13, 1965
+65/c/25||Sprayed|My 14
+65/c/25||Combine harvested|Aug 27
+65/c/25||Variety|Padarn
+65/c/25||Beans  Seed drilled at 275 lb|Nov 4, 1964
+65/c/25||Combine harvested|Sept 28
+65/c/25||Variety|Garton's Pedigree
+65/c/25||Previous crops|Spring barley 1963 and 1964
+65/C/26||Cultivations, etc.  Ploughed|Nov 24, 1964
+65/C/26||Rotary cultivated|Mer 15 and 31, 1965
+65/C/26||Basal PK applied|Apr 2
+65/C/26||Rotary cultivated, barley drilled at 155 1b|Apr 3
+65/C/26||"Nitro-Chalk' applied, trefoil at 30 Ib, clover at 30 lb sown|Apr 5
+65/C/26||Spreyed|Mey 20
+65/C/26||Combine larvested|Sept 1
+65/C/26||Varieties|Barley - Maris Badger, trefoil - English, clover - Broad Red
+65/C/26||Previous crops|Kale and potatoes 1963, barley 1964
+65/C/26||Grain  Whole plot  0.65 or 1.6 (9 a.f.) Sub plot|1.15 or 2.8% (10 a.f.)
+65/c/28||Cultivations, etc.  Ploughed|Jan 11, 1964
+65/c/28||lLimed|Mar 3, 1965
+65/c/28||Potatoes  Fertilisers applied|Apr 5, 1965
+65/c/28||Fertilisers rotary cultivated in, potatoes planted s the flat|Apr 6
+65/c/28||Harvested|July 13
+65/c/28||Variety|Arran Pilot
+65/c/28||Radishes  Basal NK applied and rotary cultivated in, seed drilled at 15 lb|July 19, 1965
+65/c/28||Harvested|Sept 10
+65/c/28||Variety|French Breakfast
+65/c/28||Previous crops|Spring wheat 1963 and 1964
+65/c/28||NOPE|The soil was sampled in December 1964 for P determination.
+65/C/29||Cultivations, etc. - Pastures (R)  Ploughed|Dec 1, 1964
+65/C/29||Formplin and PK basal compound applied|Feb 25, 1%5
+65/C/29||‘Nitro-Chalk' applied (first telf dressing), seed sown at 180 Ib|Mr 31
+65/C/29||'Nitro-Clalk' applied (2nd mif dressing)|May 17
+65/C/29||Harvested|Sept 15
+65/C/29||Variety|Oml
+65/C/29||Previous crops|Gress 193, Spring wheat 1964
+65/C/29||Little Knott I (R)  Ploughed|Oct 13, 1964
+65/C/29||Chisel ploughed|Dec 23
+65/C/29||Formalin and PK basal compound applied|Feb 25, 1965
+65/C/29||"Nitro-Chalk' applied (first half dressing), seed sown at 180 Ib|Mar 31
+65/C/29||‘'Nitro-Chalk' applied (2nd milf dressing)|May 17
+65/C/29||Sprayed|May 20
+65/C/29||Harvested|Sept 6
+65/C/29||Variety|Omi
+65/C/29||Previous crops|Barley 1963 and 1964
+65/C/29||Horsepool (W)  G@hisel ploughed|Nov 2, 1964
+65/C/29||Formplin applied|Dec 22
+65/C/29||PK basal compound applied|Feb 10, 1965
+65/C/29||Seed sown at 180 lb, 'Nitro-Chelk' (first mmlf dressing) applied|Mar 15
+65/C/29||"Nitro-Chalk' (2nd half dressing) applied|May 14
+65/C/29||Plots abandoned because of severe lodging and danpge by sparrows, no yields taken|Aug 26
+65/C/29||Variety|Oml
+65/C/29||Previous crops|Winter wheat 1963, potatoes 1964
+65/C/29||NOPE|Soil samples were taken for determination of mineralisable N and pH
+65/C/29||Grain  Pastures (pathogen free) (R)  2.34 or 8.5% (7 d.f.) Little Knott I (pathogen infected) (R)|2.43 or 8.6% (21 d.f.)
+65/C/||Cultivations, etc.  Ploughed  Nov 24, 1964, Basal dressing applied|Feb 10, 1965
+65/C/||Seedbed N applied, seed sow at 180 lb|Mr 12
+65/C/||Sprayed|May 7and 21
+65/C/||W plots irrigated - 0.375 int My 25, 9.125 in|Jue 1, 9.75 int Jue 15
+65/C/||Harvested|Aug 31
+65/C/||Variety|Opel
+65/C/||Previous crops|Spring beans 1962, winter wheat 1963
+65/C/||NOPES|(1) For previous year's results etc
+65/C/||Grain|1.51 or 7.5% (8 a.f.)
+65/C/31||Cultivations, etc.  Ploughed|Nov 2h, 1964
+65/C/31||Fumigants applied|Nov 30
+65/C/31||Appropriate plots rotary cultivated|Dec 4
+65/C/31||Seed drilled at 18 lb|Mar 29, 1965
+65/C/31||First dressing of 'Nitro-Crelk' applied  Mer 30, second|My 7
+65/C/31||Sprayed|My 11
+65/C/31||Harvested by hand|Aug 31
+65/C/31||Variety|Opal
+65/C/31||Previous crops|Winter wheat 1963, barley 1964
+65/C/||Cultivations, etc.  Chisel ploughed|Sept 7, 1964
+65/C/||Basal superphospmte and 'Nitro-Cialk' applied, seed sown at 25 lb|Sept 17
+65/C/||Ammonium nitrate and first mlf dressing of K applied|Apr 1, 1965
+65/C/||Second half dressing of K applied  May 21, Cut four times|My 21, July 2, Aug ll 4nd Oct li
+65/C/||Previous crops|Fallow 1963 and 1964
+65/C/||Cultivations, etc.  P, K, Na and Mg fertilisers applied|Nov 27, 19k
+65/C/||Ground chalk applied|Feb 2, 195
+65/C/||"Nitro-Chealk' applied|Mer 9
+65/C/||Cut|May 18, Jue 9, July 12, Aug 9, Sept 2h, Oct 27
+65/C/||Dry mtter, total of all cuts|3.43 or 4.9% (27 af.)
+65/Da/2||Cultivations, etc.  Chisel ploughed|Sept 23, 1964
+65/Da/2||Winter wheat Grilled|Oct 22
+65/Da/2||Spring wheat drilled|Mar 30, 1965
+65/Da/2||‘'Nitro- Chalk" applied|Spring wheat - Apr 2, winter wheat - Apr 13
+65/Da/2||Winter wheat sprayed|My 6
+65/Da/2||Spring wheat sprayed|May 13
+65/Da/2||Combine harvested|Sept 20
+65/Da/2||Previous crops|Winter wheat 1963, Potatoes 1964, Standard errors per plot
+65/Da/2||Grain  Winter wheat  2.25 or 6.7% (15 d.f.) Spring wheat|2.92 or 9.0% (15 a.f.)
+65/Da/3||Cultivations, etc. - Whittlocks (R)  Chisel ploughed|Oct 5, 1964
+65/Da/3||Seed sown, autum fertiliser applied|Oct 27
+65/Da/3||'Nitro-Chalk' applied|Apr 14, 1965
+65/Da/3||Sprayed|Apr 30
+65/Da/3||Combine harvested  Sept 14, Variety|Cappelle
+65/Da/3||Previous crops|Spring wheat 1963, potatoes 1964
+65/Da/3||Broadmead III (W)  Chisel ploughed|Oct 17, 1964
+65/Da/3||Autum fertiliser applied, seed sown|Oct 23
+65/Da/3||'Nitro-Chalk' applied|Apr 7
+65/Da/3||Sprayed|My 6
+65/Da/3||Combine lmrvested|Sept 15
+65/Da/3||Variety|Cappelle
+65/Da/3||Previous crops|Barley 1963, potatoes 1964
+65/Te/1||Cultivations, etc.  Ploughed|Oct 16, 1964
+65/Te/1||Seed drilled at 175 lb|Oct 22
+65/Te/1||‘'Nitro-Chlk' applied|Apr 13, 1965
+65/Te/1||Sprayed|Apr 30
+65/Te/1||Combine lmrvested|Aug 26
+65/Te/1||Previous crops|Winter wheat 1963, barley 1964
+65/Da/4||Cultivations, etc.  Chisel ploughed|Oct 5, 1%4
+65/Da/4||Spring-tine cultivated|Oct 22
+65/Da/4||Basal NPK applied, S plots Mmrrowed, seed sown, P plots spring-tine cultivated, all plots hrrowed|Oct 28
+65/Da/4||All plots Mmrrowed|Apr 7, 1%5
+65/Da/4||‘'Nitro-Chalk' applied|Apr 21
+65/Da/4||Sprayed|Apr 30
+65/Da/4||Combine Mmrvested|Sept 14
+65/Da/4||Variety|Cappelle
+65/Da/4||Previous crops|Spring wheat 1963, potatoes 1964, Stand@rd errors per plot
+65/Da/4||Grain  Whole plot  2.85 or 8.0% (6 a.f.) Sub plot|3.01 or 8.5% (9 d.f.)
+65/Da/5||Cultivations, etc.  Ploughed|June 18, 1964
+65/Da/5||Chisel ploughed twice|Oct 13
+65/Da/5||Ground ch#lk applied at 25 ewt|Oct 26
+65/Da/5||"Nitro-Chalk' applied|Apr 14, 1965
+65/Da/5||Sprayed|May 6
+65/Da/5||Combine harvested|Sept 13
+65/Da/5||Variety|Ceppelle
+65/Da/5||Previous crops|Brley and Kale 1963, bare fallow 196k
+65/Da/6||Cultivations, etc.  Ploughed|Nov 6, 1964
+65/Da/6||Basal PK compound applied|Mar 30, 1965
+65/Da/6||Seed drilled, 'Nitro-Chelk' applied|Mr 31
+65/Da/6||Weedkiller applied, CCC spray applied|May 20
+65/Da/6||Yields estimated by sampling|Sept 9
+65/Da/6||Combine hervested|Sept 19
+65/Da/6||Variety|Ol
+65/Da/6||Previous crops|Winter wheat 1963, cats 1964
+65/Da/6||NOPE|(2) Samples were taken for growth analysis at 5 leaf stage, then 3 weeks later, and at ear emergence and then fortnightly until harvest
+65/Da/6||Grain|3.41 or 11.5% (32 a.f.)
+65/Db/1||Cultivations, etc.  Great Knott II (R)  Ploughed|Nov 10 - 21, 1964
+65/Db/1||Seed sow, fertilisers applied|Mar 29, 1965
+65/Db/1||Sprayed|My 13
+65/Db/1||Combine tarvested|Sept 1
+65/Db/1||Variety|Mis Badger
+65/Db/1||Previous crops  Potatoes 1963, winter wheat 196, Horsepool (W)  Ground chalk applied at 36 ewt|Oct 14, 1964
+65/Db/1||Ploughed|Nov 18
+65/Db/1||Fertilisers applied, seed sown|Mer 15, 1965
+65/Db/1||Sprayed|May 10
+65/Db/1||Combine lmrvestea|Sept 20
+65/Db/1||Variety|Maris Badger
+65/Db/1||Previous crops|Potatoes 1963, winter wheat 1964
+65/Db/2||Cultivations, etc.  Ploughed|Nov 27, 1964
+65/Db/2||Rotary cultiveted|Mr 12, 1965
+65/Db/2||Seed drilled at 140 lb|Mr 15
+65/Db/2||Sprayed|May 10
+65/Db/2||Combine hervested|Aug 25
+65/Db/2||Variety|Maris Badger
+65/Db/2||Previous crops|Sugar beet 1963, barley 196k
+65/De/1||Cultivations, etc.  Ploughed|Oct 15, 194
+65/De/1||Seed drilled, fertilisers applied|Nov 2
+65/De/1||Sprayed|Nov 6, 1964 and Mar 15, 1%5
+65/De/1||Irrigated|Jue 2
+65/De/1||Combine tervested|Sept 28
+65/De/1||Variety|Garton's Pedigree
+65/De/1||Previous crops|Winter and spring wheat 1963, parley 1964
+65/Da/2||Cultivations, etc.  Ploughed|Oct 16, 194
+65/Da/2||Basal NPK applied|Apr 14, 1965
+65/Da/2||Rotary cultivated|Apr 23
+65/Da/2||Potatoes planted|Apr 26
+65/Da/2||Sprayed, weedkiller  Jue 17, fungicide|Jime 30, July 27, Avg 9, Aug 13
+65/Da/2||Lifted|Oct 25
+65/Da/2||Variety|Mijestic
+65/Da/2||Previous crops|Cats 1963, barley 196k
+65/Da/||Cultivations, etc.  Dung applied and ploughed in|Nov 20, 1964
+65/Da/||Basal NPK applied|Apr 7, 1965
+65/Da/||All plots rotary cultivated, potatoes planted|Apr 13
+65/Da/||Sprayed|June 28, July 21, July 27, Aug 9
+65/Da/||Sprayed with undiluted BOY at 15 gils|Sept 2
+65/Da/||Lifted|Oct 18
+65/Da/||Variety|Mijestic
+65/Da/||Previous crops|Winter and spring wheat 1963, barley 1964
+65/Da/||Total tubers|2.091 or 10.8% (4h a.f.)
+65/Da/4||Cultivations, etc.  Ploughed|Oct 16 - Nov 24, 1964
+65/Da/4||Basal NPK applied, all plots rotary cultivated, potatoes planted|Apr 13, 1965
+65/Da/4||Earthed up|Jue 14
+65/Da/4||Sprayed|Jime 28, July 14, July 26, Aug 9
+65/Da/4||Sprayed with wmdiluted BOV at 15 gels|Sept 2
+65/Da/4||Lifted|Oct 19
+65/Da/4||Previous crops|Alsike and white clover 1963, barley 1964
+65/Da/5||Cultivations, etc.  Dung applied, all plots ploughed|Nov 20, 196k
+65/Da/5||Fertiliser applied|Apr 7, 1965
+65/Da/5||Rotary cultivated, potatoes machine planted  Apr 8, Earthed up  Jme 14, First spraying with mancozeb (E,E+)|June 28
+65/Da/5||Menazon spray applied and second spraying with mancozeb (E,E+,L,I+)|July 14
+65/Da/6||Cultivations, etc.  Ploughed|Nov 23, 1964
+65/Da/6||Basal NPK applied|Apr 5, 1965
+65/Da/6||Rotary cultivated, potatoes machine planted|Apr 21
+65/Da/6||Sprayed, weedkiller  May 14, treatment fungicides|July 9 and 26
+65/Da/6||Sprayed with undiluted BOV at 15 gals|Sept 2
+65/Da/6||Lifted|Oct 21
+65/Da/6||Variety|King Edward
+65/Da/6||Previous crops|Potatoes 1963, winter wheat and barley 1964
+65/Da/6||Total tubers|1.160 or 7.8% (20 a.f.)
+65/Da/7||Cultivations, etc.  Ploughed|Nov 23, 1964
+65/Da/7||Basal NPK applied|Apr 5, 1965
+65/Da/7||spacing)|Abr 21
+65/Da/7||OG treatment applied|Apr 26
+65/Da/7||TG treatment applied|Apr 28
+65/Da/7||P treatments earthed up|My 13
+65/Da/7||Sprayed, weedkiller|May 14
+65/Da/7||Gl and TS1 treatments applied|May 21
+65/Da/7||Sprayed, fungicide|Jue 30 and July 28
+65/Da/7||cS2, TS2, cF and TF treatments applied|July 29
+65/Da/7||Sprayed with undiluted BOV at 15 gels  Sept 2, Lifted|Oct 21
+65/Da/7||Variety|King Edward (chitted seed)
+65/Da/7||Previous crops  Potatoes and winter wheat 1963, winter wheat 1964, NOPE|Tubers were examined for blight infection at harvest
+65/Da/7||Total tubers|1.446 or 8.6% (32 d.f.)
+65/Da/8||Cultivations, etc.  Ploughed|Nov 23, 1964
+65/Da/8||Basal NPK applied|Apr 5, 1965
+65/Da/8||Rotary cultivated, potatoes mchine planted|Apr 21
+65/Da/8||Sprayed (weedkiller)  My 1h, fungicide|Jue 30
+65/Da/8||Sprayed with undiluted BOV at 15 gals|Sept 2
+65/Da/8||Harvested|Aug 31
+65/Da/8||Variety|King Edward
+65/Da/8||Previous crops|Winter wheat 1963 and 1964
+65/Da/||Cultivations, etc.  Ploughed|Jan 19 - 26, 1965
+65/Da/||Basal dressing applied|Apr 13
+65/Da/||Rotary cultivated, potatoes planted|Apr 15
+65/Da/||Earthed up|June 14
+65/Da/||First spraying with mancozeb (E and E+ plots)  July 2, second (E, E+ and L)  July 15, third (E, E+ and L)  July 30, fiml (E+ and L)|Aug 13
+65/Da/||Appropriate plots sprayed with diquat|Aug 27
+65/Da/||Haulm destroyed mechanically|Oct 4
+65/Da/||Lifted  ta Variety|King Edward
+65/Da/||Previous crops|Grass 1963 and 1964
+65/De/1||Cultivations, etc.  Ploughed|Nov 2h, 1964
+65/De/1||Basal NPK applied, seed drilled at 3.5 lb, menazon granules placed|Apr 13, 1965
+65/De/1||Menazon sprays applied|Jme 3, June 21, July 3, July 16
+65/De/1||Lifted|Aug 25
+65/De/1||Variety|New Model Red Cored
+65/De/1||Previous crops|Winter wheat 1963, barley 196k
+65/Df/1||Cultivations, etc.  Ploughed|Nov 24, 1964
+65/Df/1||Rotary cultivated 4 times (to kill twitch), fertilisers broadcast, seed drilled at 10 lb|My 6, 1965
+65/Df/1||Sprayed|July 8
+65/Df/1||rvested|Oct 15
+65/Df/1||Variety|Thousand Head
+65/Df/1||“ Previous crops  Winter wheat 1963, carrots 196k, NOTE|Soil samples were taken for determimtion of mineralisable N
+65/Df/1||Fresh weight|1.809 or 8.2% (34 a.f.)
