@@ -91,7 +91,7 @@ for fname in fileList:
                     
                     elif expectDay:
                         curDate = " ".join([str(curDate),str(part)])
-                        treatments.add("|".join([str(curDate),str(curOp)]))
+                        treatments.append("|".join([str(curDate),str(curOp)]))
                         curOp = None
                         curDate = None
                         expectDay = False
