@@ -15,7 +15,7 @@ from pytesseract.pytesseract import Output
 def enhance(fname):
     img = cv2.imread(fname)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    img = cv2.resize(img, None, fx=2, fy=1.75, interpolation=cv2.INTER_CUBIC)
+    img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
     #img = cv2.medianBlur(img,3)
     #img = cv2.bilateralFilter(img,7,150,150)
     #img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
@@ -23,17 +23,17 @@ def enhance(fname):
     
     #filtered = cv2.adaptiveThreshold(img.astype(np.uint8), 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 41)
     kernel = np.ones((1, 1), np.uint8)
-    opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-    closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
-    img = cv2.bitwise_or(img, closing)
+    #opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
+    #closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
+    #img = cv2.bitwise_or(img, closing)
     #kernel = np.ones((1, 1), np.uint8)
     #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     ##img = cv2.bilateralFilter(img,9,70,70)
-    #img = cv2.dilate(img, kernel, iterations=1)
-    #img = cv2.erode(img, kernel, iterations=1)
+    img = cv2.dilate(img, kernel, iterations=1)
+    img = cv2.erode(img, kernel, iterations=1)
     ##img = cv2.GaussianBlur(img, (1, 1), 0)
-    #img = cv2.fastNlMeansDenoising(img,None,7,21,10)
-    cv2.imwrite("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\2007\\out\\"+fname, img)
+    img = cv2.fastNlMeansDenoising(img,None,7,21,10)
+    #cv2.imwrite("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\2007\\out\\"+fname, img)
     return img
 
 def getPageScan(pathToFile):
