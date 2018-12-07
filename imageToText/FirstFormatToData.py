@@ -297,7 +297,7 @@ fileList.sort()
 
 year = "1952"
 exclusions = ("and")
-corrections = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec","Ashwells","late","flowering","Majestic","Red","earthed","potatoes" "barley","seed","autumn","ploughed", "variety", "Squareheads", "fertilizers", "applied", "nitrate", "fallow","per","acre")
+corrections = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec","again","Ashwells","late","flowering","Majestic","Red","earthed","potatoes" "barley","seed","autumn","ploughed", "variety", "Squareheads", "fertilizers", "applied", "nitrate", "fallow","per","acre")
 paragraphStartKeyWords = ("Cultivations, etc.:", "Crop sections:","Fallow section:","System of replication:","Basal manuring:","Area of each plot:")
 sectionKeywords = ("section", "Barley", "Sugar beet", "Clover", "Wheat", "Potatoes", "Rye", "Ley", "Globe beet", "Spring cabbages", "Leeks")
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
