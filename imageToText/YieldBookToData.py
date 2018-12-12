@@ -32,13 +32,13 @@ def enhance(fname):
     #img = cv2.bilateralFilter(img,1,5,5)
     #img = cv2.dilate(img, kernel, iterations=1)
     #img = cv2.erode(img, kernel, iterations=1)
-    name = fname.split("\\")[7]
+    #name = fname.split("\\")[7]
     
-    name2 = name.split(".")[0]
-    print("name2: " +name2)
+    #name2 = name.split(".")[0]
+    #print("name2: " +name2)
     #cv2.imwrite("D:\\Code\\python\\workspace\\YieldBookDataTools\\" + name2 + ".png", img)
     #img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-    cv2.imwrite("D:\\Code\\python\\workspace\\YieldBookDataTools\\" + name2 + "_2.png", img)
+    #cv2.imwrite("D:\\Code\\python\\workspace\\YieldBookDataTools\\" + name2 + "_2.png", img)
     ##img = cv2.GaussianBlur(img, (1, 1), 0)
     #img = cv2.fastNlMeansDenoising(img,None,7,21,150)
     

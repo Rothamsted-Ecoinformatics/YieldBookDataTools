@@ -1,116 +1,483 @@
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|Sept 7|Dung applied ploughed fallow plots:
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|Oct 22|autumn fertilizers applied
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|Nov 5|seed drilled at 3% bushels per acre
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|Apr 21|Spring fertilizers applied
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|May 13|Second dressing of nitrate * soda applied to plot 16:
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|Aug 22|Harvested:
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Crop sections|None|variety Squareheads Master 13/h.
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Fallow section|Sept 6|ploughed
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Fallow section|Apr 22|ploughed
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Fallow section|June 26|ploughed
-YieldBook1952_004.jpg|0|52/A/A|WHEAT — BROADBAIK 1952|Rothamsted Fallow section|Aug 27|ploughed
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Sept 21 1951|ploughed
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Dec 18|Dung applied
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Dec 19|ploughed
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Feb 27 1952|fertilizers applied
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Feb 29|seed drilled nt 3 bushels per acre
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|May 9|Sprayed with D.N.0.C. 1 gallon per acre
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|Aug 1|Harvested:
-YieldBook1952_005.jpg|1|52/1/2|BARLEY - HOOSFIELD 1952|all plots|None|variety Plumage Archer,
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|Aug 28 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|Dec 22|again
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|Mar 18 1952|fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|Mar 21|seed drilled at 18 1b per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|May 23|Singled:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|Dec 31|Lifted:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Sugar beet|None|variety Klein E.
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Barley|Dec 17 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Barley|Feb 25 1952|Ground chalk applied at 20 cwt per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Barley|Mar 3|fertilizers applied seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Barley|July 28|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Barley|None|variety Plumage Archer,
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|Apr acre|seed undersown in barloy at lO lb
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|Apr 17 1951|seed undersown in barloy at lO lb
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|Nov 4|autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|Apr 16 1952|Sulphate of ammonia applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|June 25|Cut:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Clover|None|variety late flovoring Montgomory Rod,
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|Aug 7 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|Oct 18|autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|Oct 19|seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|Apr 2L 1952|Sulphate of ammonia applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|May 10|Sprayed with M,C.P.A. 5 pints per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|July 26|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Wheat|None|variety Yeoman.
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Aug 25 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Dec 18|agrin
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Apr 25 1952|Ridged, fertilizers applied potatocs planted:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|July 8|earthed up:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Sept 3|Sprayed with copper f cide 5 lb per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Sept 23|Sprayed with sulphuric acid, 20% B,0.V:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Oct 7|Lifted:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Oct 10 1951|variety Mojostic, Cultivated:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Oct 17|25 cwt ground chalk per acre autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Oct 18|seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|Apr 17 1952|Sulphate of ammonia applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|July 26|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Rothamsted Potatoes|None|variety King II. 52/80/3.2
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|Sept 13 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|Jan 7 1952|egain
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|Apr acre|fertilizers applied seed drilled ot 18 1b
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|Apr 18|fertilizers applied seed drilled ot 18 1b
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|May 29|— Singloà:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|Oct 8|Lifted:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Sugar beet|None|variety Klein E.
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Oct 121951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Feb 9 1952|again
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Apr sere|Ground chalk applied at 20 cwt
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Feb 29|Ground chalk applied at 20 cwt
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Mar 13|fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|Mar 1l|seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|July 31|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Barley|None|variety Plumage Archer.
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Clover|None|
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Seed undersovn in barley at 40 lb por acre|Apr 18 1951|
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Seed undersovn in barley at 40 lb por acre|Dec 5|autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Seed undersovn in barley at 40 lb por acre|Apr 23 1952|Sulphate of ammonia applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Seed undersovn in barley at 40 lb por acre|June 30|| Out:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Seed undersovn in barley at 40 lb por acre|None|variety late flowering Montgomery Red
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|July 24 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|Sept 7|agein
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|Oct 23|autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|Oct 26|seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|May 24|Sulphate of ammonia applied Ilay 2, 1952. Sprayed with D.N.B.P.:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|July 28|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Wheat|None|“oricty: Red Standard,
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Sept 7|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Jan 9 1952|195% agnin
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Apr 23|Ridged:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Apr 24|fertilizers applied potatoes plentod:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|June 16|earthed up:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Aug 11|Sprayed with copper fungicide 5 1b per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Sept 22|again
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Sept 22|Sprayed with sulphuric acid, 15% B.0.V:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|Oct 7|Lifted:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Potatoes|None|Voricty: Majestic
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|Oct 9 1951|ploughed
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|Oct 23|autumn fertilizers applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|Apr acre|Ground chalk applied at 20 cwt
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|Oct 25|Ground chalk applied at 20 cwt
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|Oct 26|seed drilled at 3 bushels per acre
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|May 2 1952|Sulphate of ammonia applied
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|July 25|Harvested:
-YieldBook1952_025.jpg|4|52/82/5,1|SIX COURSE ROTATION EXPERIMENT|Woburn Rye|None|Vardcty: King II. 52/82/5. 3
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|Nov 9|ploughed
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|Dec 1|seed drilled at 3 bushels per acre with insecticides:
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|Apr 21|Sulphate of ammonia applied
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|May 7|Sprayed with fallow volume M,C.F.A:
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|Aug 31|Harvested:
-YieldBook1952_074.jpg|6|52/3£/1.1|WOBURN MARKET GARDEN EXPERIMENT|all plots|None|variety Nord Desprez, DTrevious crop: Old Grass. Standard error per plot: Grain: 1.24 cwt per acre or 3.87 (15 4.1.)
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|Oct 30|: ploughed
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|Mar 13|40 ct ground chalk per acre applied
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|Mar 15|Basal fertilizers applied
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|Mar 18|Beans drilled at 4 bushels per acre
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|June 12|Spray treatments applied
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|Aug 2|Harvested:
-YieldBook1952_083.jpg|7|52/cà/2|SPRING BEANS|all plots|None|variety Ashwells selection. Previous crop: Oats. Standard error per plot: Grain: 4,50 ct per acre or 49.7% (6 à.f.)
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|Sept 7|Dung applied ploughed fallow plots:
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|Oct 22|autumn fertilizers applied
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|Nov 5|seed drilled at 3% bushels per acre
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|Apr 21|Spring fertilizers applied
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|May 13|Second dressing of nitrate of soda applied to plot 16:
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|Aug 22|Harvested:
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Crop sections|None|variety Squareheads Master 13/4.
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Fallow section|Sept 6|ploughed
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Fallow section|Apr 22|ploughed
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Fallow section|June 26|ploughed
+YieldBook1952_004.jpg|6|C|WHEAT - BROADBALK 1952|Fallow section|Aug 27|ploughed
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Sept 21 1951|ploughed
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Dec 18|Dung applied
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Dec 19|ploughed
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Feb 27 1952|fertilizers applied
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Feb 29|seed drilled at 3 bushels per acre
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|May 9|Sprayed vith D.N.0.C, 1 gallon per acre
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|Aug 1|Harvested:
+YieldBook1952_005.jpg|7|C|BARLEY - HOOSFIELD 1952|all plots|None|variety Plumage Archer,
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Cropped plots|Sept 18 1951|ploughed
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Cropped plots|Oct 19|seed drilled at 3 bushels per acre
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Cropped plots|July 31 1952|Harvested:
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Cropped plots|July 31 1952|variety Squareheads Master 13/4.
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Fallow plots|Sept 18 1951|ploughed
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Fallow plots|Feb 8|
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Fallow plots|Sept 6 1952|
+YieldBook1952_006.jpg|8|C|WHEAT AFTER FALLOW - HOOSFIELD 1952|Fallow plots|Sept 6 1952|
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Dec 13 1951|Dung applied
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Feb 13 1952|ploughed
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Apr 25|fertilizers applied
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Apr 28|seed drilled, mangolds - 9 lb per acre sugar beet - 18 lb per acre
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|May 19|Sprayed with DDT emulsion:
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|May 23|again
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|June 18|Singling commenced:
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|July 8|Top dressings applied
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Nov 11|Mangolds lifted:
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Dec 20|-
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|Dec 2230|Sugar beet lifted:
+YieldBook1952_007.jpg|9|C|MANGOLDS AND SUGAR BEET - BARNFIELD 1952|all plots|None|Varieties: Mangolds - Yellow Globe, sugar beet - Klein E.
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|Dec 17|: Lime applied
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|Jan 11|Mineral fertilizers applied
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|Mar 10|Nitrogenous fertilizers applied 1st dressing -
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|Apr 15|2nd dressing -
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|June 19|1st cut:
+YieldBook1952_009.jpg|11|C|HAY - THE PARK GRASS PLOTS 1952|all plots|Sept 22|2nd cut:
+YieldBook1952_012.jpg|14|C|WHEAT - WOBURN STACKYARD 1952|all plots|May 19|N.0.C. 2/3 gallon per acre
+YieldBook1952_012.jpg|14|C|WHEAT - WOBURN STACKYARD 1952|all plots|May 23|again
+YieldBook1952_012.jpg|14|C|WHEAT - WOBURN STACKYARD 1952|all plots|July 29|Harvested:
+YieldBook1952_012.jpg|14|C|WHEAT - WOBURN STACKYARD 1952|all plots|None|| variety Squareheads Master (12/1).
+YieldBook1952_013.jpg|15|C|BARLEY - WOBURN STACKYARD, 1952|all plots|None|Spring barley - Plumage Archer.
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Dec 15 1951|Straw applied ploughed fallow plots:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Apr 18 1952|fertilizers applied
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Apr 22|Ridged:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Apr 24|Potatoes planted with mechanical dropper:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|July 8|earthed up ridges:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Aug 12|Sprayed with medium volume copper sulphate solution, 5 lb per acre
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Sept 4|again
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Sept 23|Sprayed with 20% sulphuric acid:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|Oct 6|Lifted:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Potatoes|None|variety Majestic
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|Dec 15 1951|Straw applied ploughed fallow plots:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|Feb 26 1952|1 ton, Ground chalk per acre applied
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|Mar 3|seed drilled at 3 bushels per acre
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|Mar 4|fertilizers applied
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|May 10|Sprayed with fallow volume MOPÁ 5 lb per acre
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|July 30|Harvested:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Barley|None|variety Plumage Archer.
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Sugar beets Straw applied|Dec 15 1951|ploughed ell plots:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Sugar beets Straw applied|Mar 21 1952|fertilizers applied seed drilled at 18 1b per scre:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Sugar beets Straw applied|May 26|Singled:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Sugar beets Straw applied|Dec 28|Lifted:
+YieldBook1952_016.jpg|18|C|The main plot treatments for (c) are:|Sugar beets Straw applied|None|variety Klein E, 52/Ba/1.3
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Sept 13 1951|ploughed
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Dec 18|Dung, Adco supplementary fertilizers first dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Dec 19|Straw applied fallow plots ploughed
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Feb 7 1952|Second dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Apr 25|Ridged:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Apr 26|Spring fertilizers including third dressing to straw plots, sulphate of ammonia to half plots, applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Apr 28|Potatoes planted:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|July 10|earthed up:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Sept A|Sprayed with copper fungicide 5 lb per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Sept 25|Sprayed with sulphuric acid, 206 B.0.V.:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|Oct 7|Lifted:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Potatoes|None|variety Majestic
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Dec 18 1951|; Dung Adco applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Dec 19|Supplementary fertilizers to dung Adco, first dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Dec 20|Straw applied fallow plots ploughed
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Feb 7 1952|Second dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Feb 26|Ground chalk 221 cwt per applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|Mar 3|Spring fertilizers 52/Ba/2.2 third dressing to straw plots applied seed drilled at 3 bushels per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|May 10|Sprayed with M.C.2, A. 5 pints per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|July 30|Harvested:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Barley|None|variety Plumage Archer.
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Sept 24 1951|Dung, Adco supplementary fertilizers first dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Sept 25|Straw applied fallow plots ploughed
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Oct 22|autumn fertilizers applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Oct 25|seed sown at 112 1b per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Dec 20|Second dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|Apr 16 1952|Sulphate of ammonia third dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|May 10|Sprayed with M.C.2, A. 5 pints per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|June 16|Harvested:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Ryegrass|None|variety Western Wolths.
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Aug 1 1951|ploughed
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Sept 25|Dung, Adco supplementary fertilizers first dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Sept 26|Straw applied ploughed fallow plots:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Oct 20|autumn fertilizers applied seed drilled at 3 bushels per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Dec 20|Second dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|Apr 2L 1952|Sulphate of ammonia third dressing to straw plots applied
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|May 10|Sprayed with M,C.P.À. 5 pints per acre
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|July 29|Harvested:
+YieldBook1952_022.jpg|24|C|FOUR COURSE ROTATION EXPERIMENT|Wheat|None|variety Squareheads Master 12/l. OPO ol oN ANOLE N
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|Aug 28 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|Dec 22|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|Mar 18 1952|fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|Mar 21|seed drilled at 18 1b per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|May 23|Singled:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|Dec 31|Lifted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Sugar beet|None|variety Klein E.
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Barley|Dec 17 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Barley|Feb 25 1952|Ground chalk applied at 20 cwt per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Barley|Mar 3|fertilizers applied seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Barley|July 28|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Barley|None|variety Plumage Archer,
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Clover|Apr 17 1951|
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Clover|Nov 4|autumn fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Clover|Apr 16 1952|Sulphate of ammonia applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Clover|June 25|Cut:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Clover|None|variety late flowering Montgomery Red
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|Aug 7 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|Oct 18|autumn fertilizers apnlicd:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|Oct 19|seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|Apr 2L 1952|Sulphate of ammonia applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|May 10|Sprayed with M,C.P.A. 5 pints per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|July 26|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Wheat|None|variety Yeoman,
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Aug 25 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Dec 18|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Apr 25 1952|Ridged, fertilizers applied potatoes planted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|July 8|earthed up:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Apr acre|Sprayed with copper fungicide 5 lb
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Sept 3|Sprayed with copper fungicide 5 lb
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Sept 23|Sprayed with sulphuric acid, 20% B,0.V:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Oct 7|Lifted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Oct 10 1951|variety Majestic a6 c per
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Oct 17|25 cwt ground chalk per acre autumn fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Oct 18|seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|Apr 17 1952|| Sulphate of ammonia applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|July 26|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Rothamsted Potatoes|None|^ variety King II. 52/Ba/3.2
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|Sept 13 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|Jan 7 1952|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|Apr 18|fertilizers applied seed drilled at 18 1b per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|May 29|Singled:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|Oct 8|Lifted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Sugar beet|None|variety Klein E.
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|Oct 121951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|Feb 9 1952|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|Feb 29|Ground chalk applied at 20 cwt per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|Mar 15|fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|Mar ik|| seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|July 31|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Barley|None|variety Plumage Archer,
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Clover|Apr 18 1951|
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Clover|Apr 23 1952|autumn fertilizers applied Docc 3. Sulphate of ammonia applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Clover|June 30|Cut:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Clover|None|variety late flowering Montgomery Red
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|July 24 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|Sept 7|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|Oct 25|autumn fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|Oct 26|seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|May 24|Sulphate of ammonia applied Ilay 2, 1952, Sprayed with D,N,B.P.:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|July 28|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Wheat|None|. variety Red Standard,
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Sept 7 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Jan 9 1952|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Apr 23|Ridged:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Apr 24|fertilizers applied potatoes planted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|June 16|earthed up:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Aug 11|Sprayed with copper fungicide 5 1b per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Sept 22|again
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Sept 22|Sprayed with sulpnuric acid, 15% B.O.V:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|Oct 7|Lifted:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Potatoes|None|variety Majestic
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|Oct 9 1951|ploughed
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|Oct 23|autumn fertilizers applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|Oct 25|Ground chalk applied at 20 cwt per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|Oct 26|seed drilled at 3 bushels per acre
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|May 2 1952|Sulphate of ammonia applied
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|July 25|Harvested:
+YieldBook1952_025.jpg|27|C|SIX COURSE ROTATION EXPZRIMENT|Woburn Rye|None|variety King IT. 52/Ba/3.3
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Sept 28 1951|Sugar beet series 1) | fertilizers for ploughing in applied
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Oct 9|Dung applied ploughed in 'deep':
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Oct 10|Dung applied ploughed in 'shallow':
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Mar 22 1952|fertilizers for surface application broadcast, seed drilled at 16 1b per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||May 26|Singled:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Jan 2 1953|Lifted:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Dec 18 1951|variety Klein E, Barloy series 6) | ploughed
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Feb 25 1952|Ground chalk applied at 1 ton per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Feb 27|Basic slag sulphate of ammonia applied
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||Feb 28|seed drilled at 3 bushels per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||July 31|Harvested:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet (Series 1) ||None|variety Plumage Archer,
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Ley (Series 2)|None|2 lb American Alsike clover,
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|July 30 1951|Wheat series 3) ploughed 'deep! plots:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|Aug 8|ploughed 'shallow' plots:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|Sept 25|ploughed fallow plots:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|Oct 20|seed drilled at 3 bushels per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|Apr 16 1952|Basal sulphate of ammonia applied
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|July 26|Harvested:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat (Scries 3)|None|variety Yeoman,
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Sept 28 1951|Potatoes series 4) fertilizers for ploughing in applied
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Oct 9|Dung applied ploughed in 'deep!:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Oct 10|Dung applied ploughed in 'shallow':
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|May 1 1952|| Ridged:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|May 2|fertilizers applied in ridges, potatoes planted:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|July 10|earthed up ridges:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Aug 12|Sprayed with copper fungicide 5 Ib per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Sept 3|again
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Sept 23|Sprayed with sulphuric acid, 20% B,0,V:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Oct 18|Lifted:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Oct 29 1951|variety Majestic 52/Bb/1.2 Spring oats series 5) ploughed
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Feb 25 1952|Ground chalk applied at 1 ton per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Feb 27|Basal sulphate of ammonia drilled:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Feb 28|seed drilled at 3% bushels per acre
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|July 22|Harvested:
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes (Series 4)|Apr plot|variety Star. Standard errors
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Sugar beet|None|Totel sugar, whole plot: 2.49 cwt per acre or 4.4% (4 a.f sub-plot: 3.65 cwt per acre or 6.5% (7 à.f
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Barley|None|again 2.16 cwt per acre or 8,4% (4 d.f
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Ley|None|Hay: 2,48 cwt per acre or 4,0% (4 4.f
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Wheat|None|again 2.3L cwt per acre or 6,9% (4 4.f
+YieldBook1952_029.jpg|31|C|DEEP CULTIVATION ROTATION EXPERIMENT|Potatoes|None|Total tubers, whole plot:0,510 tons per acre or um hk df sub-plot: 1,093 tons per acre or 15.7% T i Spring oats, again 2.8. cwt per acre or 8,36 (4 4.f '52/Bb/A. 3
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 3)s Ploughed|Oct 4 1951|
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 3)s Ploughed|Oct 20|seed drilled at 53 bushels per acre with basal fertilizers
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 3)s Ploughed|Apr 30 1952|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 3)s Ploughed|Aug 1|Harvested:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 3)s Ploughed|None|variety Yeoman.
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Sept 7 1951|ploughed
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Feb 7 1952|again
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Apr 30|Ridged, dung, sulphate of armonia basal fertilizers applied potatoes planted:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|July 9|earthed up:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Aug 12|Sprayed with copper sulphate solution 5 lb per acre medium volume:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Sept 6|Sprayed with copper sulphate solution 5 lb per acre medium volume:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Oct 8|Sprayed with 20% sulphuric acid:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|Oct 16|Lifted:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 9-12)|None|variety Majestic
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Dec 20 1951|Red year (Blocks 5 8). Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Mar 27 1952|| Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|May 15|Pre-grazing cut:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 26|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|May Sept|Greazed: 4 circuits,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Dec 20 1951|12. Lucerne Red year (Blocks 5 8), Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 11|Cut: 3 times,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|July 21|Cut: 3 times,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Sept 10|Cut: 3 times,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Dec 20 1951|52/8c/4.5 Reseeded grass. Red year (Blocks 5-8). Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Feb 281952|Ground chalk applied to Blocks 6 7:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Mar 27|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 13|Cut:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 17|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Aug Sept|Grazed: 2 circuits,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Dec 20 1951|30. Permanent grass. Red year (Blocks 5-8). Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Feb 28 1952|Ground chalk applied to Blocks 6 7:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Mar 27|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 13|Cut:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|June 17|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|Aug Oct|Grazed: 2 circuits,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5-8)|None|4. Fosters
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 4)|Oct 15 1951|ploughed
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 4)|Oct 20|seed drilled at 3 bushels per acre with basal fertilizers
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 4)|Apr 29 1952|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 4)|July 25|Harvested:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat (Blocks 2 and 4)|None|variety Yeoman.
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Aug 28 1951|10, 11, 12). ploughed
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Jan 22 1952|again
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Apr 29|Ridged, dung artificials applied potatoes planted:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|June 19|earthed up:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Aug 12|Sprayed with copper sulphate solution, 5 lb per acre
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Sept 4|again
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Sept 23|Sprayed with 20% sulphuric acid:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|Oct 18|Lifted:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes (Blocks 6|None|variety Majestic
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Dec 20 1951|Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Mar 26 1952|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|May 10|Pre-grazing cut:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|June 27|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|May 26|Grazed: 4 circuits,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Sept 10|to
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Dec 20 1951|Lucerne Red yeer (Blocks 5 7). Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|June 12|Cut: 3 times
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|July 18|Cut: 3 times
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Sept 9 1952|Cut: 3 times
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Dec 20 1951|Reseeded grass Red year (Blocks 5, 7, 8, 9). Basal fertilizers applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Mar 26 1952|| Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|June 12|Pre-grazing cut:
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|June 17|Nitrochalk applied
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|Aug Sept|Grezed: 2 circuits,
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley (Blocks 5|None|26. : Standard errors per Í plot |
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Wheat|None|again Highfield: 2.49 cwt per acre or 6. 5e {13 4.1.) Fosters: 0.83 cwt per acre or 2.3% (13 d.f.)
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Potatoes|None|total tubers, Highfield: 1.61 tons per acre or 12.85 (21 a.f.) Fosters: 1.35 tons per acre or 10.7% (21 à.f.)
+YieldBook1952_040.jpg|42|C|A suitable dressing of calcium carbonate will be applied every 6 years|Barley|None|again Highfield: 2.34 cwt per acre or 8.3% (21 In Fosters: 1.53 cwt per acre or 4.3% (21 d.f. 52/Bc/A .7
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|May 15 1952|ploughed in:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|June 23|Dung straw applied to lupin rape plots, ploughed in:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|June 24|Basal fertilizers applied
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|June 24|Cabbages planted watered in (calomel 4rcated):
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|July 30|Sprayed with Parathion:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|Sept 5|Sprayed with Parathion:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|Nov 11 1952|Harvested:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|Mar 18 1955|-
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Green manures|Mar 18 1955|V-riety: January King.
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Barley|None|again 2.24 cwt per secre or 241.55 (9 d.f. 52/Bd/1.2
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|ryegrass undersovn|Apr 17|
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|ryegrass undersovn|Aug 15|Harvested:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|ryegrass undersovn|None|variety Plumage Archer. Standard errors per plot:
+YieldBook1952_050.jpg|52|C|GREEN MANURING EXPERIMENT|Cabbages|None|weight of headed cabbages: 0,383 tons per acre or 28.3% 2 iri
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Sept 7 1951|ploughed
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Jan 9 1952|again
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Apr 17|Ridged, basal fertilizers applied
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Apr 19|Potatoes planted:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|June 16|earthed up ridges:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Aug 8|Sprayed with copper fungicide, 5 1b per acre
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Sept 2|again
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Sept 22|Sprayed with sulphuric acid, 15% B,0.V:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Oct 6|Lifted:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|June 26|variety Majestic Block II. Ley - second year, Nitrochalk applied
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|May 917|Grazed by sheep: 6 circuits -
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|May June|Grazed by sheep: 6 circuits -
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|June 1725|9,
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|July 816|9,
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Aug 1826|9,
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Sept 1119|9,
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|June 17|Lucerne - second year, cwt three times:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|July 23|Lucerne - second year, cwt three times:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Potatoes|Oct 2|Lucerne - second year, cwt three times:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Sept 7 1951|ploughed
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Jan 9 1952|
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Apr 18|Basal fertilizers applied seed drilled at 18 1b per acre
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|May 30|Singled:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Oct 8|Lifted:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Oct 12 1951|variety Klein E. 52/Be/1.2 Block V, Potatoes, ploughed
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Feb 1 1952|
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Apr 23|Ridged, dung basal fertilizers applied
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Apr 25|Potatoes planted:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|June 17|earthed up ridges:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Aug 8|Sprayed with copper fungicide, 5 1b per acre
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Aug 11|resprayed
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Sept 2|resprayed
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Sept 22|Sprayed with sulphuric acid 15%
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|Oct 6|Lifted:
+YieldBook1952_055.jpg|57|C|LEY AND ARABLE ROTATIONS|Rye|None|variety Majestic Standard errors per plot: Block III. Barley, again whole plot: 1.071 cwt per acre or 4.9% ^ e sub plot: 0.7L0 cwt per acre or 3.4% (4 d.f. Block V. Potatoes, Total tubers, whole plot: 0.990 tons per acre or 9.8% (4 d.f.) sub plot: 1.355 tons per acre or 13.5% (4 d.f.)
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Globe beet|None|saleable bulbs: 1.29 tons per acre or 17.1% (17 a.f.) Lecks, saleable produce: 0.470 tons per acre or 12.64 (17 dels) 527/Bf/1.2
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Spring cabbages 1952-55|Mar 12 1953|
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Spring cabbages 1952-55|Mar 12 1953|variety Durham Early.
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|July 8 1952|Organic manures applied ploughed in:
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|July 30|Basal manures nitrochalk applied (first dressing to 0.6 0.9 N plots):
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|Aug 57|Leeks planted watered in:
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|Sept 12|Second dressing of nitrochalk to 0.6 0.9 N plots:
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|Feb 6ipr|Harvested:
+YieldBook1952_061.jpg|63|C|WOBURN MARKET GARDEN EXPERIMENT|Leeks 1952-55|None|16, 1953. variety Musselburgh. Standard errors per plot:
+YieldBook1952_068.jpg|70|C|WHEAT|all plots|Sept 3 1951|ploughed
+YieldBook1952_068.jpg|70|C|WHEAT|all plots|Oct 18|seed drilled at 3 bushels per acre
+YieldBook1952_068.jpg|70|C|WHEAT|all plots|Apr 16 1952|Sulphatc of ammonia applied
+YieldBook1952_068.jpg|70|C|WHEAT|all plots|July 28|Harvested:
+YieldBook1952_068.jpg|70|C|WHEAT|all plots|None|variety Squareheads Master 13/4.
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|May 22|applied
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|Aug 19|Harvested:
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|Oct valid|Previous crop: Linseed. Standard error per plot: again 2,92 cwt per acre or 10.9% (24 d.f.) NP, . a Counts of incidence of Eyespot were made acre available. 2) In the Summary of Results:- (a) The standard errors given acre
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|Jan particular|for testing the effects of spraying for
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|May however|treatment level; » the interactions of spraying with treatments
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|Oct include|be tested. (b) The V x R tables do
+YieldBook1952_071.jpg|73|C|WHEAT|all plots|None|the plots receiving no nitrogen, 52/08/2.2
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|Oct 11|Cultivated twice:
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|Oct 19|seed drilled at 3 bushels per acre
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|Apr 17|Sulphate of ammonia applied
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|Apr 30|Sprayed with 2 gallons D,N,0.C, plus 6 1b sulphate of ammonia per acre
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|July 29|Harvested:
+YieldBook1952_073.jpg|75|C|WHEAT|all plots|None|variety Nord Desprez, Previous crop: Potatoes, Standard crror per plot: : again 1,94 cwt per acre or 6.9% (35 d.f.)
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|Nov 9|ploughed
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|Dec 1|seed drilled at 3 bushels per acre with insecticides:
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|Apr 21|Sulphate of ammonia applied
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|May 7|Sprayed with fallow volume M.C.P.A:
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|Aug 51|Harvested:
+YieldBook1952_074.jpg|76|C|WHEAT|all plots|None|variety Nord Desprez, Trevious crop: 0ld Grass, Standard error per plot: again 1.24 cwt per acre or 3.8% (16 d.f.)
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|Sept 11|ploughed
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|Oct 24|seed drilled at 3 bushels per acre
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|Apr 18|Sulphate of ammonia applied
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|May 15|Sprayed with D.N.O.C.:
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|June 28|Nitrochalk applied
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|Aug 12|Harvested: "binder' plots -
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|Aug 15|'combine'plots -
+YieldBook1952_076.jpg|78|C|WHEAT|all plots|None|variety Yeoman. Previous crop: "heat. Standard errors per plot. again Strip: 1.72 cwt per acre or 8.9% (3 à.f.) Whole plot: 1.32 cwt per acre or 6.9% (6 d.f.) Sub plot: 1.68 cwt per acre or 8.7% (6 à.f.) 52/Ca/5.2
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|Mar 19|Sulphate of ammonia applied to linseed:
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|May 12|Harrowed in linseed which had failed:
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|May 13|seed super- phosphate drilled:
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|June 9|Sprayed with M.C.P.A. , medium volume, 5 pints in 30 gallons water per acre
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|June 16|Nitrochalk applied
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|Sept 16|Harvested: 'binder' plots -
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|Sept 19|'combine' plots -
+YieldBook1952_078.jpg|80|C|BARLEY|all plots|None|variety Plumage Archer. Previous crop: Permanent grass, Standard errors per plot. again Strip: 1.09 cwt per acre or 7.6% (3 a.r.) Thole plot: 1.05 cwt per acre or 7.4% (6 d.f.) Sub plot: 1.18 cwt per acre or 8.3% (6 per 52/Cb/1. 2
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|Dec 10|ploughed
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|Mar 5|Sulphate of ammonia applied
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|Mar 15|seed drilled at 4 bushels per acre with superphosphate:
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|May 13|Sprayed with M.C.2. A, fallow volume, 2% pints in 10 gallons of water:
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|June 30|Nitrochalk applied
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|July 2L|Harvested:
+YieldBook1952_080.jpg|82|C|SPRING OATS|all plots|None|variety Star. Previous crop: Wheat. Standard errors per plot: Grain_: 1.74 ct per acre or L.9% fs af.) Straw : 2.39 cwt per acre or 5.25 (1k à.f.)
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|Oct 30|ploughed
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|Mar 13|LO cwt ground chalk per acre applied
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|Mar 18|seed drilled at 4 bushels per acre fertilizers applied
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|June 19|Sprayed with Nicotine again blackfly:
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|July 7|again
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|Aug 6|Harvested:
+YieldBook1952_081.jpg|83|C|SPRING BEANS|all plots|None|variety Ashwells Selection. Previous crop: Oats. Standard error per plot: again Dry Matter: 1.13 cwt per acre or 20.6% (55 d.f.)
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|Oct 50|: ploughed
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|Mar 13|O0 cwt ground chalk per acre applied
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|Mar 15|Basal fertilizers applied
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|Mar 18|Beans drilled at 4 bushels per acre
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|June 12|Spray treatments applied
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|Aug 2|Harvested:
+YieldBook1952_083.jpg|85|C|SPRING BEANS|all plots|None|variety Ashwells selection. Previous crop: Oats. Standard error per plot: again 4,50 cwt per acre or 49.7% (6 à.f.)
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|Oct 50|ploughed
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|Mar 15|| LO cwt ground chalk per acre applied
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|Mar 15|Basal fertilizers applied
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|Mar 18|Beans sown:
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|July 1|Harvested:
+YieldBook1952_084.jpg|86|C|BROAD BEANS|all plots|None|variety Seville Long Pod, Previous crop: Spring Oats. Standard error per plot: Yield of green beans in pod: 2.45 cwt per acre or 9.1% (12 &.f.)
+YieldBook1952_086.jpg|88|C|POTATOES|Wheat|None|Standard errcrs per plot: Total tubers. Whole plot: 0.755 tons per acre or 7.4% (32 d.f.) Sub plot: 1.060 tons per acre or 10.4% (29 a.f.)* * . : 1 missing value. 52/Ce/4. 2
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|May 5|
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|May 5|fertilizers applied to 'C' 'E' plots:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|May 9|Ridged 'A' plots, fertilizers applied potatocs planted on 'A! 'B' plots:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|May 10|fertilizers cppliod'end potatoes planted on 'C', 'D', 'E' 'F' plots:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|July 17|earthed up:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|Aug 12|Sprayed with copper fungicide 5 lb per acre
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|Sept 5|again
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|Sept L|Sprayed with sulphuric acid, 20% B.O.V.:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|Oct 10|Lifted:
+YieldBook1952_090.jpg|92|C|POTATOES|all plots|None|variety Majestic Previous crop: Wheat. Standard error per plot: T Total tubers: 0.857 tons per acre or 9.1% (51 aà.f.) * : . 2 missing values.
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|Apr 25|
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|July 7|earthed up:
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|Aug 13|Sprayed appropriate plots with copper fungicide:
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|Sept 4|again
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|Oct 7|Sprayed appropriate plots with sulphuric acid:
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|Nov 3|Lifted:
+YieldBook1952_093.jpg|95|C|POTATOES|Potatoes planted|None|variety Majestic Previous crop: Wheat. Standard errors per plot: Total tubers. "hole plot: 0.984 tons per acre or 13.5% (6 a.f.) Sub plot: 0,614 tons per acre or 8.4% (12 à.f.) - Blight counts were made acre available. The mean level of infection was only 0.2%. 52/Ce/3. 2
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Mar 18|ploughed
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Apr 50|Ridged:
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|May 1|fertilizers applied potatoes planted:
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|July 9|earthed up:
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Aug 13|Sprayed with copper fungicide 5 1b per acre
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Sept 5|again
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Oct 8|Sprayed with sulphuric acid, 20% B.0.V.:
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|Oct 17|Lifted:
+YieldBook1952_094.jpg|96|C|POTATOES|all plots|None|variety Majestic Previous crop: Kale. Standard error per plot: Total tubers: 1.25 tons per acre or 9.0% (20 à.f.)
+YieldBook1952_097.jpg|99|C|PERMANENT GRASS|all plots|Mar 12|Muriate of potash applied
+YieldBook1952_097.jpg|99|C|PERMANENT GRASS|all plots|June 19|Cut:
+YieldBook1952_097.jpg|99|C|PERMANENT GRASS|all plots|None|weighed green. Standard errors per plot: Hay, dry matter: 1.97 cwt per acre or 5.2% (20 à.f.) PoO05 uptake: 0.00822 cwt per acre or 4.7% (20 à.f.)
+YieldBook1952_098.jpg|100|C|GLOBE BFET|all plots|None|Previous crop: Barlcy. Standard error per plot: Seleable produce” :1.60 tons per acre or 45.29 (12 a.f.)
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Oct 30 1951|ploughed
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Mar LÀ 1952|2 tons ground chalk per acre applied
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Mar 15|Basal fertilizers except nitrate of soda applied
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Mar 17|nitrate of soda applied seed drilled at 18 1b per acre '1' plots -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Apr 17|'2' plots -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|May 6|'5' plots -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Apr 15|DDT dust applied to '1' plots:
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|May 15|Singled: Plots '1A' -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|May 22|'1B' '2A' -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|May 29|'1C', '2B' '3A' -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|June 6|'90C' '3B' -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|June 17|'3C' -
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Jan 5 1953|Lifted:
+YieldBook1952_099.jpg|101|C|SUGAR BFET|all plots|Jan 5 1953|variety Klein E, Previous crop: Oats. Standard errors per plot: Total sugar: whole plot, 4.18 cwt per acre or 9.5% (8 4. f.) sub plot, 6.18 cwt per acre or 14.0% (24 d£.) Percentage Virus Yellows (transformed values): whole plot, 3.17 or 14.7% (8 4. f.) sub plot, 5.14 cr 23.9% (24 d.f.)
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Mar 4 1952|applied
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Mar 15|Sulphate of potash superphosphate drilled:
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Mar 21|Krilium applied seeddrilled at 18 lb per acre
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Mar 26|nitrate of soda applied
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|May 17|Singled:
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Jan 12 1953|Lifted:
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Apr 28|variety Klein E. applied seed drilled at 18 1b per acre
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|May 27|Singled:
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|Dec 10|Lifted:
+YieldBook1952_102.jpg|104|C|SUGAR BEET|all plots|None|variety Klein E.
+YieldBook1952_104.jpg|106|C|CLOVER, RYEGRASS, RED BEET AND CARROTS|Woburn Clover - Scarlet Isles Triblium|None|Ryegrass - Italian; Carrots - Scarlet Intermediates; Red Beet - Detroit. 52/C3/1. 2 Standard errors per plot:
+YieldBook1952_104.jpg|106|C|CLOVER, RYEGRASS, RED BEET AND CARROTS|Woburn Clover|None|fresh weight. Fosters: 9.66 cwt per acre or 14.1% e & f.) Barnfield: 3.73 cwt per acre or 12.06 (6 à.f.) .Stackyard: 19.3 cwt per acre or 31.6% (6 à.f.)
+YieldBook1952_104.jpg|106|C|CLOVER, RYEGRASS, RED BEET AND CARROTS|Woburn Ryegrass|None|fresh weight. Fosters, 1st cut: 2.09 cwt per acre or 22.0% (6 a.f. 2nd cut: 10.9 cwt per acre or 17.3% (6 d.f.
