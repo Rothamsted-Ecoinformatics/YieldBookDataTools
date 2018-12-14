@@ -6,15 +6,18 @@ Created on 3 Dec 2018
 import os
 from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
-from docutils.nodes import paragraph, Part
 import string
-
+import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+from collections import namedtuple
+import pandas as pd
 
 cultivationsSegment = []
 code = ""
 title = ""
+hasMetadata = False
+inCultivations = False
 
 def removePunctuation(value):
     result = ""
@@ -23,74 +26,70 @@ def removePunctuation(value):
             result += c
     return result
 
-def getMetadata(page,fname,pageIdx):        
+def getMetadata(page,fname,pageIdx): # should only be in here if we have no metadata       
     lines = page.split("\n")
-    objective = ""
     design = "" 
     plots = ""
     sponsors = ""
     treatments = ""
-    hasMetadata = False
+    basal = ""
+    global hasMetadata
     global code
     global title
+    global inCultivations
+    global cultivationsSegment
     section = 0 
+    
     for idx, p in enumerate(lines):
-        if(idx == 0):
-            code = p
-        elif (idx == 1):
-            if not code and p:
-                code = p
-            elif p:
-                title = p 
-        elif (idx == 2):
-            if not title and p:
-                title = p
-        elif (idx == 3 and p):
-            objective = p
-            section = 1
-        
-        print(str(idx) + ": " + p)
-        if p:
+        if p and section >= 0:
             testLine = correctLine(p.lower())
             lineParts = testLine.split(" ")
-            if fuzz.token_set_ratio(p,"Cultivations, etc.:") >= 75 and hasMetadata:         
-                ofMetadata.write("|".join([fname,str(pageIdx),code,title,str(objective),year,str(design),str(sponsors),str(plots),str(treatments)]))
+            if lineParts[0] == "cultivations": #fuzz.token_set_ratio(p,"Cultivations, etc.:") >= 75:# and hasMetadata:         
+                design = correctWords(design.split(" "), corrections)
+                plots = correctWords(plots.split(" "), corrections)
+                treatments = correctWords(treatments.split(" "), corrections)
+                sponsors = correctWords(sponsors.split(" "), corrections)
+                ofMetadata.write("|".join([fname,str(pageIdx),code,title,year,str(design),str(sponsors),str(plots),str(treatments)]))
                 ofMetadata.write("\n")   
-                section = 0
+                section = -1 # need to stop processing metadata
+                # go and process the cultivations
+                cultivationLines = lines[idx:]
+                inCultivations = True
+                getOperations(cultivationLines,fname,idx)
             elif(lineParts[0] == "sponsor"):
                 section= 2
                 hasMetadata = True
-                print("sponsor: " + testLine)
                 sponsors = p
             elif(len(lineParts) >= 3 and lineParts[0] == "system" and lineParts[2] == "replication"):
                 section= 3
                 hasMetadata = True
-                print("design: " + testLine)
                 design = p
             elif(len(lineParts) >= 5 and lineParts[0] == "area" and (lineParts[3] == "plot" or lineParts[4] == "plot")):
                 section= 4
                 hasMetadata = True
-                print("plot area: " + testLine)
                 plots = p
             elif(lineParts[0] == "treatments"):
                 section= 5
                 hasMetadata = True
-                print("treatments: " + testLine)
                 treatments = p
+            elif(lineParts[0] == "basal"):
+                section = 6
+                basal = p
             else: # means we're processing something
-                if (section == 1):
-                    objective = " ".join([objective, p.strip()]) 
-                    print("OBJECTIVE: " + objective)
-                elif (section == 2):
+                if (section == 2):
                     sponsors = " ".join([sponsors, p.strip()])
                 elif (section == 3):
                     design = " ".join([design, p.strip()])
                 elif (section == 4):
                     plots = " ".join([plots, p.strip()])
                 elif (section == 5):
-                    treatments = " ".join([treatments, p.strip()])   
-    
-      
+                    treatments = " ".join([treatments, p.strip()])
+                elif (section == 6):
+                    basal = " ".join([basal, p.strip()])   
+        elif p.isupper(): #Whoa there! got another experiment on the page
+            cultivationsSegment = []
+            title = p
+            section = 0 # need to start processing again
 
 def correctLine(line):
     correctedLine = correctWords(line.split(),paragraphStartKeyWords)
@@ -101,7 +100,6 @@ def correctWords(words,dictionary):
     #cutoffs = {3:67, 4:75, 5:80}
     newWords = []
     for word in words:
-        
         wordLen = len(word)
         if wordLen <= 2 or word in exclusions:
             newWords.append(word)
@@ -114,57 +112,28 @@ def correctWords(words,dictionary):
                 
             matched = process.extractOne(word,dictionary,scorer=fuzz.token_set_ratio,score_cutoff=cutOff)
             if matched:
-                print(word + ": " + str(matched) + " cutOFF: " + str(cutOff))
                 newWords.append(matched[0])
             else:
                 newWords.append(word)
     return " ".join(newWords)
     
-def getOperations(page,cultivations,fname,pageIdx):
-    lines = page.split("\n")
+# this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
+def getOperations(lines,fname,pageIdx):
     global cultivationsSegment
     global code
     global title
-    basal = ""
-    inBasal = False
+    global inCultivations
     crapCount = 0;
     for idx, line in enumerate(lines):
-        print(str(idx) + " " + line)
-#         if not cultivations:
-#             if idx == 0: # could be here but still in cultivations
-#                 code = line
-#                 print("code: " + line)
-#             elif (idx == 1):
-#                 title = line 
-#                 print("title: " + line)   
-#             elif (idx == 2 and not title):
-#                 title = line
-#                 print("line3: " + str(line))   
-        
-                
-        if (cultivations or idx > 3):
-            if(fuzz.token_set_ratio(line,"Basal manuring:") >= 80):
-                parts = line.split(":.,")
-                if (len(parts) >1):
-                    basal = parts[1]
-                inBasal = True
-            elif inBasal:
-                basal = " ".join([basal,line])
-            elif(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
-                inBasal = False
-                # Need to reset titles
-                code = line[0]
-                title = lines[1] if lines[1] else lines[2] 
-                
+        if (inCultivations):
+            if(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
                 cultivationsSegment.clear()
-                #print("in cultivations due to {" + str(line) + "}")
-                cultivations = True
-                # need to remove the first two words (cultivations, etc)
+                inCultivations = True
                 parts = line.split(" ")
                 if (len(parts) >2):
                     line = " ".join(parts[2:])
                     cultivationsSegment.append(line)
-            elif(cultivations):
+            elif(inCultivations):
                 if (len(line) < 10):
                     crapCount += 1;
                 else:
@@ -175,55 +144,43 @@ def getOperations(page,cultivations,fname,pageIdx):
                 elif(fuzz.token_set_ratio(line,"Woburn") > 75):
                     cultivationsSegment.append("Woburn")
                 elif(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80 or fuzz.token_set_ratio(line,"Note") >= 80  or crapCount > 5):    
-                    cultivations = False
                     processCultivations(fname,pageIdx)
+                    inCultivations = False
                     print("ex cultivations")
                 else:
                     cultivationsSegment.append(line)
-            else:
-                print(line)
-            print("in cultivations: " + str(cultivations))
-        if basal:
-            ofBasal.write("|").join([fname,str(pageIdx),code,title,year,basal])
-            ofBasal.write("\n")
-    return cultivations
     
-def writeJob(fname,pageIdx,code,title,sname,curDate,curOp):
+def writeJob(fname,pageIdx,sname,curDate,curOp,prevOp):
+    global code
+    global title
     cleanCurDate = removePunctuation(str(curDate))
-    ofOperations.write("|".join([fname,str(pageIdx),code,title,year,str(sname),cleanCurDate,str(curOp).strip()]))
-    ofOperations.write("\n")    
+    if not curOp:   
+        curOp = prevOp
+    if curOp:
+        ofOperations.write("|".join([fname,str(pageIdx),code,title,year,str(sname),cleanCurDate,str(curOp).strip()]))
+        ofOperations.write("\n")    
             
-def processCultivations(fname,pageIdx):   
-    print("processing cultivations: ")
-    print(cultivationsSegment)
-    print("start processing cultivations:")
-     
-    #cultivationSections = cultivationsSegment.split("\n\n")
+#this method is about subsectioning the cultivations then writing them             
+def processCultivations(fname,pageIdx):   #cultivationSections = cultivationsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
     #print("cultivation sections = " + str(len(cultivationSections)))
-    sectionName = None
+    sectionName = ""
     subsections = {}
     subsectionText = ""
     centre=""
+    
     for line in cultivationsSegment:
         parts = re.split(r"[:.,]",line,1)
-        #print(parts)
+        
         matched = process.extractOne(parts[0],sectionKeywords,scorer=fuzz.partial_ratio,score_cutoff=85)
-        #print(matched)
         if (matched):
             if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
                 subsections[sectionName] = subsectionText
-            #if (len(parts[0]) < 22):
-            if (parts[0].lower().startswith(sectionKeywords)):
-                sectionName = " ".join([centre,parts[0]]).strip()
-            print(sectionName)
-            subsectionText = ""
+            sectionName = " ".join([centre,parts[0]]).strip()
+            subsectionText = "" #set up the new section text
             if(parts and len(parts) > 1):
                 line = parts[1]
-            else: 
-                print("1 line parts is: " + str(parts))
-            
         elif(line == "Woburn"):
             centre = "Woburn"
             line = ""
@@ -233,48 +190,46 @@ def processCultivations(fname,pageIdx):
         
         if (len(line) > 1):
             subsectionText = " ".join([str(subsectionText),line])
-            
-    print("final section name: " + str(sectionName))
-    if(sectionName): # add the old section name to the dictionary
-        subsections[sectionName] = subsectionText           # got a new section...probably
-    else:
-        subsections["all plots"] = subsectionText
-    # Now process the subsections:
+    if not sectionName:
+        sectionName = "All plots"
+    subsections[sectionName] = subsectionText           # got a new section...probably
     
-    print("writing jobs:")
+    # Now process the subsections:
+    print("WRITING JOBS:")
     for sname, stext in subsections.items():
-        print("sname: " + sname)
         parts = stext.split(" ") # chunk everything into words
-        curOp = ""
+        
         curDate = None
         expectDay = False
         testYear = False
         corrected = correctWords(parts,corrections)
-        words = corrected.split(" ")
-        
+        rawwords = corrected.split(" ")
+        words = list(filter(None,rawwords))
+        prevOp = ""
+        curOp = ""
         for word in words:
             word = word.strip()
-            #print(str(word) + ": " + str(curOp) + " + " + str(curDate))
             
-            if word == "and" or len(word) == 0: 
-                # skip
-                word = ""
+            if word == "and": 
+                print("skip")
             elif testYear:
                 yearMatch = re.search("[0-9]{4}", word) 
                 if (yearMatch):
                     curDate = " ".join([str(curDate),str(yearMatch.group(0))])
-                    writeJob(fname,pageIdx,code,title,sname,curDate,curOp)
+                    writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     testYear = False
                     expectDay = False
-                    curOp = ""
+                    prevOp = curOp
                 elif word in months: # same operation, different date
-                    writeJob(fname,pageIdx,code,title,sname,curDate,curOp)
+                    writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     expectDay = True
                     testYear = False
+                    prevOp = curOp
                     curDate = word
                 else: # new operation
-                    writeJob(fname,pageIdx,code,title,sname,curDate,curOp)
+                    writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     curDate = None
+                    prevOp = curOp
                     curOp = word 
                     expectDay = False
                     testYear = False
@@ -290,60 +245,72 @@ def processCultivations(fname,pageIdx):
                 expectDay = False
                 testYear = False
                 curOp = " ".join([curOp,word])
-        writeJob(fname,pageIdx,code,title,sname,curDate,curOp)
-    print("Subsections:") 
-    print(subsections) 
-    print("================")   
+        writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
     
-def getExperimentCodeAndName(testString):
-    expCode = None
-    expName = None
-    #paragraphs = testString
-    paragraphs = testString.split("\n")
-    paragraphs = list(filter(None,paragraphs))
-    #print(paragraphs)
+def getExperimentCodeAndName(page,fname,pageIdx):
+    global code
+    global title
+    global hasMetadata
+    rawlines = page.split("\n")
+    lines = list(filter(None,rawlines))
+    localCode = ""
+    localTitle = ""
     
-    idx0 = paragraphs[0].strip()
-    codeMatches = re.match("[0-9]{2}/[A-Za-z]{1,2}/[0-9]", idx0)
-    if (codeMatches):
-        expCode = codeMatches.group(0)
-        expName = paragraphs[1].strip() + " " + paragraphs[2].strip()
-    else:
-        expName = paragraphs[0].strip() + " " + paragraphs[1].strip() 
-        
-    return expCode, expName
-
-#try:
+    for idx in range(3):
+        line = lines[idx]
+        if idx == 0:
+            localCode = line
+        elif idx == 1 and line and line.isupper(): # will assume always on second line
+            localTitle = line 
+        elif idx == 2 and line:
+            if localTitle and localTitle.lower() in crops:
+                localTitle = ": ".join([localTitle, lines[2]])
+                
+    if localTitle: # expect this to be a new experiment, therefore reset and look out for metadata
+        if (inCultivations): #necessary in case last page finished with cultivations and now on a new experiment
+            processCultivations(fname,pageIdx)
+            cultivationsSegment = []
+        title = localTitle
+        code = localCode
+        hasMetadata = False
+            
 year = "1952"
 ofOperations = open("operations" + year + ".txt", "w+", 1)
 ofMetadata = open("metadata" + year + ".txt", "w+", 1)
 ofBasal = open("basalManuring" + year + ".txt", "w+", 1)
-fileList = os.listdir("V:\\YieldBook1952\\FullSize")
+fileList = os.listdir("D:\\yieldbooks\\" + year)
 
 fileList.sort()
 
 exclusions = ("and")
-corrections = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec","again","Ashwells","late","flowering","series","rabbit","Krilium","experiment","beet" "Majestic","Red","Plumage","earthed","potatoes" "barley","seed","autumn","ploughed", "variety", "Squareheads", "fertilizers", "applied", "nitrate", "fallow","per","acre")
-paragraphStartKeyWords = ("system", "replication","basal","manuring","area","each","plot")
 
-sectionKeywords = ("cropped plots", "fallow plots","crop sections","fallow section","green manures", "cabbages","barley", "sugar beet", "clover", "wheat", "potatoes", "rye", "ley", "globe beet", "spring cabbages", "leeks")
+# not working
+corrections = []
+with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
+    for line in infile:
+        corrections.append(line.strip())
+print (corrections)
+#corrections = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec","ammonia", "all","Little","Hoos","again","Ashwells","late","flowering","M.C.P.A", "MCPA","D.N.O.C","DNOC","13/4","Nitrochalk","grazed","grazing","Highfield","series","rabbit","Krilium","experiment","beet","Majestic","Red","Plumage","earthed","potatoes" "barley","seed","autumn","ploughed", "variety", "Squareheads", "fertilizers", "applied", "nitrate", "fallow","per","acre")
+
+
+paragraphStartKeyWords = ("system", "replication","basal","manuring","area","each","plot","cultivations")
+
+sectionKeywords = ("cropped plots", "fallow plots","crop sections","block","fallow section","green manures", "cabbages","barley", "sugar beet", "clover", "wheat", "potatoes", "rye", "ley", "globe beet", "spring cabbages", "leeks")
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
+crops = ("spring beans", "potatoes", "wheat", "barley", "lucerne", "broad beans", "spring oats", "globe beet", "sugar beet", "permanent grass")
 
-inCultivations = False
 for idx, fname in enumerate(fileList):
     
     if fname.endswith(".jpg") and idx > 3: 
         print("processing document " + str(idx) + ", " +fname)
-        print("Globals")
-        print("code: " + str(code))
-        print("title: " + str(title))
         
-        page = getPageScan("V:\\YieldBook1952\\FullSize\\" + fname)
+        page = getPageScan("D:\\yieldbooks\\" + year + "\\" + fname)
         page = re.sub(" +"," ",page).strip()
-        
-        getMetadata(page,fname,idx)
-        inCultivations = getOperations(page,inCultivations,fname,idx)
-        print("inCultivations: " + str(inCultivations))
+        getExperimentCodeAndName(page,fname,idx)
+        if inCultivations:
+            getOperations(page,fname,idx)
+        if not hasMetadata:
+            getMetadata(page,fname,idx)
         
 print('done')
 ofOperations.close()

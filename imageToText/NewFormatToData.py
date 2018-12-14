@@ -22,7 +22,7 @@ def tidyUp(messyPage):
 pageNum = 1
 outfile = open("diary2007.txt", "w+", 1)
 
-fileList = os.listdir("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\2007")
+fileList = os.listdir("D:\\yieldbooks\\1952")
 sorted(fileList)
 curEx="" # set default
 processingDiary = False
@@ -32,7 +32,7 @@ for fname in fileList:
     
     
     if fname.endswith(".jpg"): 
-        page = getPageScan("D:\\code\\python\\workspace\\YieldBookDataTools\\test data\\2007\\" + fname)
+        page = getPageScan("D:\\yieldbooks\\1952\\" + fname)
         if page:
             pageCode = getCode(page)
             print("Processing: " + str(processingDiary))

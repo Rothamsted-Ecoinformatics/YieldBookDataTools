@@ -7,9 +7,17 @@ from imageToText.YieldBookToData import enhance, getSponsors
 import pytesseract
 import re
 from pytesseract.pytesseract import Output
-
+import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+
+corrections = []
+with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
+    for line in infile:
+        corrections.append(line.strip())
+print(corrections)
+    #for row in reader:
+       # corrections.append(row)
 
 line = "Oultivations, ctc,:"
 parts = line.split(" ")
@@ -27,15 +35,15 @@ sectionKeywords = ("soction", "Barley", "Sugar beet", "Clover", "Wheat", "Potato
 paragraphStartKeyWords = ("Cultivations, etc.:", "section", "jim","bob")
 months = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 print("zug---------------")
-matched = process.extractBests("owt",months,scorer=fuzz.partial_ratio, score_cutoff=5) 
+matched = process.extractBests("owt",corrections,scorer=fuzz.partial_ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("owt",months,scorer=fuzz.ratio, score_cutoff=5) 
+matched = process.extractBests("owt",corrections,scorer=fuzz.ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("owt",months,scorer=fuzz.token_set_ratio, score_cutoff=5)
+matched = process.extractBests("owt",corrections,scorer=fuzz.token_set_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("owt",months,scorer=fuzz.token_sort_ratio, score_cutoff=5)
+matched = process.extractBests("owt",corrections,scorer=fuzz.token_sort_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("owt",months,scorer=fuzz.QRatio, score_cutoff=5)
+matched = process.extractBests("owt",corrections,scorer=fuzz.QRatio, score_cutoff=5)
 print(matched)
 print("---------------")
 
