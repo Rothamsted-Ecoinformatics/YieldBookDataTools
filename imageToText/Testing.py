@@ -19,6 +19,9 @@ print(corrections)
     #for row in reader:
        # corrections.append(row)
 
+for avg in range(0,10):
+    print(avg)
+
 line = "Oultivations, ctc,:"
 parts = line.split(" ")
 
@@ -35,15 +38,15 @@ sectionKeywords = ("soction", "Barley", "Sugar beet", "Clover", "Wheat", "Potato
 paragraphStartKeyWords = ("Cultivations, etc.:", "section", "jim","bob")
 months = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 print("zug---------------")
-matched = process.extractBests("owt",corrections,scorer=fuzz.partial_ratio, score_cutoff=5) 
+matched = process.extractBests("to",sectionKeywords,scorer=fuzz.partial_ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("owt",corrections,scorer=fuzz.ratio, score_cutoff=5) 
+matched = process.extractBests("to",sectionKeywords,scorer=fuzz.ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("owt",corrections,scorer=fuzz.token_set_ratio, score_cutoff=5)
+matched = process.extractBests("to",sectionKeywords,scorer=fuzz.token_set_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("owt",corrections,scorer=fuzz.token_sort_ratio, score_cutoff=5)
+matched = process.extractBests("to",sectionKeywords,scorer=fuzz.token_sort_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("owt",corrections,scorer=fuzz.QRatio, score_cutoff=5)
+matched = process.extractBests("to",sectionKeywords,scorer=fuzz.QRatio, score_cutoff=5)
 print(matched)
 print("---------------")
 

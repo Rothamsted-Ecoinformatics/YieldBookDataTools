@@ -12,6 +12,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 from collections import namedtuple
 import pandas as pd
+from audioop import avg
 
 cultivationsSegment = []
 code = ""
@@ -39,7 +40,8 @@ def getMetadata(page,fname,pageIdx): # should only be in here if we have no meta
     global inCultivations
     global cultivationsSegment
     section = 0 
-    
+    if inCultivations:
+        print("STILL IN CULTIVATIONS")
     for idx, p in enumerate(lines):
         if p and section >= 0:
             testLine = correctLine(p.lower())
@@ -86,11 +88,13 @@ def getMetadata(page,fname,pageIdx): # should only be in here if we have no meta
                     treatments = " ".join([treatments, p.strip()])
                 elif (section == 6):
                     basal = " ".join([basal, p.strip()])   
+        elif inCultivations:
+            cultivationsSegment.append(p)
         elif p.isupper(): #Whoa there! got another experiment on the page
             cultivationsSegment = []
             title = p
             section = 0 # need to start processing again
-
+            
 def correctLine(line):
     correctedLine = correctWords(line.split(),paragraphStartKeyWords)
     return correctedLine
@@ -124,6 +128,24 @@ def getOperations(lines,fname,pageIdx):
     global title
     global inCultivations
     crapCount = 0;
+    denom = len(lines) if len(lines) < 10 else 10;
+    for idx in range(0,denom): # this does a test on the average word length - landscape pages tend to have short word counts. Need to stop incultivations if this is the case
+        
+        words = lines[idx].split() 
+        print(words)
+        if words:
+           avg = sum(len(word) for word in words) / len(words)    
+           print(avg)
+           crapCount += avg
+        else:
+            denom -= 1
+    totavg = crapCount/denom
+    print(totavg)
+    if totavg < 4:
+        
+        inCultivations = False
+        print ("Cancelling inCultivations")   
+        
     for idx, line in enumerate(lines):
         if (inCultivations):
             if(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
@@ -138,16 +160,21 @@ def getOperations(lines,fname,pageIdx):
                     crapCount += 1;
                 else:
                     crapCount = 0
-                    
+                print(line)    
                 if(fuzz.token_set_ratio(line,"Rothamsted") > 75):
                     cultivationsSegment.append("Rothamsted")
+                    cropCount = 0
                 elif(fuzz.token_set_ratio(line,"Woburn") > 75):
                     cultivationsSegment.append("Woburn")
-                elif(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80 or fuzz.token_set_ratio(line,"Note") >= 80  or crapCount > 5):    
+                    print("In WOBURN")
+                    cropCount = 0
+                elif(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80 or fuzz.token_set_ratio(line,"Note") >= 80  or crapCount > 17):    
                     processCultivations(fname,pageIdx)
+                    cropCount = 0
                     inCultivations = False
                     print("ex cultivations")
                 else:
+                    crapCount = 0
                     cultivationsSegment.append(line)
     
 def writeJob(fname,pageIdx,sname,curDate,curOp,prevOp):
@@ -169,11 +196,13 @@ def processCultivations(fname,pageIdx):   #cultivationSections = cultivationsSeg
     subsections = {}
     subsectionText = ""
     centre=""
-    
     for line in cultivationsSegment:
         parts = re.split(r"[:.,]",line,1)
-        
-        matched = process.extractOne(parts[0],sectionKeywords,scorer=fuzz.partial_ratio,score_cutoff=85)
+        firstWord = line.split(" ",1)
+        print("IN CULTIVATIONS")
+        print(str(parts[0]))
+        matched = process.extractOne(firstWord[0],sectionKeywords,scorer=fuzz.ratio,score_cutoff=85)
+        print(matched)
         if (matched):
             if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
                 subsections[sectionName] = subsectionText
@@ -219,17 +248,18 @@ def processCultivations(fname,pageIdx):   #cultivationSections = cultivationsSeg
                     writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     testYear = False
                     expectDay = False
-                    prevOp = curOp
+                    prevOp = curOp if curOp else prevOp
+                    curOp = ""
                 elif word in months: # same operation, different date
                     writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     expectDay = True
                     testYear = False
-                    prevOp = curOp
+                    prevOp = curOp if curOp else prevOp
                     curDate = word
                 else: # new operation
                     writeJob(fname,pageIdx,sname,curDate,curOp, prevOp)
                     curDate = None
-                    prevOp = curOp
+                    prevOp = curOp if curOp else prevOp
                     curOp = word 
                     expectDay = False
                     testYear = False
@@ -274,7 +304,7 @@ def getExperimentCodeAndName(page,fname,pageIdx):
         code = localCode
         hasMetadata = False
             
-year = "1952"
+year = "1954"
 ofOperations = open("operations" + year + ".txt", "w+", 1)
 ofMetadata = open("metadata" + year + ".txt", "w+", 1)
 ofBasal = open("basalManuring" + year + ".txt", "w+", 1)
@@ -295,7 +325,26 @@ print (corrections)
 
 paragraphStartKeyWords = ("system", "replication","basal","manuring","area","each","plot","cultivations")
 
-sectionKeywords = ("cropped plots", "fallow plots","crop sections","block","fallow section","green manures", "cabbages","barley", "sugar beet", "clover", "wheat", "potatoes", "rye", "ley", "globe beet", "spring cabbages", "leeks")
+sectionKeywords = ("Great Field", "Butt Close", "Long hoos", "Little Hoos", "Stackyard", "Highfield", "Great Hill", "West Barnfield","Lansome","Deacons","Great Knott","Mill Dam Close","Sawyers","Warren",
+                   "Rothamsted", "Woburn",
+                   "cut grass", "grass",
+                   "cropped plots", "fallow plots","crop","block","green manures", "carrots",
+                    "cabbages","barley", "sugar beet", "clover", "wheat", "rye", 
+                   "Ley 1st year", "Ley 2nd year", "Ley 3rd year", 
+                   "Lucerne 1st year", "Lucerne 2nd year", "Lucerne 3rd year",
+                   "Early Potatoes", "potatoes",
+                   "1st Test Crop Wheat",
+                   "2nd Test Crop Potatoes",
+                   "3rd Test Crop Barley",
+                   "1st year Treatment Crops",
+                   "2nd year Treatment Crops",
+                   "3rd year Treatment Crops",
+                   "Grazed ley",
+                   "fruit bushes","permanent grasses","grass cover ley",
+                   "globe beet", "seed hay", 
+                   "winter wheat",
+                   "spring cabbages", "spring wheat", "spring beans"
+                   "leeks")
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 crops = ("spring beans", "potatoes", "wheat", "barley", "lucerne", "broad beans", "spring oats", "globe beet", "sugar beet", "permanent grass")
 
@@ -307,8 +356,10 @@ for idx, fname in enumerate(fileList):
         page = getPageScan("D:\\yieldbooks\\" + year + "\\" + fname)
         page = re.sub(" +"," ",page).strip()
         getExperimentCodeAndName(page,fname,idx)
+        print("TITLE: " + title)
+        print(str(inCultivations))
         if inCultivations:
-            getOperations(page,fname,idx)
+            getOperations(page.split("\n"),fname,idx)
         if not hasMetadata:
             getMetadata(page,fname,idx)
         
