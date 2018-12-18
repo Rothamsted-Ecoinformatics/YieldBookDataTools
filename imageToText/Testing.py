@@ -10,6 +10,16 @@ from pytesseract.pytesseract import Output
 import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+line = "bals  ajkas ajkskjs akjsakj EX A2"
+parts = re.split(r"[()/]",line)
+print(parts)
+cmc = re.compile(r"(.{2}/.{1})")
+cmcl = cmc.findall("blah c bla Cb/1")
+
+fname = "YieldBook1952_004"
+print(fname[9:13])
+
+print(cmcl)
 
 corrections = []
 with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
@@ -21,6 +31,10 @@ print(corrections)
 
 for avg in range(0,10):
     print(avg)
+    
+print("xxxxxxxxxxxxxx")
+
+print(re.search(r"[0-9]","1"))
 
 line = "Oultivations, ctc,:"
 parts = line.split(" ")
@@ -34,19 +48,19 @@ tString = "Oultivations, ctc,:"
 
 parts = re.split(r"[:.,]",tString,1)
 print("1 split: " + str(parts))
-sectionKeywords = ("soction", "Barley", "Sugar beet", "Clover", "Wheat", "Potatoes", "Rye")
+sectionKeywords = ("wireworm","Rothamsted","Experiments","Wheat","Long","3-Course","4-Course","6-Course","Rotation","Rotations")
 paragraphStartKeyWords = ("Cultivations, etc.:", "section", "jim","bob")
 months = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 print("zug---------------")
-matched = process.extractBests("to",sectionKeywords,scorer=fuzz.partial_ratio, score_cutoff=5) 
+matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.partial_ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("to",sectionKeywords,scorer=fuzz.ratio, score_cutoff=5) 
+matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("to",sectionKeywords,scorer=fuzz.token_set_ratio, score_cutoff=5)
+matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.token_set_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("to",sectionKeywords,scorer=fuzz.token_sort_ratio, score_cutoff=5)
+matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.token_sort_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("to",sectionKeywords,scorer=fuzz.QRatio, score_cutoff=5)
+matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.QRatio, score_cutoff=5)
 print(matched)
 print("---------------")
 

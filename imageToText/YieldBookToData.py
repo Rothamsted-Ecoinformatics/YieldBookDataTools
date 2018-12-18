@@ -10,22 +10,23 @@ import numpy as np
 import pytesseract
 import re
 from pytesseract.pytesseract import Output
-
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
 
 def enhance(fname):
     img = cv2.imread(fname)
     img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     
-    #img = cv2.medianBlur(img,3)
+    img = cv2.medianBlur(img,3)
     #img = cv2.bilateralFilter(img,3,100,100)
     
     #img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
     
     #filtered = cv2.adaptiveThreshold(img.astype(np.uint8), 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 41)
-    #kernel = np.ones((1, 1), np.uint8)
-    #opening = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-    #closing = cv2.morphologyEx(opening, cv2.MORPH_CLOSE, kernel)
+    kernel = np.ones((1, 1), np.uint8)
+    img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
+    img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
     #img = cv2.bitwise_or(img, closing)
     #kernel = np.ones((1, 1), np.uint8)
     #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
@@ -46,7 +47,7 @@ def enhance(fname):
 
 def getPageScan(pathToFile):
     img = enhance(pathToFile)
-    scan = pytesseract.image_to_string(img, lang='lat+eng', config='--dpi 300 --psm 4',nice=0,output_type=Output.DICT)
+    scan = pytesseract.image_to_string(img, lang='lat+eng', config='--dpi 300 --psm 6',nice=0,output_type=Output.DICT)
     page = scan.get("text")
     return page    
 
@@ -98,3 +99,32 @@ def getSponsors(page):
         print(sp)
     sponsors = ",".join(map(str,sponsorList))
     return sponsors
+
+def correctLine(line,spellings):
+    correctedLine = correctWords(line.split(),spellings)
+    return correctedLine
+
+# Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
+def correctWords(words,spellings):
+    #cutoffs = {3:67, 4:75, 5:80}
+    newWords = []
+    for word in words:
+        wordLen = len(word)
+        #if wordLen <= 2 or word in exclusions:
+        #    newWords.append(word)
+        #else:
+        cutOff=74
+        if wordLen == 3:
+            cutOff = 66
+        elif (wordLen == 4):
+            cutOff = 74
+        
+        #print(word)
+            
+        matched = process.extractOne(word,spellings,scorer=fuzz.token_sort_ratio,score_cutoff=cutOff)
+        #print(matched)
+        if matched:
+            newWords.append(matched[0])
+        else:
+            newWords.append(word)
+    return " ".join(newWords)

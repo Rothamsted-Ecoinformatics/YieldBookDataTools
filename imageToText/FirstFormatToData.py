@@ -10,9 +10,8 @@ import string
 import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-from collections import namedtuple
+
 import pandas as pd
-from audioop import avg
 
 cultivationsSegment = []
 code = ""
@@ -95,31 +94,9 @@ def getMetadata(page,fname,pageIdx): # should only be in here if we have no meta
             title = p
             section = 0 # need to start processing again
             
-def correctLine(line):
-    correctedLine = correctWords(line.split(),paragraphStartKeyWords)
-    return correctedLine
 
-# Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
-def correctWords(words,dictionary):
-    #cutoffs = {3:67, 4:75, 5:80}
-    newWords = []
-    for word in words:
-        wordLen = len(word)
-        if wordLen <= 2 or word in exclusions:
-            newWords.append(word)
-        else:
-            cutOff=80
-            if wordLen == 3:
-                cutOff = 66
-            elif (wordLen == 4):
-                cutOff = 74
-                
-            matched = process.extractOne(word,dictionary,scorer=fuzz.token_set_ratio,score_cutoff=cutOff)
-            if matched:
-                newWords.append(matched[0])
-            else:
-                newWords.append(word)
-    return " ".join(newWords)
+
+
     
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(lines,fname,pageIdx):
