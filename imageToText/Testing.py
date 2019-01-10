@@ -10,6 +10,12 @@ from pytesseract.pytesseract import Output
 import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+
+word = "198h"
+for c in word:
+    print(c)
+print(word[0:2])
+
 line = "bals  ajkas ajkskjs akjsakj EX A2"
 parts = re.split(r"[()/]",line)
 print(parts)
@@ -48,19 +54,19 @@ tString = "Oultivations, ctc,:"
 
 parts = re.split(r"[:.,]",tString,1)
 print("1 split: " + str(parts))
-sectionKeywords = ("wireworm","Rothamsted","Experiments","Wheat","Long","3-Course","4-Course","6-Course","Rotation","Rotations")
+sectionKeywords = ("Cultivations etc","Rothamsted","Experiments","Wheat","Long","3-Course","4-Course","6-Course","Rotation","Rotations")
 paragraphStartKeyWords = ("Cultivations, etc.:", "section", "jim","bob")
 months = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 print("zug---------------")
-matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.partial_ratio, score_cutoff=5) 
+matched = process.extractBests("Cultivations, etoc.t",sectionKeywords,scorer=fuzz.partial_ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.ratio, score_cutoff=5) 
+matched = process.extractBests("Cultivations, etoc.t",sectionKeywords,scorer=fuzz.ratio, score_cutoff=5) 
 print(matched)
-matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.token_set_ratio, score_cutoff=5)
+matched = process.extractBests("Cultivations, etoc.t",sectionKeywords,scorer=fuzz.token_set_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.token_sort_ratio, score_cutoff=5)
+matched = process.extractBests("Cultivations, etoc.t",sectionKeywords,scorer=fuzz.token_sort_ratio, score_cutoff=5)
 print(matched)
-matched = process.extractBests("jireworm",sectionKeywords,scorer=fuzz.QRatio, score_cutoff=5)
+matched = process.extractBests("Cultivations, etoc.t",sectionKeywords,scorer=fuzz.QRatio, score_cutoff=5)
 print(matched)
 print("---------------")
 

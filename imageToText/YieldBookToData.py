@@ -12,6 +12,7 @@ import re
 from pytesseract.pytesseract import Output
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+import string
 
 def enhance(fname):
     img = cv2.imread(fname)
@@ -53,7 +54,7 @@ def getPageScan(pathToFile):
 
 # Note replicated experiments will be listed together and therefore have two codes listed. convert these to comma delimited
 def getCode(page):
-    p = re.compile("[0-9]{2}\/[A-Z]\/[A-Z]{2}\/[0-9]{1,3}")
+    p = re.compile("[0-9]{2}\/[A-Z]\/[A-Z]{1,2}\/[0-9]{1,3}")
     codeList = p.findall(page)
     codes = ",".join(map(str,codeList))
     print(codes)
@@ -115,7 +116,7 @@ def correctWords(words,spellings):
         #else:
         cutOff=74
         if wordLen == 3:
-            cutOff = 66
+            cutOff = 65
         elif (wordLen == 4):
             cutOff = 74
         
@@ -124,7 +125,9 @@ def correctWords(words,spellings):
         matched = process.extractOne(word,spellings,scorer=fuzz.token_sort_ratio,score_cutoff=cutOff)
         #print(matched)
         if matched:
-            newWords.append(matched[0])
+            lastChar = word[len(word)-1]
+            comma = lastChar if(lastChar in string.punctuation) else ""
+            newWords.append(matched[0] + comma)
         else:
             newWords.append(word)
     return " ".join(newWords)
