@@ -51,16 +51,17 @@ for idx, line in enumerate(lines):
             tn = " ".join([firstPart,parts[0]])
             pesticides.append(",".join([tn,str(parts[1]),splitter]))
             firstPart = ""
-            
+            pidx+=1
         else:
-            if line[0].isupper():
+            if line[0].isupper() and len(line.split(" ")) <=3:
                 firstPart = line
             elif len(line.split(" ")) <=3:
                 print (pidx)
+                print(str(pesticides))
                 pesticides[pidx-1] = " ".join([pesticides[pidx-1],line])
             else:
                 printAlarms(line)
-        pidx+=1
+        
 for pesticide in pesticides:
     printPesticide(pesticide)
 ofPesticides.close()
