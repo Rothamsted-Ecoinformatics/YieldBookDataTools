@@ -27,12 +27,14 @@ sorted(fileList)
 curEx="" # set default
 processingDiary = False
 specialSection = ""
+year = ""
 for fname in fileList:
     print("**************\npageNum: " + str(pageNum) + "\n**************")
     
+    nyear = fname[0:4]
     
-    if fname.endswith(".jpg"): 
-        page = getPageScan("D:\\yieldbooks\\1952\\" + fname)
+    if int(nyear) >= 1992 and fname.endswith(".jpg"): 
+        page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\1991\\" + fname)
         if page:
             pageCode = getCode(page)
             print("Processing: " + str(processingDiary))

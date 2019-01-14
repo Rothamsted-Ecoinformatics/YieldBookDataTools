@@ -25,14 +25,37 @@ def looksLikeYear(word):
         if numCount >= 3 or (numCount == 2 and nword[0:2] == "19"):
             return True
     return False 
-        
-def removePunctuation(value, exclusions):
-    result = ""
-    for c in value:
-        if c in exclusions or c not in string.punctuation:
-            result += c
-    return result
+      
+def cleanDate(dirtyDate, year):
+    dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+    sDate = ""
+    eDate = ""
     
+    dates = dirtyDate.split("-")
+    if len(dates) == 1: # just one date
+        parts = dates[0].strip().split(" ")
+        if len(parts) == 2 or len(parts) == 3:
+            sDate, month = formatDate(parts[1],parts[0],year)
+        else:
+            sDate = dirtyDate    
+    elif len(dates) == 2:
+        sparts = dates[0].strip().split(" ")
+        mnth = ""
+        if len(sparts) == 2 or len(sparts) == 3:
+            sDate, mnth = formatDate(sparts[1],sparts[0],year)
+        else:
+            sDate = dirtyDate
+        
+        eparts = dates[1].strip().split(" ")
+        if len(eparts) == 1:
+            eDate,month = formatDate(eparts[0],mnth,year)
+        else:
+            if eparts[0] in months:
+                eDate,month = formatDate(eparts[1],eparts[0],year)
+            else:
+                eDate,month = formatDate(eparts[0],mnth,year)
+    return sDate,eDate
+  
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(lines):
     global cultivationsSegment
@@ -63,16 +86,16 @@ def getOperations(lines):
     if (inCultivations):
         processCultivations(expt)
     
-def writeJob(fname,pageIdx,sname,curDate,curOp,prevOp, expt):
-    cleanCurDate = removePunctuation(str(curDate), ("-"))
-    
+def writeJob(sname,opDate,curOp,prevOp,expt):
     if not curOp:   
         curOp = prevOp
     if curOp:
         cleanCurOp = tidyOp(curOp)
-        ofOperations.write("|".join([expt,year,str(sname),cleanCurDate,cleanCurOp]))
+        sDate, eDate = cleanDate(opDate,year)
+        ofOperations.write("|".join([expt,year,str(sname),str(sDate),str(eDate),cleanCurOp]))
         ofOperations.write("\n")    
-
+    
+    
 def tidyOp(line): # Trims leading and trailing punctuation
     nline = line.strip()
     
@@ -140,7 +163,9 @@ def processCultivations(experiment):   #cultivationSections = cultivationsSegmen
         
 def processSections(experiment,subsections):
     for sname, stext in subsections.items():
-        #print (stext)
+        print(sname)
+        print("=================")
+        print (stext)
         #parts = stext.split(" ") # chunk everything into words
         
         curDate = None
@@ -210,7 +235,7 @@ def processSections(experiment,subsections):
 
         
 year = ""
-ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations.txt", "w+", 1)
+ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations1952.txt", "w+", 1)
 fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk")
 fileList.sort()
 

@@ -11,6 +11,8 @@ import string
 cultivationsSegment = []
 inCultivations = False
 
+
+
 # Looks for any 4 character word and if it has at least 3 numbers assumes it is a number
 def looksLikeYear(word):
     
@@ -37,13 +39,6 @@ def looksLikeDay(word):
             return True
     return False
          
-def removePunctuation(value, exclusions):
-    result = ""
-    for c in value:
-        if c in exclusions or c not in string.punctuation:
-            result += c
-    return result
-    
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(lines):
     global cultivationsSegment
@@ -78,7 +73,8 @@ def getOperations(lines):
         processCultivations(expt)
     
 def writeJob(sname,opDate,op,expt):
-    ofOperations.write("|".join([expt,year,str(sname),opDate,op]))
+    sDate, eDate = cleanDate(opDate,year)
+    ofOperations.write("|".join([expt,year,str(sname),str(sDate),str(eDate),op]))
     ofOperations.write("\n")    
 
 def startsWithSection(line):
@@ -186,7 +182,7 @@ def processSections(experiment,subsections):
                         opDate = " ".join([opDate," - ", str(words[idx+(2+base)]), str(removePunctuation(words[idx+(3+base)],[]))])
                         base +=3
                     idx = idx+base
-                    
+                    print("opDate: " + opDate)
                     if opCount == 0:
                         flashCurOp = curOp.split(" ")
                         print(str(trimCount) + ": " + curOp)
@@ -217,7 +213,7 @@ def processSections(experiment,subsections):
             writeJob(sname,opDate,curOp,experiment)
      
 year = ""
-ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations.txt", "w+", 1)
+ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations1968.txt", "w+", 1)
 fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk")
 fileList.sort()
 
@@ -226,7 +222,34 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as
     for line in infile:
         corrections.append(line.strip())
 
-months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
+def cleanDate(dirtyDate, year):
+    dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+    sDate = ""
+    eDate = ""
+    
+    dates = dirtyDate.split("-")
+    if len(dates) == 1: # just one date
+        parts = dates[0].strip().split(" ")
+        if len(parts) == 2 or len(parts) == 3:
+            sDate, month = formatDate(parts[0],parts[1],year)
+        else:
+            sDate = dirtyDate    
+    elif len(dates) == 2:
+        month = ""
+        eparts = dates[1].strip().split(" ")
+        if len(eparts) == 2 or len(eparts) == 3:
+            eDate,month = formatDate(eparts[0],eparts[1],year)
+        else:
+            sdate = dirtyDate
+        sparts = dates[0].strip().split(" ")
+               
+        if len(sparts) == 1:
+            sDate, month = formatDate(sparts[0],month,year)
+        else:
+            sDate, month = formatDate(sparts[0],month[1],year)
+        
+    return sDate,eDate
+
 print("starting Broadbalk")
 allLines = []
 prevlines = []
@@ -234,7 +257,7 @@ for idx, fname in enumerate(fileList):
     nyear = fname[0:4]
     
     print("idx: " + str(idx) + ":  nyear = " + nyear + ", year =  " + year)
-    if int(nyear) >= 1968 and fname.endswith(".jpg"): 
+    if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
         print("processing document " + str(idx) + ", " +fname)
         page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\" + fname)
         page = re.sub(" +"," ",page).strip()
@@ -250,6 +273,7 @@ for idx, fname in enumerate(fileList):
         
         prevlines = lines
 # finalise last
+allLines = allLines + prevlines
 getOperations(allLines)
 print('done')
 ofOperations.close()
