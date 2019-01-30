@@ -68,8 +68,6 @@ def removePunctuation(value, exclusions):
             result += c
     return result
 
-
-
 def getPageScan(pathToFile):
     img = enhance(pathToFile)
     scan = pytesseract.image_to_string(img, lang='lat+eng', config='--dpi 300 --psm 6',nice=0,output_type=Output.DICT)
@@ -151,7 +149,7 @@ def correctWords(words,spellings):
         matched = process.extractOne(word,spellings,scorer=fuzz.token_sort_ratio,score_cutoff=cutOff)
         #print(matched)
         if matched:
-            lastChar = word[len(word)-1]
+            lastChar = 1 if wordLen == 1 else word[len(word)-1]
             comma = lastChar if(lastChar in string.punctuation) else ""
             newWords.append(matched[0] + comma)
         else:
