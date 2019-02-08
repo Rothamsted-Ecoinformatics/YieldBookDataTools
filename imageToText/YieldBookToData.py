@@ -13,7 +13,6 @@ from pytesseract.pytesseract import Output
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import string
-from pandas.core.datetools import day
 
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
 
@@ -137,10 +136,11 @@ def correctWords(words,spellings):
     for word in words:
         ## add test for len here - 1 char
         lastChar = ""
+        hasPunc = False            
         if len(word) > 1:
             lastChar = word[len(word)-1]
-            hasPunc = False
             if lastChar in string.punctuation:
+                #print(word + " : " + lastChar)
                 word = word[:len(word)-1]
                 hasPunc = True
         
@@ -163,5 +163,8 @@ def correctWords(words,spellings):
             else: 
                 newWords.append(matched[0])
         else:
-            newWords.append(word)
+            if hasPunc:
+                newWords.append(word+lastChar)
+            else:
+                newWords.append(word)
     return " ".join(newWords)
