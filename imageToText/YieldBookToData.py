@@ -13,6 +13,9 @@ from pytesseract.pytesseract import Output
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import string
+from pandas.core.datetools import day
+
+months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
 
 def enhance(fname):
     img = cv2.imread(fname)
@@ -46,6 +49,25 @@ def enhance(fname):
     
     return img
 
+def formatDate(day,month,year):
+    if day in months: # check day and moths right way around and if not swap.
+        tday = day
+        day = month
+        month = tday
+    d = ""
+    if month in ["Sept","Oct","Nov","Dec"]:
+        d = "-".join([day,month,str(int(year)-1)])
+    else:
+        d = "-".join([day,month,year])
+    return d, month
+
+def removePunctuation(value, exclusions):
+    result = ""
+    for c in value:
+        if c in exclusions or c not in string.punctuation:
+            result += c
+    return result
+
 def getPageScan(pathToFile):
     img = enhance(pathToFile)
     scan = pytesseract.image_to_string(img, lang='lat+eng', config='--dpi 300 --psm 6',nice=0,output_type=Output.DICT)
@@ -69,14 +91,16 @@ def getOperationCode(job):
         job = job[codeMatch.end():].strip()
     return code, job
     
-def getJobDate(job):
+def checkJobDate(line):
     p = re.compile("[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
-    dateMatch = p.search(job)
+    dateMatch = p.search(line)
     date = None
+    isDate = False
     if (dateMatch):
         date = dateMatch.group(0)
-        job = job[dateMatch.end():].strip()
-    return date, job
+        line = line[dateMatch.end():].strip()
+        isDate = True
+    return isDate, date, line
 
 def getRateUnitsJob(job):
     rateMatch = re.search(r"[0-9]{1,3}\.[0-9]{2}", job)
@@ -108,26 +132,36 @@ def correctLine(line,spellings):
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(words,spellings):
     #cutoffs = {3:67, 4:75, 5:80}
+    print(spellings)
     newWords = []
     for word in words:
+        ## add test for len here - 1 char
+        lastChar = ""
+        if len(word) > 1:
+            lastChar = word[len(word)-1]
+            hasPunc = False
+            if lastChar in string.punctuation:
+                word = word[:len(word)-1]
+                hasPunc = True
+        
         wordLen = len(word)
         #if wordLen <= 2 or word in exclusions:
         #    newWords.append(word)
         #else:
-        cutOff=74
+        cutOff=70
         if wordLen == 3:
             cutOff = 65
         elif (wordLen == 4):
-            cutOff = 74
+            cutOff = 79
+        #print(":" + word + ":")
         
-        #print(word)
-            
-        matched = process.extractOne(word,spellings,scorer=fuzz.token_sort_ratio,score_cutoff=cutOff)
+        matched = process.extractOne(word,spellings,scorer=fuzz.ratio,score_cutoff=cutOff)
         #print(matched)
-        if matched:
-            lastChar = word[len(word)-1]
-            comma = lastChar if(lastChar in string.punctuation) else ""
-            newWords.append(matched[0] + comma)
+        if matched and wordLen > 2:
+            if hasPunc:
+                newWords.append(matched[0]+lastChar)
+            else: 
+                newWords.append(matched[0])
         else:
             newWords.append(word)
     return " ".join(newWords)

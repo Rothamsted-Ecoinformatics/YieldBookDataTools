@@ -13,6 +13,30 @@ code = ""
 title = ""
 hasMetadata = False
 inCultivations = False
+year = None
+outfile = None
+sectionStarts = ()
+sectionNames = ()
+experiment = None
+corrections = []
+    
+with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
+    for line in infile:
+        corrections.append(line.strip())
+
+months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
+
+def globals(poutfile,psectionNames, psectionStarts,pexperiment):   
+    global outfile
+    global sectionNames
+    global sectionStarts
+    global experiment
+    outfile = poutfile
+    sectionNames = psectionNames
+    sectionStarts = psectionStarts
+    experiment = pexperiment
+    
+    print(sectionNames)
 
 # Looks for any 4 character word and if it has at least 3 numbers assumes it is a number
 def looksLikeYear(word):
@@ -59,16 +83,10 @@ def cleanDate(dirtyDate, year):
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(lines):
     global cultivationsSegment
-    global inCultivations
-    expt = "Broadbalk"    
+    global inCultivations 
     for line in lines:
         print(line)
-        if (fuzz.token_set_ratio(line,"Broadbalk Wilderness") >= 80):
-            processCultivations(expt)
-            expt = "Broadbalk Wilderness"
-            cultivationsSegment.clear()
-        elif(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
-            
+        if(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
             cultivationsSegment.clear()
             inCultivations = True
             parts = line.split(" ")
@@ -77,23 +95,26 @@ def getOperations(lines):
                 cultivationsSegment.append(line)
         elif(inCultivations):
             # Need to do something with notes    
-            if(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80):    
-                processCultivations(expt)
+            if(fuzz.ratio(line.lower(),"summary of Results") > 80 or fuzz.ratio(line.lower(),"standard errors") > 80):    
+                processCultivations()
                 inCultivations = False
                 print("ex cultivations")
             else:
                 cultivationsSegment.append(line)
     if (inCultivations):
-        processCultivations(expt)
+        processCultivations()
     
-def writeJob(sname,opDate,curOp,prevOp,expt):
+def writeJob(sname,opDate,curOp,prevOp):
+    global outfile
+    global experiment
+    global year
     if not curOp:   
         curOp = prevOp
     if curOp:
         cleanCurOp = tidyOp(curOp)
         sDate, eDate = cleanDate(opDate,year)
-        ofOperations.write("|".join([expt,year,str(sname),str(sDate),str(eDate),cleanCurOp]))
-        ofOperations.write("\n")    
+        outfile.write("|".join([str(experiment),str(year),str(sname),str(sDate),str(eDate),cleanCurOp]))
+        outfile.write("\n")    
     
     
 def tidyOp(line): # Trims leading and trailing punctuation
@@ -109,13 +130,48 @@ def tidyOp(line): # Trims leading and trailing punctuation
     return nline
 
 def startsWithSection(line):
-    sectionNames = ("crop sections","cropped sections", "all sections", "fallow sections", "fallow section", "potatoes", "spring beans", "winter wheat", "fallow", "w wheat", "w. wheat", "broadbalk wilderness", "grazed meadow", "ungrazed meadow", "woodland")
-    lline = line.lower()
-    for name in sectionNames:
-        if lline.startswith(name):
-            return name, line[len(name):]
+    global sectionNames
+    #lline = line.lower()
+    #for name in sectionNames:
+    #    if lline.startswith(name):
+    #        return name, line[len(name):]
+    #return None,None
+    #print ("sectionNames: " + str(sectionNames))
+    print(" line : "  + line)
+    tline = removePunctuation(line,[]).strip()
+    print(" tline : "  + tline)
+    if tline and tline.find(" ") > -1:
+        startParts = tline.split(" ",2)
+        print("startParts: " + str(startParts))
+        matchedStart = process.extractOne(str(startParts[0]),sectionStarts,scorer=fuzz.token_set_ratio,score_cutoff=65)
+        print(str(matchedStart) + " :|: " + str(startParts[0]))
+        if startParts[0] in sectionStarts or matchedStart:
+            ok=True
+            if (matchedStart[0] == "seed" or matchedStart[0] == "seed") and not process.extractOne(startParts[1],"hay",scorer=fuzz.token_set_ratio,score_cutoff=90):
+                ok = False
+            if ok:
+                matched = process.extractOne(line,sectionNames,scorer=fuzz.token_set_ratio,score_cutoff=40)
+                print("match: " + str(matched) + " |:| " + line)
+                if matched:
+                    print(matched[0] + " " +  str(len(matched[0])))
+                    line = line[len(matched[0]):]
+                    print (line)
+                    return matched[0],line
+    #        else: 
+    #        return None,None
+    #else:
     return None,None
 
+def startsWithBlock(line):
+    lline = line.lower()
+    if (fuzz.token_set_ratio(lline,"block") >= 75):
+        blockParts = line.split(" ",2)
+        block = " ".join([blockParts[0],blockParts[1]])
+        line = blockParts[2]
+        return block, line
+    else:
+        return None,None        
+    
 def toCorrectedLines(page):
     print (page)
     lines = page.split("\n")
@@ -123,32 +179,45 @@ def toCorrectedLines(page):
     for line in lines:
         rawwords = line.split(" ") # chunk everything into words
         corrected = correctWords(rawwords,corrections)
-        print(corrected)
+        #print(corrected)
         cleanwords = corrected.split(" ")
         words = list(filter(None,cleanwords))
-        print("words: " + str(words))
+        #print("words: " + str(words))
         cleanLine = " ".join(words)
-        print("cleanLine: " + cleanLine)
+        #print("cleanLine: " + cleanLine)
         cleanLines.append(cleanLine)
     return cleanLines
         
 #this method is about subsectioning the cultivations then writing them             
-def processCultivations(experiment):   #cultivationSections = cultivationsSegment.split("\n\n")
+def processCultivations():   #cultivationSections = cultivationsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
     #print("cultivation sections = " + str(len(cultivationSections)))
     sectionName = ""
+    blockName = ""
     subsections = {}
     subsectionText = ""
     for line in cultivationsSegment:
         line = line.replace(" and ",", ")
+        print(line)
+        newBlock, newLine = startsWithBlock(line)
+        print(newBlock)
+        if newBlock:
+            blockName = newBlock
+            line = newLine.strip()
+            print(" NEW BLOCK: " + blockName + " ||| " + newLine)
+        newSection = None
+        newLine = None
+        if (line):
+            newSection, newLine = startsWithSection(line) 
         
-        newSection, newLine = startsWithSection(line) 
-        if (newSection):
-            if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
+        print("newSection: " + str(newSection))
+        if newSection:
+            if sectionName: # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
                 subsections[sectionName] = subsectionText
             subsectionText = "" #set up the new section text
-            sectionName = newSection
+            print(" NEW SECTION: " + blockName + " " + newSection)
+            sectionName = " ".join([blockName,newSection])
             line = newLine
         
         if (len(line) > 1):
@@ -159,9 +228,9 @@ def processCultivations(experiment):   #cultivationSections = cultivationsSegmen
     
     # Now process the subsections:
     print("WRITING JOBS:")
-    processSections(experiment,subsections)
+    processSections(subsections)
         
-def processSections(experiment,subsections):
+def processSections(subsections):
     for sname, stext in subsections.items():
         print(sname)
         print("=================")
@@ -191,19 +260,19 @@ def processSections(experiment,subsections):
                 elif looksLikeYear(word):
                     #curDate = " ".join([str(curDate),str(yearMatch.group(0))])
                     curDate = " ".join([str(curDate),str(word)])
-                    writeJob(sname,curDate,curOp, prevOp, experiment)
+                    writeJob(sname,curDate,curOp, prevOp)
                     testYear = False
                     expectDay = False
                     prevOp = curOp if curOp else prevOp
                     curOp = ""
                 elif word in months: # same operation, different date
-                    writeJob(sname,curDate,curOp, prevOp, experiment)
+                    writeJob(sname,curDate,curOp, prevOp)
                     expectDay = True
                     testYear = False
                     prevOp = curOp if curOp else prevOp
                     curDate = word
                 else: # new operation
-                    writeJob(sname,curDate,curOp, prevOp, experiment)
+                    writeJob(sname,curDate,curOp, prevOp)
                     curDate = None
                     prevOp = curOp if curOp else prevOp
                     curOp = word 
@@ -231,32 +300,26 @@ def processSections(experiment,subsections):
                 testYear = False
                 curOp = " ".join([curOp,word])
         if curDate != "None":
-            writeJob(sname,curDate,curOp, prevOp, experiment)
+            writeJob(sname,curDate,curOp, prevOp)
 
-        
-year = ""
-ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations1952.txt", "w+", 1)
-fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk")
-fileList.sort()
-
-corrections = []
-with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
-    for line in infile:
-        corrections.append(line.strip())
-
-months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
-print("starting Broadbalk")
-for idx, fname in enumerate(fileList):
-    nyear = fname[0:4]
-    if int(nyear) < 1968 and fname.endswith(".jpg"): 
-        print("processing document " + str(idx) + ", " +fname)
-        
-        inCultivations = True if (nyear == year) else False
-        year = nyear
-        page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\" + fname)
-        page = re.sub(" +"," ",page).strip()
-        lines = toCorrectedLines(page)        
-        getOperations(lines)
-        
-print('done')
-ofOperations.close()
+def loopDocs(dir):
+    global year
+    year = ""
+    fileList = os.listdir(dir)
+    fileList.sort()
+    
+    for idx, fname in enumerate(fileList):
+        nyear = fname[0:4]
+        if int(nyear) < 1968 and fname.endswith(".jpg"):
+             
+            print("processing document " + str(idx) + ", " +fname)
+            
+            inCultivations = True if (nyear == year) else False
+            year = nyear
+            page = getPageScan(dir + "\\" + fname)
+            page = re.sub(" +"," ",page).strip()
+            lines = toCorrectedLines(page)        
+            getOperations(lines)
+            
+    print('done')
+    outfile.close()
