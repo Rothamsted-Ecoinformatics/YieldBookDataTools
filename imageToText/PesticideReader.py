@@ -61,6 +61,7 @@ for idx, line in enumerate(lines):
                 pesticides[pidx-1] = " ".join([pesticides[pidx-1],line])
             else:
                 printAlarms(line)
+                firstPart = ""
         
 for pesticide in pesticides:
     printPesticide(pesticide)
