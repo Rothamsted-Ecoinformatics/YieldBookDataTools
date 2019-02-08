@@ -14,7 +14,7 @@ print("starting Broadbalk 2001")
 #global sectionNames
 #sectionStarts= ("ley","lucerne","rye","hay","barley","sugar","potatoes","spring","sainfoin","seeds","carrots","turnips","seed","clover","winter","grass","fallow","oats","s","w")
 sectionNames = ("winter wheat","woats","fallow section 8","winter oats","maize","fallows","sections","s wheat","s oats","all sections", "w wheat", "w oats", "forage maize", "wilderness")
-outfile = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\Broadbalk2001.txt", "w+", 1)
+outfile = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\Broadbalk2003-6.txt", "w+", 1)
 globals(outfile,"Broadbalk",sectionNames)
 loopDocs("D:\\work\\yieldbooks\\broadbalk\\")
 print('done')

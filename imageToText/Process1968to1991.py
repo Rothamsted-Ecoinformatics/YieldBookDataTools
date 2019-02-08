@@ -14,6 +14,7 @@ year = None
 outfile = None
 sectionStarts = ()
 sectionNames = ()
+sectionStops = ()
 experiment = None
 corrections = []
     
@@ -23,14 +24,16 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as
 
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 
-def globals(poutfile,psectionNames, psectionStarts,pexperiment):   
+def globals(poutfile,psectionNames, psectionStarts,psectionStops,pexperiment):   
     global outfile
     global sectionNames
     global sectionStarts
+    global sectionStops
     global experiment
     outfile = poutfile
     sectionNames = psectionNames
     sectionStarts = psectionStarts
+    sectionStops = psectionStops
     experiment = pexperiment
 
 # Looks for any 4 character word and if it has at least 3 numbers assumes it is a number
@@ -59,15 +62,23 @@ def looksLikeDay(word):
             return True
     return False
          
+def isStop(line):
+    for stopper in sectionStops:
+        if fuzz.ratio(line,stopper) > 80:
+            print("STOPPED with " + stopper)
+            return True
+    return False
+
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(lines):
     global cultivationsSegment
     global inCultivations
+    inCultivations = False# must be false because starting a new year ?
     for line in lines:
         print(line)
         if(inCultivations):
             # Need to do something with notes    
-            if(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80):    
+            if isStop(line):    
                 processCultivations()
                 inCultivations = False
                 print("ex cultivations")
@@ -81,12 +92,10 @@ def getOperations(lines):
             if (len(parts) >2):
                 line = " ".join(parts[2:])
                 cultivationsSegment.append(line)
-    if (inCultivations):
+    if (inCultivations): # Should be processing cultivations at end of page
         processCultivations()
     
 def writeJob(sname,opDate,op):
-    #global outfile
-    #global experiment
     global year
     sDate, eDate = cleanDate(opDate,year)
     outfile.write("|".join([experiment,year,str(sname),str(sDate),str(eDate),op]))
@@ -120,9 +129,11 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
     #print("cultivation sections = " + str(len(cultivationSections)))
+    global cultivationsSegment
     sectionName = ""
     subsections = {}
     subsectionText = ""
+    
     print ("processing for: " + experiment)
     for line in cultivationsSegment:
         line = line.replace(" and ",", ")
@@ -143,6 +154,8 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
     
     # Now process the subsections:
     processSections(subsections)
+    #cultivationsSegment = []
+    #subsections = None
 
 def filterPunctuation(rawword):
     if rawword in ["-","~","="]:
@@ -260,6 +273,7 @@ def loopDocs(dir):
     allLines = []
     prevlines = []
     global year
+    global inCultivations
     year = ""
     fileList = os.listdir(dir)
     fileList.sort()
@@ -269,19 +283,20 @@ def loopDocs(dir):
         
         print("idx: " + str(idx) + ":  nyear = " + nyear + ", year =  " + year)
         if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
-            print("processing document " + str(idx) + ", " +fname)
-            page = getPageScan(dir + "\\" + fname)
-            page = re.sub(" +"," ",page).strip()
-            lines = toCorrectedLines(page)  
+              
             allLines = allLines + prevlines
-            print("lines size " + str(len(lines)))
-            print("allLines size " + str(len(allLines)))
             if nyear != year:
+                print("NEW YEAR - process Y"+year)
                 getOperations(allLines)
                 cultivationsSegment = []
+                #inCultivations = False
                 year = nyear
                 allLines = []
+            print("processing document " + str(idx) + ", " +fname)
             
+            page = getPageScan(dir + "\\" + fname)
+            page = re.sub(" +"," ",page).strip()
+            lines = toCorrectedLines(page)
             prevlines = lines
     # finalise last
     allLines = allLines + prevlines

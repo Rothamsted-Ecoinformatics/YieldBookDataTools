@@ -95,7 +95,7 @@ def getOperations(lines):
                 cultivationsSegment.append(line)
         elif(inCultivations):
             # Need to do something with notes    
-            if(fuzz.ratio(line,"Summary of Results") > 80 or fuzz.ratio(line,"Standard errors") > 80):    
+            if(fuzz.ratio(line.lower(),"summary of Results") > 80 or fuzz.ratio(line.lower(),"standard errors") > 80):    
                 processCultivations()
                 inCultivations = False
                 print("ex cultivations")

@@ -213,7 +213,7 @@ def processSections(experiment,subsections):
             writeJob(sname,opDate,curOp,experiment)
      
 year = ""
-ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations1968.txt", "w+", 1)
+ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations2001-2.txt", "w+", 1)
 fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk")
 fileList.sort()
 
@@ -257,7 +257,7 @@ for idx, fname in enumerate(fileList):
     nyear = fname[0:4]
     
     print("idx: " + str(idx) + ":  nyear = " + nyear + ", year =  " + year)
-    if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
+    if int(nyear) >= 2001 and int(nyear) <= 2002 and fname.endswith(".jpg"): 
         print("processing document " + str(idx) + ", " +fname)
         page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\" + fname)
         page = re.sub(" +"," ",page).strip()

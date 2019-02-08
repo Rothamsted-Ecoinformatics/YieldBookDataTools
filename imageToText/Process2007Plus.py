@@ -41,6 +41,7 @@ def globals(poutfile,pexperiment,pSections):
     global sectionNames
     outfile = poutfile
     experiment = pexperiment
+    print(experiment)
     sectionNames = pSections
 
 def tidyUp(messyPage):
@@ -52,7 +53,7 @@ def tidyUp(messyPage):
 def printJobs(jobs):
     
     for job in jobs:
-        outfile.write("|".join([experiment,str(year),str(job.date),str(job.jobType),str(job.section),str(job.description),str(job.rate),str(job.rateUnit)]))
+        outfile.write("|".join([str(experiment),str(year),str(job.date),str(job.jobType),str(job.section),str(job.description),str(job.rate),str(job.rateUnit)]))
         outfile.write("\n")
 
 def checkForSection(line):
@@ -83,7 +84,7 @@ def loopDocs(dir):
     curJob = None
     for fname in fileList:
         nyear = fname[0:4]
-        if int(nyear) > 2000 and fname.endswith(".jpg"): 
+        if int(nyear) >= 2007 and fname.endswith(".jpg"): 
             page = getPageScan(dir + "\\" + fname)
             if nyear != year:
                 printJobs(jobs)
@@ -114,6 +115,10 @@ def loopDocs(dir):
                     else:
                         parts = line.split(" ")
                         dateMatch = re.search("\d{1,2}[-|\/][\w\d]+[-|\/]\d{2,4}",parts[0])
+                        #isMix = False # Not going to worry about this as only affects  2012/13
+                        #if line.find("@") > -1: # this is a bit tedious, ideally want to get each in as a new row
+                        #    isMix = True
+                        
                         if dateMatch:
                             if curJob:
                                 jobs.append(curJob)
@@ -125,8 +130,11 @@ def loopDocs(dir):
                                 curJob.jobType = tjobtype[0]
                             else:
                                 curJob.jobType = "x"
-                            curJob = testLast(curJob,parts[2:])
+                            curJob = testLast(curJob,parts[2:]) #2 for 2007+
+                            #curJob.description = " ".join(parts[1:]) # for 2003-6
                             curJob.section = section        
+                        #elif isMix:
+                            
                         elif len(parts[0]) <=2 and parts[0][0] in ("a","s","p","f"):
                             print("++++++++++++++")
                             if curJob:

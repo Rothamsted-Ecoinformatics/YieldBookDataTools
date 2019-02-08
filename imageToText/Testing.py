@@ -3,7 +3,7 @@ Created on 3 Dec 2018
 
 @author: ostlerr
 '''
-from imageToText.YieldBookToData import enhance, getSponsors
+from imageToText.YieldBookToData import enhance, getSponsors, correctWords
 import pytesseract
 import re
 from pytesseract.pytesseract import Output
@@ -20,6 +20,8 @@ def formatDate(day,month,year):
     else:
         d = "-".join([day,month,year])
     return d, month
+
+
 
 def cleanDate(dirtyDate, year):
     sDate = ""
@@ -85,10 +87,16 @@ print(fname[9:13])
 print(cmcl)
 
 corrections = []
-with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
+with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\basalCorrections.csv", 'r') as infile:
     for line in infile:
         corrections.append(line.strip())
 print(corrections)
+
+
+rawwords = "Besal applications: manures: 88 kg N as 'Witro-Chslk' combine drilled,".split(" ") # chunk everything into words
+corrected = correctWords(rawwords,corrections)
+print(corrected)
+
     #for row in reader:
        # corrections.append(row)
 
@@ -111,9 +119,9 @@ tString = "Oultivations, ctc,:"
 
 parts = re.split(r"[:.,]",tString,1)
 print("1 split: " + str(parts))
-sectionKeywords = ("ley","rye","hay")#("ley - first year", "ley - second year","lucerne - first year","lucerne - second year", "potatoes","rye","barley","ley - third year", "hay", "sugar beet")
+sectionKeywords = corrections# ("ley","rye","hay")#("ley - first year", "ley - second year","lucerne - first year","lucerne - second year", "potatoes","rye","barley","ley - third year", "hay", "sugar beet")
 paragraphStartKeyWords = ("Cultivations, etc.:", "section", "jim","bob")
-line = "ley" #"ley - third year grazed by sheep 6 circuits  May 19"
+line = "Besal" #"ley - third year grazed by sheep 6 circuits  May 19"
 months = ("cwt","Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 print("zug---------------")
 matched = process.extractOne(line,sectionKeywords,scorer=fuzz.token_set_ratio,score_cutoff=50)

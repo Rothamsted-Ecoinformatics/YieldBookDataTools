@@ -51,8 +51,8 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as
         corrections.append(line.strip())
 
 pageNum = 1
-ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations1992.txt", "w+", 1)
-fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk\\1992")
+ofOperations = open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\BroadbalkOperations2001-2.txt", "w+", 1)
+fileList = os.listdir("D:\\work\\yieldbooks\\Broadbalk")
 sorted(fileList)
 curEx="" # set default
 processingDiary = False
@@ -68,9 +68,9 @@ for fname in fileList:
     curOpType = ""
     doneWheat = False
     processingDiary = False
-    if int(nyear) >= 1992 and fname.endswith(".jpg"): 
+    if int(nyear) >= 2001 and int(nyear) <= 2002 and fname.endswith(".jpg"): 
         year = nyear
-        page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\1992\\" + fname)
+        page = getPageScan("D:\\work\\yieldbooks\\Broadbalk\\" + fname)
         page = re.sub(" +"," ",page).strip()
         lines = toCorrectedLines(page)
         

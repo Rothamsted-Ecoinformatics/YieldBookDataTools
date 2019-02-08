@@ -13,7 +13,7 @@ from imageToText.YieldBookToData import *
 
 year = None
 outfile = None
-sectionStarts = ()
+#sectionStarts = ()
 sectionNames = ()
 experiment = None
 corrections = []
@@ -24,6 +24,16 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as
         corrections.append(line.strip())
 
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
+
+def globals(poutfile,psectionNames,pexperiment):   
+    global outfile
+    global sectionNames
+ #   global sectionStarts
+    global experiment
+    outfile = poutfile
+    sectionNames = psectionNames
+  #  sectionStarts = psectionStarts
+    experiment = pexperiment
 
 def tidyUp(messyPage):
     messyPage = messyPage.replace("\n\n","\n")
@@ -52,11 +62,13 @@ def checkForSection(line):
     return False, None
 
 def writeJob(sname,curOpDate,curOp,curOpType):
+    global year
     if len(curOp) > 1:
-        outfile.write("|".join([experiment,year,str(sname),curOpDate,curOp,curOpType]))
+        outfile.write("|".join([str(experiment),str(year),str(sname),str(curOpDate),str(curOp),curOpType]))
         outfile.write("\n")
 
 def loopDocs(dir):
+    global year
     fileList = os.listdir(dir)
     fileList.sort()
     processingDiary = False
@@ -67,7 +79,7 @@ def loopDocs(dir):
         curOpDate = ""
         curOpType = ""
         processingDiary = False
-        if int(nyear) >= 1992 and fname.endswith(".jpg"): 
+        if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
             year = nyear
             page = getPageScan(dir + "\\" + fname)
             page = re.sub(" +"," ",page).strip()
@@ -87,10 +99,15 @@ def loopDocs(dir):
                         if job.startswith("Note:"):
                             processingDiary = False
                         elif isDate:
-                            writeJob(sname,year,curOpDate,curOp,curOpType)
+                            writeJob(sname,curOpDate,curOp,curOpType)
                             opDate = opDate.strip()
-                            if opDate.endswith("00"):
-                                curOpDate = opDate.replace("00","2000")
+                            dateParts = opDate.split("-")
+                            if len(dateParts) == 3:
+                                if dateParts[2][0] == "0":
+                                    dateParts[2] = "20" + dateParts[2]
+                                else:
+                                    dateParts[2] = "19" + dateParts[2]
+                                curOpDate = "-".join(dateParts)
                             else: 
                                 curOpDate = opDate[:7] + "19" + opDate[7:]
                             parts = job.split(" ",3)
@@ -103,4 +120,4 @@ def loopDocs(dir):
                         else:
                             curOp = " ".join([curOp,job])
                        
-            writeJob(curOpDate,curOp,curOpType)
+            writeJob(sname,curOpDate,curOp,curOpType)

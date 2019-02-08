@@ -132,26 +132,36 @@ def correctLine(line,spellings):
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(words,spellings):
     #cutoffs = {3:67, 4:75, 5:80}
+    print(spellings)
     newWords = []
     for word in words:
+        ## add test for len here - 1 char
+        lastChar = ""
+        if len(word) > 1:
+            lastChar = word[len(word)-1]
+            hasPunc = False
+            if lastChar in string.punctuation:
+                word = word[:len(word)-1]
+                hasPunc = True
+        
         wordLen = len(word)
         #if wordLen <= 2 or word in exclusions:
         #    newWords.append(word)
         #else:
-        cutOff=74
+        cutOff=70
         if wordLen == 3:
             cutOff = 65
         elif (wordLen == 4):
-            cutOff = 74
+            cutOff = 79
+        #print(":" + word + ":")
         
-        #print(word)
-            
-        matched = process.extractOne(word,spellings,scorer=fuzz.token_sort_ratio,score_cutoff=cutOff)
+        matched = process.extractOne(word,spellings,scorer=fuzz.ratio,score_cutoff=cutOff)
         #print(matched)
-        if matched:
-            lastChar = 1 if wordLen == 1 else word[len(word)-1]
-            comma = lastChar if(lastChar in string.punctuation) else ""
-            newWords.append(matched[0] + comma)
+        if matched and wordLen > 2:
+            if hasPunc:
+                newWords.append(matched[0]+lastChar)
+            else: 
+                newWords.append(matched[0])
         else:
             newWords.append(word)
     return " ".join(newWords)
