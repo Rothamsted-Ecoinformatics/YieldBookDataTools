@@ -10,7 +10,7 @@ These documents only cover the Classicals and other long-terms, main concern is 
 import os
 from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import * 
-import re
+import configparser
 
 outfile = None
 sectionStarts = ()
@@ -35,14 +35,14 @@ class job():
 
 #months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 
-def globals(poutfile,pexperiment,pSections):   
-    global outfile
-    global experiment
-    global sectionNames
-    outfile = poutfile
-    experiment = pexperiment
-    print(experiment)
-    sectionNames = pSections
+# def globals(poutfile,pexperiment,pSections):   
+#     global outfile
+#     global experiment
+#     global sectionNames
+#     outfile = poutfile
+#     experiment = pexperiment
+#     print(experiment)
+#     sectionNames = pSections
 
 def tidyUp(messyPage):
     messyPage = messyPage.replace("\n\n","\n")
@@ -75,9 +75,9 @@ def testLast(job, parts):
         job.description = " ".join(parts)
     return job    
 
-def loopDocs(dir):
+def loopDocs():
     global year
-    fileList = os.listdir(dir)
+    fileList = os.listdir(srcdocs)
     sorted(fileList)
     jobs = []
     section = ""
@@ -85,7 +85,7 @@ def loopDocs(dir):
     for fname in fileList:
         nyear = fname[0:4]
         if int(nyear) >= 2007 and fname.endswith(".jpg"): 
-            page = getPageScan(dir + "\\" + fname)
+            page = getPageScan(srcdocs + "\\" + fname)
             if nyear != year:
                 printJobs(jobs)
                 jobs = []
@@ -150,4 +150,13 @@ def loopDocs(dir):
     if curJob:
         jobs.append(curJob)
     printJobs(jobs)                        
-print('done')
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+experiment = config['EXPERIMENT']['name']
+outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
+srcdocs = config['EXPERIMENT']['srcdocs']
+strSections = config['EXPERIMENT']['sections']
+sectionsNames = strSections.split(",")
+loopDocs()
+print("done")

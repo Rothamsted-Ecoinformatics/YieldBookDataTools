@@ -135,6 +135,10 @@ def correctWords(words,spellings):
     newWords = []
     for word in words:
         ## add test for len here - 1 char
+        if word.find("\n") > -1:
+            print("[" + str(word) + "]")
+            print (str(newWords))
+        word = word.strip()
         lastChar = ""
         hasPunc = False            
         if len(word) > 1:
@@ -167,4 +171,5 @@ def correctWords(words,spellings):
                 newWords.append(word+lastChar)
             else:
                 newWords.append(word)
+                
     return " ".join(newWords)

@@ -317,4 +317,6 @@ config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
+#strSections = config['EXPERIMENT']['sections']
+#sectionsNames = strSections.split(",")
 loopDocs()

@@ -10,6 +10,7 @@ These documents only cover the Classicals and other long-terms, main concern is 
 import os
 from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
+import configparser
 
 year = None
 outfile = None
@@ -25,15 +26,15 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as
 
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
 
-def globals(poutfile,psectionNames,pexperiment):   
-    global outfile
-    global sectionNames
+#def globals(poutfile,psectionNames,pexperiment):   
+    #global outfile
+    #global sectionNames
  #   global sectionStarts
-    global experiment
-    outfile = poutfile
-    sectionNames = psectionNames
+   # global experiment
+  #  outfile = poutfile
+ #   sectionNames = psectionNames
   #  sectionStarts = psectionStarts
-    experiment = pexperiment
+#    experiment = pexperiment
 
 def tidyUp(messyPage):
     messyPage = messyPage.replace("\n\n","\n")
@@ -67,9 +68,9 @@ def writeJob(sname,curOpDate,curOp,curOpType):
         outfile.write("|".join([str(experiment),str(year),str(sname),str(curOpDate),str(curOp),curOpType]))
         outfile.write("\n")
 
-def loopDocs(dir):
+def loopDocs():
     global year
-    fileList = os.listdir(dir)
+    fileList = os.listdir(srcdocs)
     fileList.sort()
     processingDiary = False
     for fname in fileList:
@@ -81,7 +82,7 @@ def loopDocs(dir):
         processingDiary = False
         if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
             year = nyear
-            page = getPageScan(dir + "\\" + fname)
+            page = getPageScan(srcdocs + "\\" + fname)
             page = re.sub(" +"," ",page).strip()
             lines = toCorrectedLines(page)
             
@@ -121,3 +122,12 @@ def loopDocs(dir):
                             curOp = " ".join([curOp,job])
                        
             writeJob(sname,curOpDate,curOp,curOpType)
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+experiment = config['EXPERIMENT']['name']
+outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
+srcdocs = config['EXPERIMENT']['srcdocs']
+strSections = config['EXPERIMENT']['sections']
+sectionsNames = strSections.split(",")
+loopDocs()

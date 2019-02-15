@@ -15,7 +15,7 @@ def loopDocs():
     fileList.sort()
     corrections = []
     
-    with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\seedCorrections.csv", 'r') as infile:
+    with open("D:\\Work\\rothamsted-ecoinformatics\\YieldbookDatasetDrafts\\seedCorrections.csv", 'r') as infile:
         for line in infile:
             corrections.append(line.strip())
     
@@ -40,19 +40,12 @@ def loopDocs():
                 
             print(data)
             if data:
-                #page = page.replace("\n"," ").strip()
-                
-                #print(page.find(":"))
-                #if page.find(":") == -1: # Only one crop
-                #    outfile.write(experiment + "|" + str(nyear) + "|" + page) 
-                #    outfile.write("\n")
-                #else:
                 words = page.split(" ")
                 cropSection = None
                 curinfo = ""
                 for idx, word in enumerate(words):
                     testWord = removePunctuation(word.lower(),[])
-                    if testWord in ["potatoes","wheat","beans","wheats"]:
+                    if testWord in ["potatoes","wheat","beans","wheats","barley"]:
                         print ("found: " + testWord)
                         #test the previous word - This will be handy for standard applications
                         if idx > 0:
@@ -70,10 +63,6 @@ def loopDocs():
                     print(str(cropSection) + ": " + str(curinfo))
                 outfile.write(experiment + "|" + str(nyear) + "|" + str(cropSection) + "|" + curinfo) 
                 outfile.write("\n")        
-                #i = 0
-                    #while i < lenCrops-1:
-                    #    
-                    #    i+=2
                 
 config = configparser.ConfigParser()
 config.read('config.ini')

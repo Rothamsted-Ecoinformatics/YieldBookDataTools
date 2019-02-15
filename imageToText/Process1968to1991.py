@@ -7,6 +7,7 @@ import os
 from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
 import string
+import configparser
 
 cultivationsSegment = []
 inCultivations = False
@@ -15,7 +16,6 @@ outfile = None
 sectionStarts = ()
 sectionNames = ()
 sectionStops = ()
-experiment = None
 corrections = []
     
 with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
@@ -268,14 +268,14 @@ def cleanDate(dirtyDate, year):
         
     return sDate,eDate
 
-def loopDocs(dir):
+def loopDocs():
     print("starting " + experiment)
     allLines = []
     prevlines = []
     global year
     global inCultivations
     year = ""
-    fileList = os.listdir(dir)
+    fileList = os.listdir(srcdocs)
     fileList.sort()
     
     for idx, fname in enumerate(fileList):
@@ -294,10 +294,19 @@ def loopDocs(dir):
                 allLines = []
             print("processing document " + str(idx) + ", " +fname)
             
-            page = getPageScan(dir + "\\" + fname)
+            page = getPageScan(srcdocs + "\\" + fname)
             page = re.sub(" +"," ",page).strip()
             lines = toCorrectedLines(page)
             prevlines = lines
     # finalise last
     allLines = allLines + prevlines
     getOperations(allLines)
+    
+config = configparser.ConfigParser()
+config.read('config.ini')
+experiment = config['EXPERIMENT']['name']
+outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
+srcdocs = config['EXPERIMENT']['srcdocs']
+strSections = config['EXPERIMENT']['sections']
+sectionsNames = strSections.split(",")
+loopDocs()
