@@ -8,59 +8,16 @@ These documents only cover the Classicals and other long-terms, main concern is 
 @author: ostlerr
 '''
 import os
-from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
 import configparser
 
 year = None
-outfile = None
-#sectionStarts = ()
-sectionNames = ()
-experiment = None
 corrections = []
 specialSection = ""
     
-with open("D:\\Work\\rothamsted-ecoinformatics\\Lists\\corrections.csv", 'r') as infile:
+with open("D:\\work\\Rothamsted-Ecoinformatics\\YieldbookDatasetDrafts\\corrections.csv", 'r') as infile:
     for line in infile:
         corrections.append(line.strip())
-
-months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
-
-#def globals(poutfile,psectionNames,pexperiment):   
-    #global outfile
-    #global sectionNames
- #   global sectionStarts
-   # global experiment
-  #  outfile = poutfile
- #   sectionNames = psectionNames
-  #  sectionStarts = psectionStarts
-#    experiment = pexperiment
-
-def tidyUp(messyPage):
-    messyPage = messyPage.replace("\n\n","\n")
-    messyPage = re.sub("[0-9]{1,2}- ?[\w]+- ?[0-9]{2}",clearSpace, messyPage) # this cleans up spaces from dates
-    messyPage = messyPage.replace("{","f") # Doesn't always do a good job with f)
-    return messyPage
-
-def toCorrectedLines(page):
-    lines = page.split("\n")
-    lines = list(filter(None,lines))
-    cleanLines = []
-    for line in lines:
-        rawwords = line.split(" ") # chunk everything into words
-        corrected = correctWords(rawwords,corrections)
-        cleanwords = corrected.split(" ")
-        words = list(filter(None,cleanwords))
-        cleanLine = " ".join(words)
-        cleanLines.append(cleanLine)
-    return cleanLines
-
-def checkForSection(line):
-    lline = line.lower()
-    for name in sectionNames:
-        if lline.startswith(name):
-            return True, name
-    return False, None
 
 def writeJob(sname,curOpDate,curOp,curOpType):
     global year
@@ -84,7 +41,7 @@ def loopDocs():
             year = nyear
             page = getPageScan(srcdocs + "\\" + fname)
             page = re.sub(" +"," ",page).strip()
-            lines = toCorrectedLines(page)
+            lines = toCorrectedLines(page,corrections)
             
             print(lines)
             
@@ -92,11 +49,15 @@ def loopDocs():
                 if line.lower().startswith("experimental diary"):
                     processingDiary = True
                 elif processingDiary:
-                    isNewSection, nsname = checkForSection(line)    
+                    print("line = " + line)
+                    isNewSection, nsname = checkForSection(line,sectionNames)    
                     if isNewSection:
                         sname= nsname
+                        print("dkljdalajdlsajdslajnd")
                     else: #processing diary entries here
                         isDate, opDate, job = checkJobDate(line)
+                        print("hello")
+                        print(isDate)
                         if job.startswith("Note:"):
                             processingDiary = False
                         elif isDate:
@@ -129,5 +90,7 @@ experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 strSections = config['EXPERIMENT']['sections']
-sectionsNames = strSections.split(",")
+sectionNames = strSections.split(",") if len(strSections) > 0 else []
+print(sectionNames)
 loopDocs()
+outfile.close()

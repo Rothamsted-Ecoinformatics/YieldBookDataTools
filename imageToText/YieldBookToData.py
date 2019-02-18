@@ -48,6 +48,15 @@ def enhance(fname):
     
     return img
 
+def checkForSection(line, sectionNames):
+    #global sectionNames
+    if len(sectionNames) > 0:
+        lline = line.lower()
+        for name in sectionNames:
+            if lline.startswith(name):
+                return True, name
+    return False, None
+
 def formatDate(day,month,year):
     if day in months: # check day and moths right way around and if not swap.
         tday = day
@@ -93,6 +102,7 @@ def getOperationCode(job):
 def checkJobDate(line):
     p = re.compile("[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
     dateMatch = p.search(line)
+    print(dateMatch)
     date = None
     isDate = False
     if (dateMatch):
@@ -106,8 +116,6 @@ def getRateUnitsJob(job):
     rate = None
     units= None
     if (rateMatch):
-        #print(rateMatch)
-        #print(job)
         rate = rateMatch.group(0)
         units = job[rateMatch.end():].strip()
         job =job[:rateMatch.start()].strip()
@@ -116,13 +124,18 @@ def getRateUnitsJob(job):
 def clearSpace(matchObject):
     return matchObject.group(0).replace(" ", "")
 
-def getSponsors(page):
-    p = re.compile("((?:[A-Z]\. *)+(?:Ma?c[A-Z][a-z]+|[A-Z][a-z]+))")# need to factor in McG
-    sponsorList = p.findall(page)
-    for sp in sponsorList:
-        print(sp)
-    sponsors = ",".join(map(str,sponsorList))
-    return sponsors
+def toCorrectedLines(page,corrections):
+    lines = page.split("\n")
+    lines = list(filter(None,lines))
+    cleanLines = []
+    for line in lines:
+        rawwords = line.split(" ") # chunk everything into words
+        corrected = correctWords(rawwords,corrections)
+        cleanwords = corrected.split(" ")
+        words = list(filter(None,cleanwords))
+        cleanLine = " ".join(words)
+        cleanLines.append(cleanLine)
+    return cleanLines
 
 def correctLine(line,spellings):
     correctedLine = correctWords(line.split(),spellings)
@@ -130,14 +143,9 @@ def correctLine(line,spellings):
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(words,spellings):
-    #cutoffs = {3:67, 4:75, 5:80}
-    print(spellings)
+    #print(spellings)
     newWords = []
     for word in words:
-        ## add test for len here - 1 char
-        if word.find("\n") > -1:
-            print("[" + str(word) + "]")
-            print (str(newWords))
         word = word.strip()
         lastChar = ""
         hasPunc = False            
@@ -149,18 +157,13 @@ def correctWords(words,spellings):
                 hasPunc = True
         
         wordLen = len(word)
-        #if wordLen <= 2 or word in exclusions:
-        #    newWords.append(word)
-        #else:
         cutOff=70
         if wordLen == 3:
             cutOff = 65
         elif (wordLen == 4):
             cutOff = 79
-        #print(":" + word + ":")
-        
+            
         matched = process.extractOne(word,spellings,scorer=fuzz.ratio,score_cutoff=cutOff)
-        #print(matched)
         if matched and wordLen > 2:
             if hasPunc:
                 newWords.append(matched[0]+lastChar)
