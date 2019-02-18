@@ -320,6 +320,15 @@ def loopDocs(dir):
             page = re.sub(" +"," ",page).strip()
             lines = toCorrectedLines(page)        
             getOperations(lines)
-            
-    print('done')
     outfile.close()
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+experiment = config['EXPERIMENT']['name']
+outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
+srcdocs = config['EXPERIMENT']['srcdocs']
+strSections = config['EXPERIMENT']['sections']
+print(strSections)
+sectionsNames = strSections.split(",")
+loopDocs()
+print('done')

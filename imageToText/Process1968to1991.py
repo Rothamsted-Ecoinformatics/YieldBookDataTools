@@ -308,5 +308,7 @@ experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 strSections = config['EXPERIMENT']['sections']
-sectionsNames = strSections.split(",")
+print(strSections)
+sectionNames = strSections.split(",")
+print(sectionNames)
 loopDocs()
