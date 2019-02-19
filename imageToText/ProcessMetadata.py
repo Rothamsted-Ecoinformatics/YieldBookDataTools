@@ -23,7 +23,8 @@ class Metadata():
     def __init__(self):
         self.object = ""
         self.design = ""
-        self.plots = ""
+        self.wholeplots = ""
+        self.subplots = ""
         self.field = ""
         self.treatments = ""
         
@@ -43,7 +44,7 @@ def trimPage(tpage,start,end):
 
 def identifyField(text):
     for field in fields:
-        if text.find(field):
+        if text.find(field) > -1:
             return(field)
     return ""
 
@@ -59,8 +60,9 @@ def loopDocs():
             #rawPage = rawPage.replace("\n"," ") # This trick is for retaining line breaks, while allowing for testing line break joined words...
             rawPage = correctWords(rawPage.split(" "),corrections)
             metadata = Metadata()
-            
+            hasMetadata = False
             if rawPage.find("Object:") > -1:
+                hasMetadata = True
                 page = rawPage
                 page = trimPage(page,"Object:","Sponsors:")
                 metadata.object = page.replace("\n"," ")
@@ -76,14 +78,19 @@ def loopDocs():
             if rawPage.lower().find("plot dimensions:") > -1:
                 page = rawPage
                 page = trimPage(page,"Plot dimensions:","Treatments") 
-                metadata.design = page.replace("\n"," ")
-                print("DIMENSIONS: [" + metadata.design + "]")
+                metadata.wholeplots = page.replace("\n"," ")
+                print("DIMENSIONS: [" + metadata.wholeplots + "]")
+                #if rawPage.lower().find("Sub-plot dimensions")
+                
             if rawPage.find("Treatments:") > -1:
                 page = rawPage
                 page = trimPage(page,"Treatments:","Experimental diary") 
                 metadata.treatments = page.replace("\n","\ ") # markdown paragraph
                 print("TREATMENTS: [" + metadata.treatments + "]")
-                
+            
+            if hasMetadata:
+                metadataOutfile.write(experiment + "|" + str(nyear) + "|" + metadata.field + "|" + metadata.object + "|" + metadata.design + "|" + metadata.wholeplots + "|" + metadata.subplots + "|" +  metadata.treatments)
+                metadataOutfile.write("\n")
             if rawPage.find("Sponsors:") > -1:# or page.find("$$Seed") > -1:
                 page = rawPage
                 #page = page.replace("$$", " ")
@@ -92,7 +99,7 @@ def loopDocs():
                 print(page)
                 sponsors = getSponsors(page)
                 for sponsor in sponsors:
-                    sponsorOutfile.write(experiment + "|" + str(nyear) + "|" + sponsor) 
+                    sponsorOutfile.write(experiment + "," + str(nyear) + "," + sponsor) 
                     sponsorOutfile.write("\n")
             
 config = configparser.ConfigParser()
