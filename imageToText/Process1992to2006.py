@@ -8,7 +8,7 @@ These documents only cover the Classicals and other long-terms, main concern is 
 @author: ostlerr
 '''
 import os
-from imageToText.YieldBookToData import *
+from imageToText.YieldBookToData import checkForSection, checkJobDate, getPageScan, toCorrectedLines
 import configparser
 
 year = None
@@ -40,7 +40,7 @@ def loopDocs():
         if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
             year = nyear
             page = getPageScan(srcdocs + "\\" + fname)
-            page = re.sub(" +"," ",page).strip()
+            #page = re.sub(" +"," ",page).strip()
             lines = toCorrectedLines(page,corrections)
             
             print(lines)
