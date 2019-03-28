@@ -16,6 +16,11 @@ import string
 
 months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
 
+corrections = []
+with open("D:\\Work\\rothamsted-ecoinformatics\\YieldbookDatasetDrafts\\corrections.csv", 'r') as infile:
+    for line in infile:
+        corrections.append(line.strip())
+
 def enhance(fname):
     img = cv2.imread(fname)
     img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
@@ -47,6 +52,35 @@ def enhance(fname):
     #img = cv2.fastNlMeansDenoising(img,None,7,21,150)
     
     return img
+
+# Looks for any 4 character word and if it has at least 3 numbers assumes it is a number
+def looksLikeYear(word):
+    nword = removePunctuation(word,["&","%","}"])
+    if (len(nword) == 4): 
+        numCount= 0
+        for c in nword:
+            if c.isdigit():
+                numCount += 1
+        if numCount >= 3 or (numCount == 2 and nword[0:2] == "19"):
+            return True
+    return False 
+
+def isStop(line):
+    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error']: #sectionStops:
+        if line.startswith(stopper) or fuzz.ratio(line,stopper) > 80:
+            return True
+    return False
+
+def startsWithSection(line, sectionNames):
+    lline = line.lower()
+    lline = lline.translate(str.maketrans({a:None for a in string.punctuation}))
+    print(lline)
+    
+    for name in sectionNames:
+        if lline.startswith(name):
+            print(name)
+            return name, line[len(name):]
+    return None,None
 
 def checkForSection(line, sectionNames):
     #global sectionNames
@@ -124,25 +158,25 @@ def getRateUnitsJob(job):
 def clearSpace(matchObject):
     return matchObject.group(0).replace(" ", "")
 
-def toCorrectedLines(page,corrections):
+def toCorrectedLines(page):
     lines = page.split("\n")
     lines = list(filter(None,lines))
     cleanLines = []
     for line in lines:
         rawwords = line.split(" ") # chunk everything into words
-        corrected = correctWords(rawwords,corrections)
+        corrected = correctWords(rawwords)
         cleanwords = corrected.split(" ")
         words = list(filter(None,cleanwords))
         cleanLine = " ".join(words)
         cleanLines.append(cleanLine)
     return cleanLines
 
-def correctLine(line,spellings):
-    correctedLine = correctWords(line.split(),spellings)
+def correctLine(line):
+    correctedLine = correctWords(line.split(),corrections)
     return correctedLine
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
-def correctWords(words,spellings):
+def correctWords(words):
     #print(spellings)
     newWords = []
     for word in words:
@@ -163,7 +197,7 @@ def correctWords(words,spellings):
         elif (wordLen == 4):
             cutOff = 79
             
-        matched = process.extractOne(word,spellings,scorer=fuzz.ratio,score_cutoff=cutOff)
+        matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
         if matched and wordLen > 2:
             if hasPunc:
                 newWords.append(matched[0]+lastChar)

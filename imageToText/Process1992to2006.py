@@ -11,78 +11,12 @@ import os
 from imageToText.YieldBookToData import checkForSection, checkJobDate, getPageScan, toCorrectedLines
 import configparser
 
-year = None
-corrections = []
 specialSection = ""
-    
-with open("D:\\work\\Rothamsted-Ecoinformatics\\YieldbookDatasetDrafts\\corrections.csv", 'r') as infile:
-    for line in infile:
-        corrections.append(line.strip())
 
 def writeJob(sname,curOpDate,curOp,curOpType):
-    global year
     if len(curOp) > 1:
         outfile.write("|".join([str(experiment),str(year),str(sname),str(curOpDate),str(curOp),curOpType]))
         outfile.write("\n")
-
-def loopDocs():
-    global year
-    fileList = os.listdir(srcdocs)
-    fileList.sort()
-    processingDiary = False
-    for fname in fileList:
-        nyear = fname[0:4]
-        sname = ""
-        curOp = ""
-        curOpDate = ""
-        curOpType = ""
-        processingDiary = False
-        if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
-            year = nyear
-            page = getPageScan(srcdocs + "\\" + fname)
-            #page = re.sub(" +"," ",page).strip()
-            lines = toCorrectedLines(page,corrections)
-            
-            print(lines)
-            
-            for line in lines:
-                if line.lower().startswith("experimental diary"):
-                    processingDiary = True
-                elif processingDiary:
-                    print("line = " + line)
-                    isNewSection, nsname = checkForSection(line,sectionNames)    
-                    if isNewSection:
-                        sname= nsname
-                        print("dkljdalajdlsajdslajnd")
-                    else: #processing diary entries here
-                        isDate, opDate, job = checkJobDate(line)
-                        print("hello")
-                        print(isDate)
-                        if job.startswith("Note:"):
-                            processingDiary = False
-                        elif isDate:
-                            writeJob(sname,curOpDate,curOp,curOpType)
-                            opDate = opDate.strip()
-                            dateParts = opDate.split("-")
-                            if len(dateParts) == 3:
-                                if dateParts[2][0] == "0":
-                                    dateParts[2] = "20" + dateParts[2]
-                                else:
-                                    dateParts[2] = "19" + dateParts[2]
-                                curOpDate = "-".join(dateParts)
-                            else: 
-                                curOpDate = opDate[:7] + "19" + opDate[7:]
-                            parts = job.split(" ",3)
-                            if len(parts) == 4:
-                                curOpType = parts[1]
-                                curOp = parts[3]
-                            else:
-                                curOpType = "".join(parts[0:1])
-                                curOp = parts[2]
-                        else:
-                            curOp = " ".join([curOp,job])
-                       
-            writeJob(sname,curOpDate,curOp,curOpType)
 
 config = configparser.ConfigParser()
 config.read('config.ini')
@@ -91,6 +25,56 @@ outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",") if len(strSections) > 0 else []
-print(sectionNames)
-loopDocs()
+year = ""
+fileList = os.listdir(srcdocs)
+fileList.sort()
+processingDiary = False
+for fname in fileList:
+    nyear = fname[0:4]
+    sname = ""
+    curOp = ""
+    curOpDate = ""
+    curOpType = ""
+    processingDiary = False
+    if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
+        year = nyear
+        page = getPageScan(srcdocs + "\\" + fname)
+        lines = toCorrectedLines(page)
+                
+        for line in lines:
+            if line.lower().startswith("experimental diary"):
+                processingDiary = True
+            elif processingDiary:
+                print("line = " + line)
+                isNewSection, nsname = checkForSection(line,sectionNames)    
+                if isNewSection:
+                    sname= nsname
+                else: #processing diary entries here
+                    isDate, opDate, job = checkJobDate(line)
+                    if job.startswith("Note:"):
+                        processingDiary = False
+                    elif isDate:
+                        writeJob(sname,curOpDate,curOp,curOpType)
+                        opDate = opDate.strip()
+                        dateParts = opDate.split("-")
+                        if len(dateParts) == 3:
+                            if dateParts[2][0] == "0":
+                                dateParts[2] = "20" + dateParts[2]
+                            else:
+                                dateParts[2] = "19" + dateParts[2]
+                            curOpDate = "-".join(dateParts)
+                        else: 
+                            curOpDate = opDate[:7] + "19" + opDate[7:]
+                        parts = job.split(" ",3)
+                        if len(parts) == 4:
+                            curOpType = parts[1]
+                            curOp = parts[3]
+                        else:
+                            curOpType = "".join(parts[0:1])
+                            curOp = parts[2]
+                    else:
+                        curOp = " ".join([curOp,job])
+                   
+        writeJob(sname,curOpDate,curOp,curOpType)
+        
 outfile.close()
