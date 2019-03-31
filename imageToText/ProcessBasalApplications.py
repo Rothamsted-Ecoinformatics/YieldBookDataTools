@@ -121,11 +121,7 @@ def loopDocs():
                 print(nyear + " : " + str(cutStart) + " : " + str(cutEnd) + " : " + str(len(page)))
                 fpage = str(page)[cutStart:cutEnd]
                 fpage = fpage.strip()
-            print("=====================DATA=========================")    
-            print(page.find("Standard applications"))
-            print(len(fpage))
-            print(fpage)
-            print("=====================/DATA=========================")
+
             if data:
                 cropSections = processCropSections(fpage)
                 for cropSection in cropSections:
@@ -143,33 +139,6 @@ def loopDocs():
                             applicationText = " ".join([applicationText,word.strip()])
                     outfile.write("|".join([str(experiment),str(nyear),cropSection.cropName,application,applicationText.strip()]))
                     outfile.write("\n")
-                    
-                    #print(data)
-                
-                    #section = ""
-                    #for idx2, part in enumerate(applicationData):
-                    #    sectionParts = part.split(" ")
-                    #    lastWord = sectionParts[len(sectionParts)-1].strip()
-                    #    print("(" + lastWord + ")")
-                    #    oldSection = section
-                    #    if lastWord in sections:
-                        #if part[len(part)-1].lower() in sections:
-                            #if len(prevLine) > 0:
-                            #    outfile.write(str(nyear) + "|" + section + "|" + part) 
-                            #    outfile.write("\n")
-                    #        section = lastWord
-                            #part = " ".join(sectionParts[:len(sectionParts)-2])
-                    #    if len(section) > 0 and idx2 > 0:
-                     #       part.replace(cropSection.cropName,"")
-                      #      outfile.write("|".join([str(experiment),str(nyear),cropSection.cropName,oldSection,str(part)]))
-                       #     outfile.write("\n")
-                            
-                    
-                #outfile.write(str(nyear) + "|" + section + "|" + part) 
-                #outfile.write("\n")
-                #page = page.replace("\n"," ")
-                #outfile.write(str(nyear) + ": " + page) 
-                #outfile.write("\n")   
 
 config = configparser.ConfigParser()
 config.read('config.ini')
