@@ -54,7 +54,8 @@ def loopDocs():
     fileList.sort()
     for fname in fileList:
         nyear = fname[0:4]
-        if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
+        #if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
+        if fname.endswith(".jpg"): 
             rawPage = getPageScan(srcdocs + "\\" + fname)
             print("RAWPAGE: [" + rawPage + "]")
             #rawPage = rawPage.replace("\n"," ") # This trick is for retaining line breaks, while allowing for testing line break joined words...
