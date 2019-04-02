@@ -30,9 +30,7 @@ def getOperations(lines):
     for line in lines:
         print(str(year) + ": "  + line)
         if(inCultivations):
-            # Need to do something with notes    
             if isStop(line):    
-                #processCultivations()
                 inCultivations = False
                 print("ex cultivations")
                 break
@@ -50,7 +48,6 @@ def getOperations(lines):
     processCultivations()
     
 def writeJob(sname,opDate,op):
-    #global year
     sDate, eDate = cleanDate(opDate,year)
     outfile.write("|".join([experiment,year,str(sname),str(sDate),str(eDate),op]))
     outfile.write("\n")    
@@ -64,7 +61,7 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
     subsectionText = ""
 
     for line in cultivationsSegment:
-        line = line.replace(" and ",", ")
+        #line = line.replace(" and ",", ")
         
         newSection, newLine = startsWithSection(line,sectionNames) 
         if (newSection):
@@ -158,30 +155,58 @@ def processSections(subsections):
             writeJob(sname,opDate,curOp,experiment)
      
 def cleanDate(dirtyDate, year):
+#     dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+#     sDate = ""
+#     eDate = ""
+#     
+#     dates = dirtyDate.split("-")
+#     if len(dates) == 1: # just one date
+#         parts = dates[0].strip().split(" ")
+#         if len(parts) == 2 or len(parts) == 3:
+#             sDate, month = formatDate(parts[0],parts[1],year)
+#         else:
+#             sDate = dirtyDate    
+#     elif len(dates) == 2:
+#         month = ""
+#         eparts = dates[1].strip().split(" ")
+#         if len(eparts) == 2 or len(eparts) == 3:
+#             eDate,month = formatDate(eparts[0],eparts[1],year)
+#         sparts = dates[0].strip().split(" ")
+#                
+#         if len(sparts) == 1:
+#             sDate, month = formatDate(sparts[0],month,year)
+#         else:
+#             sDate, month = formatDate(sparts[0],month[1],year)
+#         
+#     return sDate,eDate
+
     dirtyDate = removePunctuation(str(dirtyDate), ("-"))
     sDate = ""
     eDate = ""
-    
+    lyear = year # the local year from the date, rather than the doc
+    print("dirtyDate: " + dirtyDate + " , lyear: " + str(lyear))
     dates = dirtyDate.split("-")
-    if len(dates) == 1: # just one date
-        parts = dates[0].strip().split(" ")
-        if len(parts) == 2 or len(parts) == 3:
-            sDate, month = formatDate(parts[0],parts[1],year)
-        else:
-            sDate = dirtyDate    
-    elif len(dates) == 2:
-        month = ""
-        eparts = dates[1].strip().split(" ")
-        if len(eparts) == 2 or len(eparts) == 3:
-            eDate,month = formatDate(eparts[0],eparts[1],year)
+    if len(dates) > 0: # just one date
         sparts = dates[0].strip().split(" ")
-               
-        if len(sparts) == 1:
-            sDate, month = formatDate(sparts[0],month,year)
+        print(sparts)
+        mnth = ""
+        if len(sparts) == 2:
+            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
+        elif len(sparts) == 3:
+            lyear = sparts[2]
+            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)            
         else:
-            sDate, month = formatDate(sparts[0],month[1],year)
-        
+            sDate = dirtyDate
+        if len(dates) == 2:    
+            eparts = dates[1].strip().split(" ")
+            if len(eparts) == 1:
+                eDate,month = formatDate(eparts[0],mnth,lyear)
+            elif eparts[0] in months:
+                eDate,month = formatDate(eparts[1],eparts[0],lyear)
+            else:
+                eDate,month = formatDate(eparts[0],mnth,lyear)
     return sDate,eDate
+
 
 config = configparser.ConfigParser()
 config.read('config.ini')

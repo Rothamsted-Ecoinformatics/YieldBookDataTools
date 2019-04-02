@@ -66,21 +66,22 @@ def looksLikeYear(word):
     return False 
 
 def isStop(line):
+    lline = line.lower()
     for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error']: #sectionStops:
-        if line.startswith(stopper) or fuzz.ratio(line,stopper) > 80:
+        if lline.startswith(stopper) or fuzz.ratio(lline,stopper) > 80:
             return True
     return False
 
 def startsWithSection(line, sectionNames):
     lline = line.lower()
     lline = lline.translate(str.maketrans({a:None for a in string.punctuation}))
-    print(lline)
+    print("line: " + lline)
     
     for name in sectionNames:
         if lline.startswith(name):
             print(name)
             return name, line[len(name):]
-    return None,None
+    return None,line
 
 def checkForSection(line, sectionNames):
     #global sectionNames
@@ -92,15 +93,16 @@ def checkForSection(line, sectionNames):
     return False, None
 
 def formatDate(day,month,year):
-    if day in months: # check day and moths right way around and if not swap.
+    if day in months: # check day and months right way around and if not swap.
         tday = day
         day = month
         month = tday
-    d = ""
-    if month in ["Sept","Oct","Nov","Dec"]:
-        d = "-".join([day,month,str(int(year)-1)])
-    else:
-        d = "-".join([day,month,year])
+    d = "-".join([day,month,year])
+    #d = ""
+    #if month in ["Sept","Oct","Nov","Dec"]:
+    #    d = "-".join([day,month,str(int(year)-1)])
+   # else:
+    #    d = "-".join([day,month,year])
     return d, month
 
 def removePunctuation(value, exclusions):

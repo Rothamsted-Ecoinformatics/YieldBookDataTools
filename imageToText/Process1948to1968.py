@@ -6,37 +6,34 @@ Created on 3 Dec 2018
 import os
 from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
-import string
 import configparser
 
 def cleanDate(dirtyDate, year):
     dirtyDate = removePunctuation(str(dirtyDate), ("-"))
     sDate = ""
     eDate = ""
-    
+    lyear = year # the local year from the date, rather than the doc
+    print("dirtyDate: " + dirtyDate + " , lyear: " + str(lyear))
     dates = dirtyDate.split("-")
-    if len(dates) == 1: # just one date
-        parts = dates[0].strip().split(" ")
-        if len(parts) == 2 or len(parts) == 3:
-            sDate, month = formatDate(parts[1],parts[0],year)
-        else:
-            sDate = dirtyDate    
-    elif len(dates) == 2:
+    if len(dates) > 0: # just one date
         sparts = dates[0].strip().split(" ")
+        print(sparts)
         mnth = ""
-        if len(sparts) == 2 or len(sparts) == 3:
-            sDate, mnth = formatDate(sparts[1],sparts[0],year)
+        if len(sparts) == 2:
+            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
+        elif len(sparts) == 3:
+            lyear = sparts[2]
+            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)            
         else:
             sDate = dirtyDate
-        
-        eparts = dates[1].strip().split(" ")
-        if len(eparts) == 1:
-            eDate,month = formatDate(eparts[0],mnth,year)
-        else:
-            if eparts[0] in months:
-                eDate,month = formatDate(eparts[1],eparts[0],year)
+        if len(dates) == 2:    
+            eparts = dates[1].strip().split(" ")
+            if len(eparts) == 1:
+                eDate,month = formatDate(eparts[0],mnth,lyear)
+            elif eparts[0] in months:
+                eDate,month = formatDate(eparts[1],eparts[0],lyear)
             else:
-                eDate,month = formatDate(eparts[0],mnth,year)
+                eDate,month = formatDate(eparts[0],mnth,lyear)
     return sDate,eDate
   
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
@@ -61,9 +58,6 @@ def getOperations(lines):
     processCultivations()
     
 def writeJob(sname,opDate,curOp,prevOp):
-    global outfile
-    global experiment
-    global year
     if not curOp:   
         curOp = prevOp
     if curOp:
@@ -103,7 +97,7 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
     blockName = ""
     subsections = {}
     subsectionText = ""
-    for line in cultivationsSegment:
+    for idx, line in enumerate(cultivationsSegment):
         line = line.replace(" and ",", ")
         newBlock, newLine = startsWithBlock(line)
         
@@ -116,11 +110,11 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
         if (line):
             newSection, newLine = startsWithSection(line,sectionNames) 
 
-        if newSection:
-            if sectionName: # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
+        if newSection or idx == 0: # Need the zero check in case of no section or dodgy section
+            if sectionName: # add the old section name to the dictionary. 
                 subsections[sectionName] = subsectionText
             subsectionText = "" #set up the new section text
-            sectionName = " ".join([blockName,newSection])
+            sectionName = " ".join([blockName,str(newSection)])
             line = newLine
         
         if (len(line) > 1):
@@ -130,11 +124,14 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
         sectionName = "All plots"
     subsections[sectionName] = subsectionText           # got a new section...probably
     
-    # Now process the subsections:
     processSections(subsections)
         
 def processSections(subsections):
     for sname, stext in subsections.items():
+        print("===========")
+        print(sname)
+        print(stext)
+        print("===========")
         curDate = None
         expectDay = False
         expectDayOrMonth = False
@@ -186,11 +183,13 @@ def processSections(subsections):
                 expectDay = True
                 testYear = False
                 curDate = word
+            elif word == "variety":
+                curDate = "variety"
             else:
                 expectDay = False
                 testYear = False
                 curOp = " ".join([curOp,word])
-        if curDate != "None":
+        if curDate == "variety":
             writeJob(sname,curDate,curOp, prevOp)
 
 config = configparser.ConfigParser()

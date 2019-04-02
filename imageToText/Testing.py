@@ -3,81 +3,20 @@ Created on 3 Dec 2018
 
 @author: ostlerr
 '''
-from imageToText.YieldBookToData import enhance, getSponsors, correctWords
+from imageToText.YieldBookToData import *
 import pytesseract
 import re
 from pytesseract.pytesseract import Output
 import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
+line = "bals  ajkas : T : ajkskjs akjsakj EX A2"
+print(re.search(r":\s[TB]\s:",line))
 
-months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec")
-
-def formatDate(day,month,year):
-    d = ""
-    if month in ["Sept","Oct","Nov","Dec"]:
-        d = "-".join([day,month,str(int(year)-1)])
-    else:
-        d = "-".join([day,month,year])
-    return d, month
-
-
-
-def cleanDate(dirtyDate, year):
-    sDate = ""
-    eDate = ""
-    
-    dates = dirtyDate.split("-")
-    if len(dates) == 1: # just one date
-        parts = dates.strip().split(" ")
-        if len(parts) == 2 or len(parts) == 3:
-            sDate = formatDate(parts[1],parts[0],year)
-        else:
-            sDate = dirtyDate    
-    elif len(dates) == 2:
-        sparts = dates[0].strip().split(" ")
-        mnth = ""
-        if len(sparts) == 2 or len(sparts) == 3:
-            sDate, mnth = formatDate(sparts[1],sparts[0],year)
-        else:
-            sDate = dirtyDate
-        
-        eparts = dates[1].strip().split(" ")
-        if len(eparts) == 1:
-            eDate,month = formatDate(eparts[0],mnth,year)
-        else:
-            if eparts[0] in months:
-                eDate,month = formatDate(eparts[1],eparts[0],year)
-            else:
-                eDate,month = formatDate(eparts[0],mnth,year)
-    return dirtyDate,sDate,eDate    
-
-
-curOpDate = "12-APR-00"
-tdate = ""
-if curOpDate.endswith("00"):
-    tdate = curOpDate.replace("00","2000")
-else: 
-    tdate = curOpDate[:7] + "19" + curOpDate[7:]
-print(tdate)
-
-print(cleanDate("Nov 18-27 1952", "1960"))
-print(cleanDate("Nov 18 - 27 1952", "1960"))
-print(cleanDate("Nov 18 - Dec 27 1952", "1960"))
-print(cleanDate("Nov 18 - Dec 27 1952", "1960"))
-print(cleanDate("May 18-27", "1960"))
-print(cleanDate("May 18 - 27", "1960"))
-
-word = "198h"
-for c in word:
-    print(c)
-print(word[0:2])
-
-
-
-line = "bals  ajkas ajkskjs akjsakj EX A2"
-parts = re.split(r"[()/]",line)
+parts = re.split(r":\s[TB]\s:",line)
+print("---------=============")
 print(parts)
+print("---------=============")
 cmc = re.compile(r"(.{2}/.{1})")
 cmcl = cmc.findall("blah c bla Cb/1")
 

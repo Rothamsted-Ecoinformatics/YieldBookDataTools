@@ -10,6 +10,7 @@ These documents only cover the Classicals and other long-terms, main concern is 
 import os
 from imageToText.YieldBookToData import checkForSection, checkJobDate, getPageScan, toCorrectedLines
 import configparser
+import re
 
 specialSection = ""
 
@@ -45,7 +46,6 @@ for fname in fileList:
             if line.lower().startswith("experimental diary"):
                 processingDiary = True
             elif processingDiary:
-                print("line = " + line)
                 isNewSection, nsname = checkForSection(line,sectionNames)    
                 if isNewSection:
                     sname= nsname
@@ -54,7 +54,16 @@ for fname in fileList:
                     if job.startswith("Note:"):
                         processingDiary = False
                     elif isDate:
-                        writeJob(sname,curOpDate,curOp,curOpType)
+                        if re.search(r":\s[TB]\s:",curOp): # this is to deal with multiple operations for one date
+                            curOps = re.split(r":\s[TB]\s:",curOp)
+                            for co in curOps:
+                                writeJob(sname,curOpDate,co,curOpType)
+                        elif re.search(r":\stm\)",curOp): # this is to deal with multiple operations for one date
+                            curOps = re.split(r":\stm\)",curOp)
+                            for co in curOps:
+                                writeJob(sname,curOpDate,co,curOpType)
+                        else:
+                            writeJob(sname,curOpDate,curOp,curOpType)
                         opDate = opDate.strip()
                         dateParts = opDate.split("-")
                         if len(dateParts) == 3:
