@@ -54,16 +54,13 @@ for fname in fileList:
                     if job.startswith("Note:"):
                         processingDiary = False
                     elif isDate:
-                        if re.search(r":\s[TB]\s:",curOp): # this is to deal with multiple operations for one date
-                            curOps = re.split(r":\s[TB]\s:",curOp)
-                            for co in curOps:
-                                writeJob(sname,curOpDate,co,curOpType)
-                        elif re.search(r":\stm\)",curOp): # this is to deal with multiple operations for one date
-                            curOps = re.split(r":\stm\)",curOp)
-                            for co in curOps:
-                                writeJob(sname,curOpDate,co,curOpType)
-                        else:
-                            writeJob(sname,curOpDate,curOp,curOpType)
+                        curOp = curOp.replace(";",":")
+                        curOp = curOp.replace(": B :","||")
+                        curOp = curOp.replace(": T :","||")
+                        curOp = curOp.replace(": tm)","||")
+                        curOps = curOp.split("||")
+                        for co in curOps:
+                            writeJob(sname,curOpDate,co,curOpType)
                         opDate = opDate.strip()
                         dateParts = opDate.split("-")
                         if len(dateParts) == 3:

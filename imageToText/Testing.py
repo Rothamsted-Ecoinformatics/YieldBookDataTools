@@ -10,10 +10,10 @@ from pytesseract.pytesseract import Output
 import csv
 from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
-line = "bals  ajkas : T : ajkskjs akjsakj EX A2"
-print(re.search(r":\s[TB]\s:",line))
+line = ": tm)Amistar at 0.8 1 in 100 1. : B: : tm)Folicur at 0.75 1 in 100 1.|B"
+print(re.search(r": [TB] :|:\ tm\):",line))
 
-parts = re.split(r":\s[TB]\s:",line)
+parts = re.split(r": [TB] :|:\ tm\)",line)
 print("---------=============")
 print(parts)
 print("---------=============")
