@@ -31,15 +31,15 @@ year = ""
 fileList = os.listdir(srcdocs)
 fileList.sort()
 processingDiary = False
-for fname in fileList: 
+for fname in fileList:
     nyear = fname[0:4]
     sname = ""
     curOp = ""
     curOpDate = ""
     curOpType = ""
-    processingDiary = False
-    if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
-    #if int(nyear) == 2004:
+    processingDiary = True
+    #if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
+    if int(nyear) == 2006:
         year = nyear
         page = getPageScan(srcdocs + "\\" + fname)
         lines = toCorrectedLines(page)
@@ -79,14 +79,13 @@ for fname in fileList:
                         else: 
                             curOpDate = opDate[:7] + "19" + opDate[7:]
                         parts = job.split(" ",3)
-                        if len(parts) == 4:
-                            curOpType = parts[1]
-                            curOp = parts[3]
-                        else:
-                            curOpType = "".join(parts[0:1])
-                            #if len(parts) >=3:
-                            print(parts)
-                            curOp = parts[2]
+                        print(parts)
+                        #if len(parts) == 3:
+                            #curOpType = parts[1]
+                        #    curOp = parts[2]
+                        #else:
+                            #curOpType = "".join(parts[0:1])
+                        curOp = " ".join(parts)
                     else:
                         curOp = " ".join([curOp,job])
                    

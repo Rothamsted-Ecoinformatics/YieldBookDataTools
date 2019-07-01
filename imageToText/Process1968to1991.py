@@ -28,7 +28,7 @@ def getOperations(lines):
     global inCultivations# must be false because starting a new year ?
     inCultivations = False
     for line in lines:
-        print(str(year) + ": "  + line)
+        print(startCultivations(line))
         if(inCultivations):
             if isStop(line):    
                 inCultivations = False
@@ -36,7 +36,8 @@ def getOperations(lines):
                 break
             else:                
                 cultivationsSegment.append(line)
-        elif(fuzz.token_set_ratio(line,"Cultivations etc") >= 75): 
+        elif startCultivations(line):
+        #elif(fuzz.token_set_ratio(line,"Cultivations etc") >= 75): 
             print("in cultivations")
             cultivationsSegment.clear()
             inCultivations = True
@@ -61,8 +62,7 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
     subsectionText = ""
 
     for line in cultivationsSegment:
-        #line = line.replace(" and ",", ")
-        
+        print(line)
         newSection, newLine = startsWithSection(line,sectionNames) 
         if (newSection):
             if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
@@ -90,7 +90,6 @@ def filterPunctuation(rawword):
             
 def processSections(subsections):
     for sname, stext in subsections.items():
-        print(sname + ": " + stext)
         rawwords = stext.split()
         words = list(filter(filterPunctuation,rawwords))
         wordCount = len(words)
@@ -155,40 +154,14 @@ def processSections(subsections):
             writeJob(sname,opDate,curOp,experiment)
      
 def cleanDate(dirtyDate, year):
-#     dirtyDate = removePunctuation(str(dirtyDate), ("-"))
-#     sDate = ""
-#     eDate = ""
-#     
-#     dates = dirtyDate.split("-")
-#     if len(dates) == 1: # just one date
-#         parts = dates[0].strip().split(" ")
-#         if len(parts) == 2 or len(parts) == 3:
-#             sDate, month = formatDate(parts[0],parts[1],year)
-#         else:
-#             sDate = dirtyDate    
-#     elif len(dates) == 2:
-#         month = ""
-#         eparts = dates[1].strip().split(" ")
-#         if len(eparts) == 2 or len(eparts) == 3:
-#             eDate,month = formatDate(eparts[0],eparts[1],year)
-#         sparts = dates[0].strip().split(" ")
-#                
-#         if len(sparts) == 1:
-#             sDate, month = formatDate(sparts[0],month,year)
-#         else:
-#             sDate, month = formatDate(sparts[0],month[1],year)
-#         
-#     return sDate,eDate
 
     dirtyDate = removePunctuation(str(dirtyDate), ("-"))
     sDate = ""
     eDate = ""
     lyear = year # the local year from the date, rather than the doc
-    print("dirtyDate: " + dirtyDate + " , lyear: " + str(lyear))
     dates = dirtyDate.split("-")
     if len(dates) > 0: # just one date
         sparts = dates[0].strip().split(" ")
-        print(sparts)
         mnth = ""
         if len(sparts) == 2:
             sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
@@ -215,6 +188,7 @@ outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
+print(sectionNames)
 print("starting " + experiment)
 
 cultivationsSegment = []
@@ -231,7 +205,7 @@ for fname in fileList:
     nyear = fname[0:4]
     
     if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
-          
+    #if int(nyear) == 1991:      
         allLines = allLines + prevlines
         if nyear != year:
             print("start processing year: " + str(year))

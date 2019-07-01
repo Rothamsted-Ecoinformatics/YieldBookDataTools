@@ -20,7 +20,7 @@ corrections = []
 with open("D:\\Work\\rothamsted-ecoinformatics\\YieldbookDatasetDrafts\\corrections.csv", 'r') as infile:
     for line in infile:
         corrections.append(line.strip())
-
+        
 def enhance(fname):
     img = cv2.imread(fname)
     img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
@@ -72,24 +72,32 @@ def isStop(line):
             return True
     return False
 
-def startsWithSection(line, sectionNames):
+def startCultivations(line):
     lline = line.lower()
     lline = lline.translate(str.maketrans({a:None for a in string.punctuation}))
-    print("line: " + lline)
-    
+    if lline.startswith("cultivations"):
+        return True
+    return False
+
+def startsWithSection(line, sectionNames):
+    lline = removePunctuation(line.lower(),[])
+    #lline = lline.translate(str.maketrans({a:None for a in string.punctuation}))
+    print("test section start  -:- " + lline)
     for name in sectionNames:
-        if lline.startswith(name):
-            print(name)
+        if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
+            print("section is: " + name)
             return name, line[len(name):]
     return None,line
 
+#this is redundant... rework for leys ...check then go to end of line
 def checkForSection(line, sectionNames):
-    #global sectionNames
-    if len(sectionNames) > 0:
-        lline = line.lower()
-        for name in sectionNames:
-            if lline.startswith(name):
-                return True, name
+    lline = removePunctuation(line.lower(),[])
+    print("test section start  -:- " + lline)
+    #if len(sectionNames) > 0:
+    for name in sectionNames:
+        if lline.startswith(name):
+            print("a: " + lline)
+            return True, lline#name
     return False, None
 
 def formatDate(day,month,year):
@@ -113,8 +121,9 @@ def removePunctuation(value, exclusions):
     return result
 
 def getPageScan(pathToFile):
-    img = enhance(pathToFile)
-    scan = pytesseract.image_to_string(img, lang='lat+eng', config='--dpi 300 --psm 6',nice=0,output_type=Output.DICT)
+    img = enhance(pathToFile) # use --psm 6 for normal use lat/eng
+    scan = pytesseract.image_to_string(img, lang='eng', config='--dpi 300 --psm 6',nice=0,output_type=Output.DICT)
+    #scan = pytesseract.image_to_pdf_or_hocr(img, lang='eng', config='--dpi 300 --psm 6',nice=0,extension='hocr')
     page = scan.get("text")
     return page    
 
@@ -123,7 +132,6 @@ def getCode(page):
     p = re.compile("[0-9]{2}\/[A-Z]\/[A-Z]{1,2}\/[0-9]{1,3}")
     codeList = p.findall(page)
     codes = ",".join(map(str,codeList))
-    print(codes)
     return codes
 
 def getOperationCode(job):
@@ -138,7 +146,6 @@ def getOperationCode(job):
 def checkJobDate(line):
     p = re.compile("[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
     dateMatch = p.search(line)
-    print(dateMatch)
     date = None
     isDate = False
     if (dateMatch):
@@ -179,36 +186,38 @@ def correctLine(line):
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(words):
-    #print(spellings)
     newWords = []
     for word in words:
-        word = word.strip()
-        lastChar = ""
-        hasPunc = False            
-        if len(word) > 1:
+        if len(word) > 2:
+            word = word.strip()
+            lastChar = ""
+            hasPunc = False 
+            
             lastChar = word[len(word)-1]
             if lastChar in string.punctuation:
-                #print(word + " : " + lastChar)
                 word = word[:len(word)-1]
                 hasPunc = True
-        
-        wordLen = len(word)
-        cutOff=70
-        if wordLen == 3:
-            cutOff = 65
-        elif (wordLen == 4):
-            cutOff = 79
             
-        matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
-        if matched and wordLen > 2:
-            if hasPunc:
-                newWords.append(matched[0]+lastChar)
-            else: 
-                newWords.append(matched[0])
-        else:
-            if hasPunc:
-                newWords.append(word+lastChar)
-            else:
-                newWords.append(word)
+            wordLen = len(word)
+            cutOff=70
+            if wordLen == 3:
+                cutOff = 65
+            elif (wordLen == 4):
+                cutOff = 74
                 
+            matched = process.extractBests(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
+            #print(matched)
+            matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
+            if matched and wordLen > 2:
+                if hasPunc:
+                    newWords.append(matched[0]+lastChar)
+                else: 
+                    newWords.append(matched[0])
+            else:
+                if hasPunc:
+                    newWords.append(word+lastChar)
+                else:
+                    newWords.append(word)
+        else: 
+            newWords.append(word)        
     return " ".join(newWords)

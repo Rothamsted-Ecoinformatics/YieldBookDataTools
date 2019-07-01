@@ -37,19 +37,20 @@ def checkForSection(line):
     lline = removePunctuation(line.lower(),[])
     for name in sectionNames:
         if lline.startswith(name):
-            return name
+            return line
     return None
         
 def testLast(job, parts):
-    testUnit = parts[len(parts)-1]
-    testlen = len(testUnit)
-    
-    if testUnit[testlen-2:] == "ha" or testUnit[testlen-2:testlen-1] == "m":
-        job.rate = parts[len(parts)-2]
-        job.rateUnit = testUnit
-        job.description = " ".join(parts[:len(parts)-2])
-    else:
-        job.description = " ".join(parts)
+    if (len(parts)-1) > 0:
+        testUnit = parts[len(parts)-1]
+        testlen = len(testUnit)
+        
+        if testUnit[testlen-2:] == "ha" or testUnit[testlen-2:testlen-1] == "m":
+            job.rate = parts[len(parts)-2]
+            job.rateUnit = testUnit
+            job.description = " ".join(parts[:len(parts)-2])
+        else:
+            job.description = " ".join(parts)
     return job    
 
 config = configparser.ConfigParser()
@@ -62,7 +63,7 @@ sectionNames = strSections.split(",")
 sectionStarts = ()
 specialSection = ""
 year = ""
-
+print(sectionNames)
 fileList = os.listdir(srcdocs)
 sorted(fileList)
 jobs = []
@@ -70,7 +71,8 @@ section = ""
 curJob = None
 for fname in fileList:
     nyear = fname[0:4]
-    if int(nyear) >= 2007 and fname.endswith(".jpg"): 
+    #if int(nyear) >= 2007 and fname.endswith(".jpg"): 
+    if int(nyear) == 2007:
         page = getPageScan(srcdocs + "\\" + fname)
         if nyear != year:
             printJobs(jobs)
@@ -92,6 +94,7 @@ for fname in fileList:
                 print("original : " + line)
                 isNewSection = checkForSection(line)
                 if isNewSection:
+                    print("b")
                     section = isNewSection
                     if curJob:
                         jobs.append(curJob)

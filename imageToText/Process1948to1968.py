@@ -4,7 +4,6 @@ Created on 3 Dec 2018
 @author: ostlerr
 '''
 import os
-from pytesseract.pytesseract import Output
 from imageToText.YieldBookToData import *
 import configparser
 
@@ -13,11 +12,9 @@ def cleanDate(dirtyDate, year):
     sDate = ""
     eDate = ""
     lyear = year # the local year from the date, rather than the doc
-    print("dirtyDate: " + dirtyDate + " , lyear: " + str(lyear))
     dates = dirtyDate.split("-")
     if len(dates) > 0: # just one date
         sparts = dates[0].strip().split(" ")
-        print(sparts)
         mnth = ""
         if len(sparts) == 2:
             sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
@@ -40,6 +37,7 @@ def cleanDate(dirtyDate, year):
 def getOperations(lines):
     global cultivationsSegment
     global inCultivations 
+    print("----++++" + year)
     for line in lines:
         if(inCultivations):
             if isStop(line): 
@@ -47,9 +45,10 @@ def getOperations(lines):
                 print("ex cultivations")
             else:
                 cultivationsSegment.append(line)
-        elif(fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75): 
+        elif fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75 or year == "1938": 
+            print("++++" + year)
             cultivationsSegment.clear()
-            inCultivations = True
+            inCultivations = True 
             print("in cultivations")
             parts = line.split(" ")
             if (len(parts) >2):
@@ -90,7 +89,7 @@ def startsWithBlock(line):
         return None,None        
         
 #this method is about subsectioning the cultivations then writing them             
-def processCultivations():   #cultivationSections = cultivationsSegment.split("\n\n")
+def processCultivations():   #cultivationSections = cultivationxsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
     sectionName = ""
@@ -199,7 +198,7 @@ outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
-
+print(sectionNames)
 cultivationsSegment = []
 inCultivations = False
 sectionStarts = ()
@@ -218,6 +217,7 @@ for idx, fname in enumerate(fileList):
         page = getPageScan(srcdocs + "\\" + fname)
         page = re.sub(" +"," ",page).strip()
         lines = toCorrectedLines(page)        
+        print(lines)
         getOperations(lines)
         
 print('done')
