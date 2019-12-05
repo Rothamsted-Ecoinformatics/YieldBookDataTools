@@ -4,13 +4,13 @@ Created on 1 Jul 2019
 @author: ostlerr
 '''
 import os
-from imageToText.YieldBookToData import getPageScan, correctWords, removePunctuation
+from YieldBookToData import getPageScan, correctWords, removePunctuation
 import configparser
 import re
 from fuzzywuzzy import fuzz
 
 config = configparser.ConfigParser()
-config.read('config.ini')
+print(config.read('D:\Code\python\workspace\YieldBookDataTools\imageToText\config.ini'))
 #experiment = config['EXPERIMENT']['name']
 #outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
@@ -24,7 +24,7 @@ for fname in fileList:
     #print (nyear + " - " + npage)
     print(srcdocs + "\\" + fname)
     
-    if fname.endswith("jpg"):
+    if fname=="1975.jpg":
         outfile = open(srcdocs + "/"+nyear+".txt", "w+", 1)
         page = getPageScan(srcdocs + "\\" + fname)
         lines = page.split("\n")
