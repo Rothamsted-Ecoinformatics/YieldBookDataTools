@@ -14,7 +14,7 @@ from fuzzywuzzy import fuzz
 from fuzzywuzzy import process
 import string
 
-months = ("Jan", "Feb", "Mar", "Apr", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
+months = ("Jan", "Feb", "Mar", "Apr", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
 
 corrections = []
 with open("D:\\Work\\rothamsted-ecoinformatics\\YieldbookDatasetDrafts\\corrections.csv", 'r') as infile:
@@ -67,7 +67,7 @@ def looksLikeYear(word):
 
 def isStop(line):
     lline = line.lower()
-    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error']: #sectionStops:
+    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error','broadbalk wilderness']: #sectionStops:
         if lline.startswith(stopper) or fuzz.ratio(lline,stopper) > 80:
             return True
     return False
@@ -129,7 +129,7 @@ def getPageScan(pathToFile):
 
 # Note replicated experiments will be listed together and therefore have two codes listed. convert these to comma delimited
 def getCode(page):
-    p = re.compile("[0-9]{2}\/[A-Z]\/[A-Z]{1,2}\/[0-9]{1,3}")
+    p = re.compile(r"[0-9]{2}\/[A-Z]\/[A-Z]{1,2}\/[0-9]{1,3}")
     codeList = p.findall(page)
     codes = ",".join(map(str,codeList))
     return codes
@@ -144,7 +144,7 @@ def getOperationCode(job):
     return code, job
     
 def checkJobDate(line):
-    p = re.compile("[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
+    p = re.compile(r"[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
     dateMatch = p.search(line)
     date = None
     isDate = False
@@ -168,10 +168,15 @@ def clearSpace(matchObject):
     return matchObject.group(0).replace(" ", "")
 
 def toCorrectedLines(page):
+    # some special force replacements
+    page = page.replace("LO gals","40 gals")
+    page = re.sub(r"My ([\d]{1,2})",r"May \1",page)
+    page = re.sub(r" ([\d]{1,2}) and ",r" \1, ",page) # for fixing date formats 
     lines = page.split("\n")
     lines = list(filter(None,lines))
     cleanLines = []
     for line in lines:
+        line = re.sub(r'(\w)-(\w)',r'\1 - \2',line) # ensures dashes are surrounded by spaces
         rawwords = line.split(" ") # chunk everything into words
         corrected = correctWords(rawwords)
         cleanwords = corrected.split(" ")
@@ -181,13 +186,15 @@ def toCorrectedLines(page):
     return cleanLines
 
 def correctLine(line):
-    correctedLine = correctWords(line.split(),corrections)
+    correctedLine = correctWords(line.split())
     return correctedLine
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(words):
     newWords = []
     for word in words:
+        # some special force replacements 
+        word = word.replace("0ct","Oct").replace("Mey","May")
         if len(word) > 2:
             word = word.strip()
             lastChar = ""

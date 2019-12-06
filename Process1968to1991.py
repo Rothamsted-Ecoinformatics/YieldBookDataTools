@@ -5,7 +5,7 @@ Created on 3 Dec 2018
 '''
 import os
 from pytesseract.pytesseract import Output
-from imageToText.YieldBookToData import *
+from YieldBookToData import *
 import string
 import configparser
 
@@ -95,6 +95,7 @@ def processSections(subsections):
         wordCount = len(words)
         opDate = ""
         curOp = ""
+        prevOp = ""
         opCount=0
         idx = 0
         backupOp = ""
@@ -134,6 +135,8 @@ def processSections(subsections):
                         curOp = curOp.replace(":", "").strip()
                         if(len(curOp) <= 2):
                             curOp = backupOp
+                        if curOp == "and":
+                            curOp = backupOp
                         opCount = 1
                     writeJob(sname,opDate,curOp)
                     opDate = None
@@ -151,34 +154,82 @@ def processSections(subsections):
                     
             idx+=1    
         if opDate:
+            if curOp == "and":
+                curOp = backupOp
             writeJob(sname,opDate,curOp,experiment)
+            #prevOp = curOp
      
 def cleanDate(dirtyDate, year):
-
-    dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+    global lyear
     sDate = ""
     eDate = ""
-    lyear = year # the local year from the date, rather than the doc
-    dates = dirtyDate.split("-")
-    if len(dates) > 0: # just one date
-        sparts = dates[0].strip().split(" ")
-        mnth = ""
-        if len(sparts) == 2:
-            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
-        elif len(sparts) == 3:
-            lyear = sparts[2]
-            sDate, mnth = formatDate(sparts[1],sparts[0],lyear)            
+
+    if dirtyDate:
+        dirtyDate = dirtyDate.replace("=","-").replace("—","-")
+        dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+        dirtyDate = dirtyDate.replace(" and ",", ")
+        dirtyDate = re.sub(r"(\d)-(\d)",r"\1 - \2",dirtyDate)
+        print("dirtyDate: " + str(dirtyDate))
+
+        parts = dirtyDate.split(" ")
+        if re.match(r"\d{1,2} \w{3,5} - \d{1,2} \w{3,5} \d{4}",str(dirtyDate)):
+            lyear = parts[5]
+            sDate = "-".join([parts[0],parts[1],lyear])
+            eDate = "-".join([parts[3],parts[4],lyear])
+        elif re.match(r"\d{1,2} - \d{1,2} \w{3,5} \d{4}",str(dirtyDate)):
+            lyear = parts[4]
+            month = parts[3]
+            sDate = "-".join([parts[0],month,lyear])
+            eDate = "-".join([parts[2],month,lyear])
+        elif re.match(r"\d{1,2} - \d{1,2} \w{3,5}",str(dirtyDate)):
+            month = parts[3]
+            sDate = "-".join([parts[0],month,lyear])
+            eDate = "-".join([parts[2],month,lyear])
+        elif re.match(r"\d{1,2} \w{3,5} \d{1,4}",str(dirtyDate)):
+            lyear = parts[2]
+            month = parts[1]
+            sDate = "-".join([parts[0],month,lyear])        
+        elif re.match(r"\d{1,2} \w{3,5}",str(dirtyDate)):
+            if lyear == "":
+                lyear = str(int(year)-1)
+            month = parts[1]
+            if (lyear == "" or lyear == str(int(year)-1)) and month in ("Jan","Feb","Mar","April","Apr","May","June","July"):
+                lyear = year
+            elif lyear == "":
+                lyear = str(int(year)-1)
+
+            sDate = "-".join([parts[0],month,lyear])
         else:
-            sDate = dirtyDate
-        if len(dates) == 2:    
-            eparts = dates[1].strip().split(" ")
-            if len(eparts) == 1:
-                eDate,month = formatDate(eparts[0],mnth,lyear)
-            elif eparts[0] in months:
-                eDate,month = formatDate(eparts[1],eparts[0],lyear)
-            else:
-                eDate,month = formatDate(eparts[0],mnth,lyear)
+            sDate = "UNKNOWN"
+            eDate = dirtyDate
+            
     return sDate,eDate
+
+
+    # dirtyDate = removePunctuation(str(dirtyDate), ("-"))
+    # sDate = ""
+    # eDate = ""
+    # lyear = year # the local year from the date, rather than the doc
+    # dates = dirtyDate.split("-")
+    # if len(dates) > 0: # just one date
+    #     sparts = dates[0].strip().split(" ")
+    #     mnth = ""
+    #     if len(sparts) == 2:
+    #         sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
+    #     elif len(sparts) == 3:
+    #         lyear = sparts[2]
+    #         sDate, mnth = formatDate(sparts[1],sparts[0],lyear)            
+    #     else:
+    #         sDate = dirtyDate
+    #     if len(dates) == 2:    
+    #         eparts = dates[1].strip().split(" ")
+    #         if len(eparts) == 1:
+    #             eDate,month = formatDate(eparts[0],mnth,lyear)
+    #         elif eparts[0] in months:
+    #             eDate,month = formatDate(eparts[1],eparts[0],lyear)
+    #         else:
+    #             eDate,month = formatDate(eparts[0],mnth,lyear)
+    # return sDate,eDate
 
 
 config = configparser.ConfigParser()
@@ -199,13 +250,12 @@ inCultivations = False
 
 fileList = os.listdir(srcdocs)
 fileList.sort()
-
+lyear = ""
 for fname in fileList:
     print("fname: " + fname)
     nyear = fname[0:4]
     
     if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
-    #if int(nyear) == 1991:      
         allLines = allLines + prevlines
         if nyear != year:
             print("start processing year: " + str(year))
