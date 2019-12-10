@@ -4,10 +4,11 @@ Created on 3 Dec 2018
 @author: ostlerr
 '''
 import os
-from pytesseract.pytesseract import Output
 from YieldBookToData import *
 import string
 import configparser
+import xmltodict
+import re
 
 def looksLikeDay(word):
     nword = removePunctuation(word,["&","%","}"])
@@ -23,46 +24,61 @@ def looksLikeDay(word):
     return False
 
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
-def getOperations(lines):
-    global cultivationsSegment
-    global inCultivations# must be false because starting a new year ?
+def getOperations(content):
+    lines = content.split("\n")
+    cultivationsSegment = []
     inCultivations = False
     for line in lines:
-        print(startCultivations(line))
         if(inCultivations):
             if isStop(line):    
                 inCultivations = False
-                print("ex cultivations")
                 break
             else:                
                 cultivationsSegment.append(line)
         elif startCultivations(line):
-        #elif(fuzz.token_set_ratio(line,"Cultivations etc") >= 75): 
-            print("in cultivations")
             cultivationsSegment.clear()
             inCultivations = True
             parts = line.split(" ")
             if (len(parts) >2):
-                line = " ".join(parts[2:])
+                line = " ".join(parts[2:]) # why the start at index 2?
                 cultivationsSegment.append(line)
     
-    processCultivations()
+    processCultivations(cultivationsSegment)
     
 def writeJob(sname,opDate,op):
     sDate, eDate = cleanDate(opDate,year)
-    outfile.write("|".join([experiment,year,str(sname),str(sDate),str(eDate),op]))
+    outfile.write("|".join([str(experiment),str(year),str(sname),str(sDate),str(eDate),"diary record",op]))
     outfile.write("\n")    
 
+def applyCorrections(content):
+    # Note this preserves lines as they provide structural cues to help with processing
+    # some special force replacements - these could be applied to the whole doc
+    
+    content = re.sub(" +"," ",content).strip()
+    content = content.replace("LO gals","40 gals")
+    content = content.replace("=","-")
+    content = content.replace("—","-")
+    content = content.replace("~","-")
+    content = content.replace("--","-")
+    content = re.sub(r"My ([\d]{1,2})",r"May \1",content)
+    content = re.sub(r"((?=[^2])\w),((?=[^4])\w)",r"\1, \2",content) # should ignore 2,4
+    content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
+    content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
+    
+    corrected = correctWords(content)
+    words = list(filter(None,corrected))
+    return " ".join(words)
+
 #this method is about subsectioning the cultivations then writing them             
-def processCultivations():   #cultivationSections = cultivationsSegment.split("\n\n")
+def processCultivations(cultivationsSegment):   #cultivationSections = cultivationsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
+    # The text is formatted as a single block of text with no line breaks
     sectionName = ""
     subsections = {}
     subsectionText = ""
 
     for line in cultivationsSegment:
-        print(line)
         newSection, newLine = startsWithSection(line,sectionNames) 
         if (newSection):
             if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
@@ -72,7 +88,11 @@ def processCultivations():   #cultivationSections = cultivationsSegment.split("\
             line = newLine
         
         if (len(line) > 1):
-            subsectionText = " ".join([str(subsectionText),line])
+            line = line.strip()
+            if subsectionText[-1:] == "-":
+                subsectionText = "".join([str(subsectionText),line])    
+            else: 
+                subsectionText = " ".join([str(subsectionText),line])
     if not sectionName:
         sectionName = "All plots"
     subsections[sectionName] = subsectionText           # got a new section...probably
@@ -90,8 +110,8 @@ def filterPunctuation(rawword):
             
 def processSections(subsections):
     for sname, stext in subsections.items():
-        rawwords = stext.split()
-        words = list(filter(filterPunctuation,rawwords))
+        rawwords = applyCorrections(stext).split(" ")
+        words = list(filter(filterPunctuation,rawwords)) #removes stray punctuation marks 
         wordCount = len(words)
         opDate = ""
         curOp = ""
@@ -157,7 +177,6 @@ def processSections(subsections):
             if curOp == "and":
                 curOp = backupOp
             writeJob(sname,opDate,curOp,experiment)
-            #prevOp = curOp
      
 def cleanDate(dirtyDate, year):
     global lyear
@@ -169,7 +188,6 @@ def cleanDate(dirtyDate, year):
         dirtyDate = removePunctuation(str(dirtyDate), ("-"))
         dirtyDate = dirtyDate.replace(" and ",", ")
         dirtyDate = re.sub(r"(\d)-(\d)",r"\1 - \2",dirtyDate)
-        print("dirtyDate: " + str(dirtyDate))
 
         parts = dirtyDate.split(" ")
         if re.match(r"\d{1,2} \w{3,5} - \d{1,2} \w{3,5} \d{4}",str(dirtyDate)):
@@ -205,69 +223,25 @@ def cleanDate(dirtyDate, year):
             
     return sDate,eDate
 
-
-    # dirtyDate = removePunctuation(str(dirtyDate), ("-"))
-    # sDate = ""
-    # eDate = ""
-    # lyear = year # the local year from the date, rather than the doc
-    # dates = dirtyDate.split("-")
-    # if len(dates) > 0: # just one date
-    #     sparts = dates[0].strip().split(" ")
-    #     mnth = ""
-    #     if len(sparts) == 2:
-    #         sDate, mnth = formatDate(sparts[1],sparts[0],lyear)
-    #     elif len(sparts) == 3:
-    #         lyear = sparts[2]
-    #         sDate, mnth = formatDate(sparts[1],sparts[0],lyear)            
-    #     else:
-    #         sDate = dirtyDate
-    #     if len(dates) == 2:    
-    #         eparts = dates[1].strip().split(" ")
-    #         if len(eparts) == 1:
-    #             eDate,month = formatDate(eparts[0],mnth,lyear)
-    #         elif eparts[0] in months:
-    #             eDate,month = formatDate(eparts[1],eparts[0],lyear)
-    #         else:
-    #             eDate,month = formatDate(eparts[0],mnth,lyear)
-    # return sDate,eDate
-
-
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
-outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
-srcdocs = config['EXPERIMENT']['srcdocs']
+outfile = open(config['EXPERIMENT']['o_outfile'], "w+", 1)
+srcdoc = config['EXPERIMENT']['srcdoc']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
 print(sectionNames)
 print("starting " + experiment)
 
-cultivationsSegment = []
-allLines = []
-prevlines = []
 year = ""
-inCultivations = False
-
-fileList = os.listdir(srcdocs)
-fileList.sort()
 lyear = ""
-for fname in fileList:
-    print("fname: " + fname)
-    nyear = fname[0:4]
-    
-    if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
-        allLines = allLines + prevlines
-        if nyear != year:
-            print("start processing year: " + str(year))
-            getOperations(allLines)
-            cultivationsSegment = []
-            year = nyear
-            allLines = []
-        
-        page = getPageScan(srcdocs + "\\" + fname)
-        page = re.sub(" +"," ",page).strip()
-        lines = toCorrectedLines(page)
-        prevlines = lines
-# finalise last
-allLines = allLines + prevlines
-getOperations(allLines)
+
+with open(srcdoc) as fd:
+    doc = xmltodict.parse(fd.read())
+
+for rep in doc["reports"]["report"]:
+    year = rep["year"]    
+    print("start processing year: " + str(year))
+    content = rep["rawcontent"]
+    content = removeBlankLines(content)
+    getOperations(content)
