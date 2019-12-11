@@ -33,16 +33,16 @@ def getOperations(content):
             if isStop(line):    
                 inCultivations = False
                 break
-            else:                
+            else:                               
                 cultivationsSegment.append(line)
-        elif startCultivations(line):
-            cultivationsSegment.clear()
+        elif startCultivations(line):            
             inCultivations = True
+            line = line.replace("etc","etc ") # just in case no spaces as the first word will be lost otherwise 
             parts = line.split(" ")
             if (len(parts) >2):
                 line = " ".join(parts[2:]) # why the start at index 2?
                 cultivationsSegment.append(line)
-    
+    print(cultivationsSegment)
     processCultivations(cultivationsSegment)
     
 def writeJob(sname,opDate,op):
@@ -77,23 +77,29 @@ def processCultivations(cultivationsSegment):   #cultivationSections = cultivati
     sectionName = ""
     subsections = {}
     subsectionText = ""
-
-    for line in cultivationsSegment:
+    firstline = True
+    for idx, line in enumerate(cultivationsSegment):
+        print (line)
         newSection, newLine = startsWithSection(line,sectionNames) 
-        if (newSection):
-            if(sectionName): # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
+        if newSection or idx == 0:
+            if sectionName: # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
                 subsections[sectionName] = subsectionText
             subsectionText = "" #set up the new section text
-            sectionName = newSection
+            if not newSection and idx == 0:
+                sectionName = "all plots"
+            else:
+                sectionName = newSection
             line = newLine
-        
-        if (len(line) > 1):
+
+        if len(line) > 1:
             line = line.strip()
             if subsectionText[-1:] == "-":
                 subsectionText = "".join([str(subsectionText),line])    
             else: 
                 subsectionText = " ".join([str(subsectionText),line])
+    print(sectionName)
     if not sectionName:
+        print("will be all")
         sectionName = "All plots"
     subsections[sectionName] = subsectionText           # got a new section...probably
     
@@ -227,7 +233,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['ob_outfile'], "w+", 1)
-srcdoc = config['EXPERIMENT']['srcdoc']
+srcdoc = config['EXPERIMENT']['raw_xml']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
 print(sectionNames)
@@ -241,7 +247,8 @@ with open(srcdoc) as fd:
 
 for rep in doc["reports"]["report"]:
     year = rep["year"]    
-    print("start processing year: " + str(year))
-    content = rep["rawcontent"]
-    content = removeBlankLines(content)
-    getOperations(content)
+    if int(year) >=1968 and int(year) <= 1991:    
+        print("start processing year: " + str(year))
+        content = rep["rawcontent"]
+        content = removeBlankLines(content)
+        getOperations(content)        

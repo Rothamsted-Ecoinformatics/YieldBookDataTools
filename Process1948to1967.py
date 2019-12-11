@@ -4,7 +4,7 @@ Created on 3 Dec 2018
 @author: ostlerr
 '''
 import os
-from YieldBookToData import removeBlankLines, startsWithSection, months, looksLikeYear, removePunctuation, isStop, filterPunctuation, correctWords
+from YieldBookToData import removeBlankLines, startsWithSection, months, looksLikeYear, removePunctuation, isStop, filterPunctuation, correctWords, startCultivations
 import configparser
 import xmltodict
 from fuzzywuzzy import fuzz
@@ -98,8 +98,7 @@ def getOperations(content):
                 break
             else:
                 cultivationsSegment.append(line)
-        elif fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75: 
-            #cultivationsSegment.clear()
+        elif startCultivations(line): #fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 70: 
             inCultivations = True 
             print("in cultivations")
             
@@ -277,12 +276,11 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['oa_outfile'], "w+", 1)
-srcdoc = config['EXPERIMENT']['srcdoc']
+srcdoc = config['EXPERIMENT']['raw_xml']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
 print(sectionNames)
 sectionStarts = ()
-year = ""
 lyear = ""
 
 with open(srcdoc) as fd:
@@ -290,11 +288,10 @@ with open(srcdoc) as fd:
 
 for rep in doc["reports"]["report"]:
     year = rep["year"]    
-    print("start processing year: " + str(year))
-    content = rep["rawcontent"]
-    print(len(content.split("\n")))
-    content = removeBlankLines(content)
-    print(len(content.split("\n")))
-    getOperations(content)
+    if int(year) >=1948 and int(year) <= 1967:
+        print("start processing year: " + str(year))
+        content = rep["rawcontent"]
+        content = removeBlankLines(content)
+        getOperations(content)
 print('done')
 outfile.close()

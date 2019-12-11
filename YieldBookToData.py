@@ -36,14 +36,14 @@ def looksLikeYear(word):
 def isStop(line):
     lline = line.lower()
     for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error','broadbalk wilderness','note']: #sectionStops:
-        if lline.startswith(stopper) or fuzz.ratio(lline,stopper) > 80:
+        if lline.startswith(stopper) or fuzz.partial_ratio(lline,stopper) > 80:
             return True
     return False
 
 def startCultivations(line):
     lline = line.lower()
     lline = lline.translate(str.maketrans({a:None for a in string.punctuation}))
-    if lline.startswith("cultivations"):
+    if lline.startswith("cultivations") or fuzz.partial_ratio(line,"cultivations etc") >= 75:
         return True
     return False
 
@@ -154,9 +154,9 @@ def correctWords(content):
             if firstChar in ["(","'"]:
                 if word[1] == "'":
                     firstChar += "'"
-                    word = word[1:]
-                else:
                     word = word[2:]
+                else:
+                    word = word[1:]
                 hasPrePunc = True
             
             wordLen = len(word)
@@ -166,8 +166,6 @@ def correctWords(content):
             elif (wordLen == 4):
                 cutOff = 74
                 
-            #matched = process.extractBests(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
-            #print(matched)
             matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
             if matched and wordLen > 2:
                 mword = matched[0]

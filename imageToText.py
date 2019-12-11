@@ -26,7 +26,7 @@ def getPageScan(pathToFile):
 
 config = configparser.ConfigParser()
 config.read('config.ini')
-outfile = open(config['EXPERIMENT']['r_outfile'], "w+", 1)
+outfile = open(config['EXPERIMENT']['raw_xml'], "w+", 1)
 srcdocs = config['EXPERIMENT']['srcdocs']
 
 fileList = os.listdir(srcdocs)
@@ -38,7 +38,7 @@ for fname in fileList:
     print("fname: " + fname)
     nyear = fname[0:4]
     
-    if int(nyear) >= 1948 and int(nyear) <= 1967 and fname.endswith(".jpg"): 
+    if int(nyear) >= 1948 and int(nyear) <= 2018 and fname.endswith(".jpg"): 
         curcontent = getPageScan(srcdocs + "\\" + fname)
         print(nyear)
         if nyear != year:
