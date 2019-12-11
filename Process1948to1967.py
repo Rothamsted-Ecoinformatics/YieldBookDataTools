@@ -4,10 +4,13 @@ Created on 3 Dec 2018
 @author: ostlerr
 '''
 import os
-from YieldBookToData import *
+from YieldBookToData import removeBlankLines, startsWithSection, months, looksLikeYear, removePunctuation, isStop, filterPunctuation, correctWords
 import configparser
-
-#newYear = False
+import xmltodict
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+import string
+import re
 
 def cleanDate(dirtyDate, year): # date format expects month first for this period
     global lyear
@@ -52,13 +55,42 @@ def cleanDate(dirtyDate, year): # date format expects month first for this perio
             eDate = dirtyDate
             
     return sDate,eDate
-  
+
+def applyCorrections(content):
+    # Note this preserves lines as they provide structural cues to help with processing
+    # some special force replacements - these could be applied to the whole doc
+    
+    content = re.sub(" +"," ",content).strip()
+    
+    content = content.replace("LO gals","40 gals")
+    content = content.replace("=","-")
+    content = content.replace("—","-")
+    content = content.replace("~","-")
+    content = content.replace("--","-")
+    content = re.sub(r'(\d{1,2}),',r'\1',content) # e.g. 1,
+    content = re.sub(r'(\d{4});',r'\1,',content) # e.g. 1956;
+    content = re.sub(r' [;.:] ',r' ',content)
+    
+    #content = re.sub(r"My ([\d]{1,2})",r"May \1",content)
+    #content = re.sub(r"((?=[^2])\w),((?=[^4])\w)",r"\1, \2",content) # should ignore 2,4
+    #content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
+    #content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
+    
+    corrected = correctWords(content)
+    words = list(filter(None,corrected))
+    return " ".join(words)
+
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
-def getOperations(lines):
-    global cultivationsSegment
-    global inCultivations 
+def getOperations(content):
+    print(content)
+    print("IN OPERATIONS XXX")
+    lines = content.split("\n")
+    print(len(lines))
+    inCultivations = False
+    cultivationsSegment = []
     
     for line in lines:
+        print("opline: " + line)
         if(inCultivations):
             if isStop(line): 
                 inCultivations = False
@@ -66,8 +98,8 @@ def getOperations(lines):
                 break
             else:
                 cultivationsSegment.append(line)
-        elif fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75 or year == "1938": 
-            cultivationsSegment.clear()
+        elif fuzz.token_set_ratio(line,"Cultivations, etc.:") >= 75: 
+            #cultivationsSegment.clear()
             inCultivations = True 
             print("in cultivations")
             
@@ -75,7 +107,7 @@ def getOperations(lines):
             if (len(parts) >2):
                 line = " ".join(parts[2:])
                 cultivationsSegment.append(line)
-    processCultivations()
+    processCultivations(cultivationsSegment)
     
 def writeJob(sname,opDate,curOp,prevOp):
     if not curOp:   
@@ -92,7 +124,6 @@ def writeJob(sname,opDate,curOp,prevOp):
             cleanCurOp = cleanCurOp.replace("note:","").strip()
         else:
             vtype = "diary record"
-        print("opDate: " + str(opDate) + " : " + str(newYear))
         sDate, eDate = cleanDate(opDate,year)
         outfile.write("|".join([str(experiment),str(year),str(sname),str(sDate),str(eDate),vtype,cleanCurOp]))
         outfile.write("\n") 
@@ -122,7 +153,7 @@ def startsWithBlock(line):
         return None,None        
         
 #this method is about subsectioning the cultivations then writing them             
-def processCultivations():   #cultivationSections = cultivationxsSegment.split("\n\n")
+def processCultivations(cultivationsSegment):   #cultivationSections = cultivationxsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
     # possible patterns are short lines (<=2 words) and 'section' as second word
     sectionName = ""
@@ -164,6 +195,9 @@ def processSections(subsections):
     global lyear
     written = True
     for sname, stext in subsections.items():
+        rawwords = applyCorrections(stext).split(" ")
+        words = list(filter(filterPunctuation,rawwords)) #removes stray punctuation marks 
+        
         lyear = ""
         print("===========")
         print(sname)
@@ -175,10 +209,6 @@ def processSections(subsections):
         testYear = False
         prevOp = ""
         curOp = ""
-        stext = re.sub(r'(\d{1,2}),',r'\1',stext) # e.g. 1,
-        stext = re.sub(r'(\d{4});',r'\1,',stext) # e.g. 1956;
-        stext = re.sub(r' [;.:] ',r' ',stext)
-        words = stext.split(" ")
         for word in words:
             print(str(word) + " : " + str(testYear) + " : " + str(expectDay) + " : " + str(curDate))
             written = False
@@ -240,41 +270,31 @@ def processSections(subsections):
             curOp = ""
     if not written:
         print("not written")
-        #newYear = True
         writeJob(sname,curDate,curOp, prevOp)
         curOp = ""
 
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
-outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
-srcdocs = config['EXPERIMENT']['srcdocs']
+outfile = open(config['EXPERIMENT']['oa_outfile'], "w+", 1)
+srcdoc = config['EXPERIMENT']['srcdoc']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")
 print(sectionNames)
-cultivationsSegment = []
-inCultivations = False
 sectionStarts = ()
 year = ""
-newYear = False
 lyear = ""
 
-fileList = os.listdir(srcdocs)
-fileList.sort()
+with open(srcdoc) as fd:
+    doc = xmltodict.parse(fd.read())
 
-for idx, fname in enumerate(fileList):
-    nyear = fname[0:4]
-    if int(nyear) > 1951 and int(nyear) < 1968 and fname.endswith(".jpg"):
-         
-        print("processing document " + str(idx) + ", " +fname)
-        inCultivations = True if (nyear == year) else False
-        year = nyear
-        page = getPageScan(srcdocs + "\\" + fname)
-        page = re.sub(" +"," ",page).strip()
-        print(page)
-        lines = toCorrectedLines(page)        
-        print(lines)
-        getOperations(lines)
-        
+for rep in doc["reports"]["report"]:
+    year = rep["year"]    
+    print("start processing year: " + str(year))
+    content = rep["rawcontent"]
+    print(len(content.split("\n")))
+    content = removeBlankLines(content)
+    print(len(content.split("\n")))
+    getOperations(content)
 print('done')
 outfile.close()

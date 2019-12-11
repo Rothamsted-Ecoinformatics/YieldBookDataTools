@@ -226,7 +226,7 @@ def cleanDate(dirtyDate, year):
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
-outfile = open(config['EXPERIMENT']['o_outfile'], "w+", 1)
+outfile = open(config['EXPERIMENT']['ob_outfile'], "w+", 1)
 srcdoc = config['EXPERIMENT']['srcdoc']
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",")

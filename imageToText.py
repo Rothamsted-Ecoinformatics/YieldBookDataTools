@@ -38,7 +38,7 @@ for fname in fileList:
     print("fname: " + fname)
     nyear = fname[0:4]
     
-    if int(nyear) >= 1968 and int(nyear) <= 1991 and fname.endswith(".jpg"): 
+    if int(nyear) >= 1948 and int(nyear) <= 1967 and fname.endswith(".jpg"): 
         curcontent = getPageScan(srcdocs + "\\" + fname)
         print(nyear)
         if nyear != year:
@@ -62,4 +62,5 @@ outfile.writelines(rawcontent)
 outfile.write("\n]]></rawcontent>")
 outfile.write("\n</report>")
 outfile.write("\n</reports>")
+outfile.close()
 print("done")
