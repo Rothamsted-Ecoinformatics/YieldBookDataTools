@@ -21,38 +21,6 @@ with open("D:\\Work\\rothamsted-ecoinformatics\\YieldbookDatasetDrafts\\correcti
 
 months = ("Jan", "Feb", "Mar", "Apr", "April", "May", "June", "July", "Aug", "Sept", "Oct", "Nov", "Dec", "Mey") # Note Mey as seems to be a problem catching correction
 
-# # def enhance(fname):
-# #     img = cv2.imread(fname)
-# #     img = cv2.resize(img, None, fx=2, fy=2, interpolation=cv2.INTER_CUBIC)
-# #     img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    
-# #     img = cv2.medianBlur(img,3)
-# #     #img = cv2.bilateralFilter(img,3,100,100)
-    
-# #     #img = cv2.adaptiveThreshold(img, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, 11, 2)
-    
-# #     #filtered = cv2.adaptiveThreshold(img.astype(np.uint8), 255, cv2.ADAPTIVE_THRESH_MEAN_C, cv2.THRESH_BINARY, 9, 41)
-# #     kernel = np.ones((1, 1), np.uint8)
-# #     img = cv2.morphologyEx(img, cv2.MORPH_OPEN, kernel)
-# #     img = cv2.morphologyEx(img, cv2.MORPH_CLOSE, kernel)
-# #     #img = cv2.bitwise_or(img, closing)
-# #     #kernel = np.ones((1, 1), np.uint8)
-# #     #img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-# #     #img = cv2.bilateralFilter(img,1,5,5)
-# #     #img = cv2.dilate(img, kernel, iterations=1)
-# #     #img = cv2.erode(img, kernel, iterations=1)
-# #     #name = fname.split("\\")[7]
-    
-# #     #name2 = name.split(".")[0]
-# #     #print("name2: " +name2)
-# #     #cv2.imwrite("D:\\Code\\python\\workspace\\YieldBookDataTools\\" + name2 + ".png", img)
-# #     #img = cv2.threshold(img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)[1]
-# #     #cv2.imwrite("D:\\Code\\python\\workspace\\YieldBookDataTools\\" + name2 + "_2.png", img)
-# #     ##img = cv2.GaussianBlur(img, (1, 1), 0)
-# #     #img = cv2.fastNlMeansDenoising(img,None,7,21,150)
-    
-# #     return img
-
 # Looks for any 4 character word and if it has at least 3 numbers assumes it is a number
 def looksLikeYear(word):
     nword = removePunctuation(word,["&","%","}"])
@@ -67,7 +35,7 @@ def looksLikeYear(word):
 
 def isStop(line):
     lline = line.lower()
-    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error','broadbalk wilderness']: #sectionStops:
+    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error','broadbalk wilderness','note']: #sectionStops:
         if lline.startswith(stopper) or fuzz.ratio(lline,stopper) > 80:
             return True
     return False
@@ -148,6 +116,14 @@ def getRateUnitsJob(job):
 
 def clearSpace(matchObject):
     return matchObject.group(0).replace(" ", "")
+
+def filterPunctuation(rawword):
+    if rawword in ["-","~","="]:
+        return True
+    elif rawword in string.punctuation or rawword == " ":
+        return False
+    else:        
+        return True
 
 def removeBlankLines(content):
     lines = content.split("\n")
