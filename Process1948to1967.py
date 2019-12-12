@@ -70,27 +70,16 @@ def applyCorrections(content):
     content = re.sub(r'(\d{1,2}),',r'\1',content) # e.g. 1,
     content = re.sub(r'(\d{4});',r'\1,',content) # e.g. 1956;
     content = re.sub(r' [;.:] ',r' ',content)
-    
-    #content = re.sub(r"My ([\d]{1,2})",r"May \1",content)
-    #content = re.sub(r"((?=[^2])\w),((?=[^4])\w)",r"\1, \2",content) # should ignore 2,4
-    #content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
-    #content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
-    
-    corrected = correctWords(content)
-    words = list(filter(None,corrected))
-    return " ".join(words)
+
+    return correctWords(content)
 
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(content):
-    print(content)
-    print("IN OPERATIONS XXX")
     lines = content.split("\n")
-    print(len(lines))
     inCultivations = False
     cultivationsSegment = []
     
     for line in lines:
-        print("opline: " + line)
         if(inCultivations):
             if isStop(line): 
                 inCultivations = False
@@ -198,10 +187,6 @@ def processSections(subsections):
         words = list(filter(filterPunctuation,rawwords)) #removes stray punctuation marks 
         
         lyear = ""
-        print("===========")
-        print(sname)
-        print(stext)
-        print("===========")
         curDate = None
         expectDay = False
         expectDayOrMonth = False
@@ -209,7 +194,6 @@ def processSections(subsections):
         prevOp = ""
         curOp = ""
         for word in words:
-            print(str(word) + " : " + str(testYear) + " : " + str(expectDay) + " : " + str(curDate))
             written = False
             word = word.strip()
             if testYear:

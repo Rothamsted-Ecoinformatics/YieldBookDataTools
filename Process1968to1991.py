@@ -53,7 +53,6 @@ def writeJob(sname,opDate,op):
 def applyCorrections(content):
     # Note this preserves lines as they provide structural cues to help with processing
     # some special force replacements - these could be applied to the whole doc
-    
     content = re.sub(" +"," ",content).strip()
     content = content.replace("LO gals","40 gals")
     content = content.replace("=","-")
@@ -65,9 +64,7 @@ def applyCorrections(content):
     content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
     content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
     
-    corrected = correctWords(content)
-    words = list(filter(None,corrected))
-    return " ".join(words)
+    return correctWords(content) #" ".join(words)
 
 #this method is about subsectioning the cultivations then writing them             
 def processCultivations(cultivationsSegment):   #cultivationSections = cultivationsSegment.split("\n\n")
@@ -79,7 +76,6 @@ def processCultivations(cultivationsSegment):   #cultivationSections = cultivati
     subsectionText = ""
     firstline = True
     for idx, line in enumerate(cultivationsSegment):
-        print (line)
         newSection, newLine = startsWithSection(line,sectionNames) 
         if newSection or idx == 0:
             if sectionName: # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
@@ -97,22 +93,12 @@ def processCultivations(cultivationsSegment):   #cultivationSections = cultivati
                 subsectionText = "".join([str(subsectionText),line])    
             else: 
                 subsectionText = " ".join([str(subsectionText),line])
-    print(sectionName)
     if not sectionName:
-        print("will be all")
         sectionName = "All plots"
     subsections[sectionName] = subsectionText           # got a new section...probably
     
     # Now process the subsections:
     processSections(subsections)
-
-def filterPunctuation(rawword):
-    if rawword in ["-","~","="]:
-        return True
-    elif rawword in string.punctuation or rawword == " ":
-        return False
-    else:        
-        return True
             
 def processSections(subsections):
     for sname, stext in subsections.items():

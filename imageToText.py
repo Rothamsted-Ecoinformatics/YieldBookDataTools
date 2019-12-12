@@ -54,7 +54,7 @@ for fname in fileList:
             rawcontent = curcontent
         else:
             rawcontent += "\n" + curcontent
-
+        
 outfile.write("\n<report>")
 outfile.write("\n<year>" + year + "</year>")
 outfile.write("\n<rawcontent>\n<![CDATA[")

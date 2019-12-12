@@ -8,10 +8,10 @@ These documents only cover the Classicals and other long-terms, main concern is 
 @author: ostlerr
 '''
 import os
-from imageToText.YieldBookToData import checkForSection, checkJobDate, getPageScan, toCorrectedLines,\
-    startsWithSection
+from YieldBookToData import checkForSection, checkJobDate, startsWithSection, removeBlankLines, correctWords
 import configparser
 import re
+import xmltodict
 
 specialSection = ""
 
@@ -20,42 +20,63 @@ def writeJob(sname,curOpDate,curOp,curOpType):
         outfile.write("|".join([str(experiment),str(year),str(sname),str(curOpDate),str(curOp),curOpType]))
         outfile.write("\n")
 
+def applyCorrections(content):
+    # Note this preserves lines as they provide structural cues to help with processing
+    # some special force replacements - these could be applied to the whole doc
+    #content = content.replace("\n"," $$$$ ")
+    print("$$$$")
+    print(content)
+    print("$$$$")
+    
+    #content = content.replace("LO gals","40 gals")
+    #content = content.replace("=","-")
+    #content = content.replace("—","-")
+    #content = content.replace("~","-")
+    #content = content.replace("--","-")
+    #content = re.sub(r"My ([\d]{1,2})",r"May \1",content)
+    #content = re.sub(r"((?=[^2])\w),((?=[^4])\w)",r"\1, \2",content) # should ignore 2,4
+    #content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
+    #content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
+    
+    return correctWords(content)
+
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
-outfile = open(config['EXPERIMENT']['outfile'], "w+", 1)
-srcdocs = config['EXPERIMENT']['srcdocs']
+outfile = open(config['EXPERIMENT']['oc_outfile'], "w+", 1)
+srcdoc = config['EXPERIMENT']['raw_xml']
+print(srcdoc)
 strSections = config['EXPERIMENT']['sections']
 sectionNames = strSections.split(",") if len(strSections) > 0 else []
 year = ""
-fileList = os.listdir(srcdocs)
-fileList.sort()
-processingDiary = False
-for fname in fileList: 
-    nyear = fname[0:4]
-    sname = ""
-    curOp = ""
-    curOpDate = ""
-    curOpType = ""
-    processingDiary = False
-    if int(nyear) >= 1992 and int(nyear) <= 2006 and fname.endswith(".jpg"): 
-    #if int(nyear) == 2004:
-        year = nyear
-        page = getPageScan(srcdocs + "\\" + fname)
-        lines = toCorrectedLines(page)
+with open(srcdoc) as fd:
+    doc = xmltodict.parse(fd.read())
+
+for rep in doc["reports"]["report"]:
+    print(rep)
+    year = rep["year"]
+    if int(year) >=1992 and int(year) <= 2006:    
+        print("start processing year: " + str(year))
+        content = rep["rawcontent"]        
+        content = applyCorrections(content)
                 
+        sname = ""
+        curOp = ""
+        curOpDate = ""
+        curOpType = ""
+        processingDiary = False
+        
+        lines = content.split("\n")
         for line in lines:
-            print(line)
-            if line.lower().startswith("experimental diary"):# or line.lower().startswith("i diary"):
+            if line.startswith("experimental diary") or line == "experimental diary":# or line.lower().startswith("i diary"):
                 processingDiary = True
             elif processingDiary:
                 isNewSection, nsname = checkForSection(line,sectionNames)    
-                #print(line)
                 if isNewSection:
                     sname= nsname
                 else: #processing diary entries here
                     isDate, opDate, job = checkJobDate(line)
-                    if job.startswith("Note:"):
+                    if job.lower().startswith("note"):
                         processingDiary = False
                     elif isDate:
                         if re.search(r":\s[TB]\s:",curOp): # this is to deal with multiple operations for one date

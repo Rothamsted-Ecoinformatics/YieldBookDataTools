@@ -110,7 +110,7 @@ config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['sa_outfile'], "w+", 1)
-srcdoc = config['EXPERIMENT']['srcdoc']
+srcdoc = config['EXPERIMENT']['raw_xml']
 crops = config['EXPERIMENT']['crops'].split(",")
 sections = ["weedkiller","fungicide","insecticide","manures","weedkillers"]
 
@@ -119,7 +119,8 @@ with open(srcdoc) as fd:
 
 for rep in doc["reports"]["report"]:
     year = rep["year"]    
-    print("start processing year: " + str(year))
-    content = rep["rawcontent"]
-    content = removeBlankLines(content)
-    process(content)
+    if int(year) >=1968 and int(year) <= 1991:   
+        print("start processing year: " + str(year))
+        content = rep["rawcontent"]
+        content = removeBlankLines(content)
+        process(content)

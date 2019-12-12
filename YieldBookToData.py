@@ -132,6 +132,7 @@ def removeBlankLines(content):
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(content):
+    content = content.replace("\n"," $$$$ ") # this is for line preservation
     words = content.split(" ") # chunk everything into words
     newWords = []
     for word in words:
@@ -180,4 +181,7 @@ def correctWords(content):
         if hasPrePunc:
             mword = firstChar + mword
         newWords.append(mword)
-    return newWords
+    content = re.sub(" +"," ",content).strip()
+    words = list(filter(None,newWords))
+    content = " ".join(words).replace(" $$$$ ","\n")
+    return content
