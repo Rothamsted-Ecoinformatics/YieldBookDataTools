@@ -5,6 +5,24 @@ Created on 18 Jun 2019
 '''
 import re
 
+
+
+
+t = []
+print(t.pop())
+
+
+
+
+
+
+
+
+
+if(re.search(r"[:.>;]\s?[~—@PTBOo\d]{1,2}\s?[:.>;]"," : T : P : P test (triple superphosphate at 98 kg, plots").start()>-1):
+    print("true")
+
+
 p = re.compile(".*(BEN A).*")
 
 s = "FUNGCIDE, NONE SF S BEN A BEN S BENtSF S NUA A NUA S MEAN"

@@ -15,29 +15,37 @@ import xmltodict
 
 specialSection = ""
 
+def tidyOp(op):
+    op = op.strip()
+    op = re.sub(r"^:\s","",op)
+    op = re.sub(r"^-\s","",op)
+    return(op)
+
+
 def writeJob(sname,curOpDate,curOp,curOpType):
     if len(curOp) > 1:
-        outfile.write("|".join([str(experiment),str(year),str(sname),str(curOpDate),str(curOp),curOpType]))
+        outfile.write("|".join([str(experiment),str(year),str(sname).strip(),str(curOpDate),tidyOp(curOp),curOpType]))
         outfile.write("\n")
+
+def writeJobs(sname,curOpDate,curOp,curOpType):
+    if len(curOp) > 1:
+        if re.search(r"[:.>;]\s?[~—@PTBOo\d]{1,2}\s?[:.>;]",curOp): # this is to deal with multiple operations for one date
+            curOps = re.split(r"[:.>;]\s?[~—@PTBOo\d]{1,2}\s?[:.>;]",curOp)
+            for co in curOps:
+                writeJob(sname,curOpDate,co,curOpType)
+        elif re.search(r":\stm\)",curOp): # this is to deal with multiple operations for one date
+            curOps = re.split(r":\stm\)",curOp)
+            for co in curOps:
+                writeJob(sname,curOpDate,co,curOpType)
+        else:
+            writeJob(sname,curOpDate,curOp,curOpType)
 
 def applyCorrections(content):
     # Note this preserves lines as they provide structural cues to help with processing
     # some special force replacements - these could be applied to the whole doc
-    #content = content.replace("\n"," $$$$ ")
-    print("$$$$")
-    print(content)
-    print("$$$$")
-    
-    #content = content.replace("LO gals","40 gals")
-    #content = content.replace("=","-")
-    #content = content.replace("—","-")
-    #content = content.replace("~","-")
-    #content = content.replace("--","-")
-    #content = re.sub(r"My ([\d]{1,2})",r"May \1",content)
-    #content = re.sub(r"((?=[^2])\w),((?=[^4])\w)",r"\1, \2",content) # should ignore 2,4
-    #content = re.sub(r" ([\d]{1,2}) and ",r" \1, ",content) # for fixing date formats 
-    #content = re.sub(r'((?=[^4pgnsbo])\w)-((?=[^DtsmpC])\w)',r'\1 - \2',content) # ensures dashes are surrounded by spaces should ignore a few combinations... Nitro-Chalk, 4-D, sub-plots, spring-tine, deep-tine, demeton-s-methyl
-    
+    #content = content.replace(": :",":")    
+    content = re.sub(r"tm\)([\w])",r"tm \1",content).strip()
+    content = content.replace("~","-")
     return correctWords(content)
 
 config = configparser.ConfigParser()
@@ -53,9 +61,9 @@ with open(srcdoc) as fd:
     doc = xmltodict.parse(fd.read())
 
 for rep in doc["reports"]["report"]:
-    print(rep)
+    
     year = rep["year"]
-    if int(year) >=1992 and int(year) <= 2006:    
+    if int(year) >=1992 and int(year) <= 2006: # need to check formats before running this    
         print("start processing year: " + str(year))
         content = rep["rawcontent"]        
         content = applyCorrections(content)
@@ -64,31 +72,29 @@ for rep in doc["reports"]["report"]:
         curOp = ""
         curOpDate = ""
         curOpType = ""
+        job = ""
         processingDiary = False
         
         lines = content.split("\n")
         for line in lines:
+            
             if line.startswith("experimental diary") or line == "experimental diary":# or line.lower().startswith("i diary"):
                 processingDiary = True
             elif processingDiary:
                 isNewSection, nsname = checkForSection(line,sectionNames)    
                 if isNewSection:
+                    writeJobs(sname,curOpDate,curOp,curOpType)
+                    curOpDate = ""
+                    curOp = ""
+                    curOpType = ""
                     sname= nsname
+                
                 else: #processing diary entries here
                     isDate, opDate, job = checkJobDate(line)
                     if job.lower().startswith("note"):
                         processingDiary = False
                     elif isDate:
-                        if re.search(r":\s[TB]\s:",curOp): # this is to deal with multiple operations for one date
-                            curOps = re.split(r":\s[TB]\s:",curOp)
-                            for co in curOps:
-                                writeJob(sname,curOpDate,co,curOpType)
-                        elif re.search(r":\stm\)",curOp): # this is to deal with multiple operations for one date
-                            curOps = re.split(r":\stm\)",curOp)
-                            for co in curOps:
-                                writeJob(sname,curOpDate,co,curOpType)
-                        else:
-                            writeJob(sname,curOpDate,curOp,curOpType)
+                        writeJobs(sname,curOpDate,curOp,curOpType)
                         opDate = opDate.strip()
                         dateParts = opDate.split("-")
                         if len(dateParts) == 3:
@@ -105,11 +111,12 @@ for rep in doc["reports"]["report"]:
                             curOp = parts[3]
                         else:
                             curOpType = "".join(parts[0:1])
-                            #if len(parts) >=3:
-                            print(parts)
-                            curOp = parts[2]
+                            if len(parts) >=3:
+                                print(parts)
+                                curOp = parts[2]
                     else:
-                        curOp = " ".join([curOp,job])
+                        curOp = " ".join([curOp,line])
+                        
                    
         writeJob(sname,curOpDate,curOp,curOpType)
         

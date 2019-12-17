@@ -47,9 +47,10 @@ def processCropSections(content):
 def writeApplication(cropSection, application, applicationText):
     allApplications = applicationText.split(". ")
     for singleApplication in allApplications:
-        application.replace(":","")
-        outfile.write("|".join([str(experiment),str(year),cropSection.cropName,application,singleApplication.strip()]))
-        outfile.write("\n")
+        singleApplication = singleApplication.replace(":","").strip()
+        if len(singleApplication)>1:
+            outfile.write("|".join([str(experiment),str(year),cropSection.cropName,application,singleApplication]))
+            outfile.write("\n")
 
 def tidyApplicationData(content):
     content = content.replace("icide)","icide:").replace("killer)","killer:")
@@ -58,16 +59,11 @@ def tidyApplicationData(content):
 def applyCorrections(content):
     # Note this preserves lines as they provide structural cues to help with processing
     # some special force replacements - these could be applied to the whole doc
-    
     content = re.sub(" +"," ",content).strip()
     content = re.sub(r"(\d),(\d)",r"\1.\2",content) # decimals
-    corrected = correctWords(content)
-    words = list(filter(None,corrected))
-    return " ".join(words)
+    return correctWords(content)
 
 def process(content):
-    #content = applyCorrections(content)
-    print (content)
     data = False
     if content.find("Basal applications") > -1 or content.find("Standard applications") > -1:
         cutStart = 0

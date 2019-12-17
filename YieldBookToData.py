@@ -35,7 +35,7 @@ def looksLikeYear(word):
 
 def isStop(line):
     lline = line.lower()
-    for stopper in ['grain tonnes/hecatare','table of means','summary of results','standard error','broadbalk wilderness','note']: #sectionStops:
+    for stopper in ['grain tonnes/hecatare','grain tonnes /hecatare','table of means','summary of results','standard error','broadbalk wilderness','note']: #sectionStops:
         if lline.startswith(stopper) or fuzz.partial_ratio(lline,stopper) > 80:
             return True
     return False
@@ -94,7 +94,7 @@ def getOperationCode(job):
     return code, job
     
 def checkJobDate(line):
-    p = re.compile(r"[0-9]{1,2}-[\w]+-[0-9]{2}") # Could extend this to have different date formats
+    p = re.compile(r"[0-9SOli]{1,2}[-~][\w]+[~-][0-9SOli]{2,3}") # Could extend this to have different date formats. S, O, l are common mis-types to check for. 2,3 check is for occassional mis-types
     dateMatch = p.search(line)
     date = None
     isDate = False
@@ -132,56 +132,69 @@ def removeBlankLines(content):
 
 # Note there is a bias based on word length = e.g. 3 letter word gives score 67 if just one change. Should also ignore 2 letter words
 def correctWords(content):
-    content = content.replace("\n"," $$$$ ") # this is for line preservation
-    words = content.split(" ") # chunk everything into words
-    newWords = []
-    for word in words:
-        # some special force replacements 
-        word = word.replace("0ct","Oct").replace("Mey","May")
-        mword = ""
-        lastChar = ""
-        firstChar = ""
-        hasPunc = False
-        hasPrePunc = False
-        if len(word) > 2:
-            word = word.strip().replace(":","")
-            
-            lastChar = word[len(word)-1]
-            if lastChar in string.punctuation:
-                word = word[:len(word)-1]
-                hasPunc = True
-            
-            firstChar = word[0]
-            if firstChar in ["(","'"]:
-                if word[1] == "'":
-                    firstChar += "'"
-                    word = word[2:]
-                else:
-                    word = word[1:]
-                hasPrePunc = True
-            
-            wordLen = len(word)
-            cutOff=70
-            if wordLen == 3:
-                cutOff = 65
-            elif (wordLen == 4):
-                cutOff = 74
-                
-            matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
-            if matched and wordLen > 2:
-                mword = matched[0]
-            else:
-                mword = word
-        else: 
-            mword = word
-        
-        if hasPunc:
-            mword += lastChar
-
-        if hasPrePunc:
-            mword = firstChar + mword
-        newWords.append(mword)
+    content = content.replace("\n\n","\n") # this is for line preservation
     content = re.sub(" +"," ",content).strip()
-    words = list(filter(None,newWords))
-    content = " ".join(words).replace(" $$$$ ","\n")
+    newWords = []
+    lines = content.split("\n")
+    for line in lines:
+        words = line.split(" ") # chunk everything into words
+        for word in words:
+            # some special force replacements 
+            word = word.replace("0ct","Oct").replace("Mey","May").replace("Aua","Aug").replace("et","at")
+            mword = ""
+            lastChar = ""
+            firstChar = ""
+            hasPunc = False
+            hasPrePunc = False
+            if len(word) > 2:
+                word = word.strip().replace(":","")
+                
+                lastChar = word[len(word)-1]
+                if lastChar in string.punctuation:
+                    word = word[:len(word)-1]
+                    hasPunc = True
+                
+                firstChar = word[0]
+                if firstChar in ["(","'"]:
+                    if word[1] == "'":
+                        firstChar += "'"
+                        word = word[2:]
+                    else:
+                        word = word[1:]
+                    hasPrePunc = True
+                
+                wordLen = len(word)
+                cutOff=70
+                if wordLen == 3:
+                    cutOff = 65
+                elif (wordLen == 4):
+                    cutOff = 74
+                    
+                matched = process.extractOne(word,corrections,scorer=fuzz.ratio,score_cutoff=cutOff)
+                if matched and wordLen > 2:
+                    mword = matched[0]
+                else:
+                    mword = word
+            else: 
+                mword = word
+            
+            if hasPunc:
+                mword += lastChar
+
+            if hasPrePunc:
+                mword = firstChar + mword
+            newWords.append(mword.strip())
+            #print("mword: " + mword)
+        newWords.append("$$$$")
+    print(newWords)
+    #newWords = np.where(newWords=="$$$$", "\n", newWords)
+    #
+    #print(words)
+    content = " ".join(newWords)
+    #print(content)
+    content = content.replace("$$$$ ","\n").replace("$$$$","")
+    #content = re.sub("^\s","",content)
+    print("--------------------")
+    print(content)
+    print("--------------------")
     return content
