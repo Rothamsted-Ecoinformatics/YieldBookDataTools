@@ -40,9 +40,7 @@ for fname in fileList:
     
     if int(nyear) >= 1948 and int(nyear) <= 2018 and fname.endswith(".jpg"): 
         curcontent = getPageScan(srcdocs + "\\" + fname)
-        print(nyear)
         if nyear != year:
-            print (year + " " + nyear)
             if rawcontent:
                 outfile.write("\n<report>")
                 outfile.write("\n<year>" + year + "</year>")

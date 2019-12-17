@@ -52,7 +52,7 @@ def startsWithSection(line, sectionNames):
     for name in sectionNames:
         if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
             return name, line[len(name):]    
-    return None,line
+    return "",line
 
 #this is redundant... rework for leys ...check then go to end of line
 def checkForSection(line, sectionNames):

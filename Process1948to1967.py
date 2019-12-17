@@ -118,7 +118,7 @@ def writeJob(sname,opDates,curOp,prevOp):
         curOp = prevOp
     if curOp:
         cleanCurOp = tidyOp(curOp)
-        if opDates[0] == "variety":
+        if len(opDates) == 1 and opDates[0] == "variety":
             cleanCurOp = cleanCurOp.replace("variety:","").strip()
             outfile.write("|".join([str(experiment),str(year),str(sname).strip(),"","","variety",cleanCurOp]))
             outfile.write("\n")
@@ -240,6 +240,8 @@ def processSections(subsections):
                         curDate = curDates[jdx]
                         #if (lyear == "" or lyear == str(int(year)-1)) and curDate.smonth in ("Jan","Feb","Mar","April","Apr","May","June","July"):
                         #    lyear = year
+                        print(curDate)
+                        print("the word is: " + word)
                         curDate.syear = word.replace(".","")
                         curDate.eyear = word.replace(".","")
                         curDates[jdx] = curDate
