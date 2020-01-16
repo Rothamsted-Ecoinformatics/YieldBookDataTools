@@ -20,7 +20,7 @@ def newCrop(line):
     for crop in crops:
         lline = line.lower()
         lcrop = crop.lower()
-        if lline.find(lcrop) >= 0 and lline.find(lcrop) <= 5: # look for the crop near the start of the line (first 5 chars)
+        if lline.startswith(lcrop): # >= 0 and lline.find(lcrop) <= 5: # look for the crop near the start of the line (first 5 chars)
             cropSection = CropSection(crop,line[len(crop)+1:].strip())
             return cropSection
     return None
@@ -82,7 +82,6 @@ def process(content):
         elif content.find("Cultivations, etc") > -1:
             cutEnd = content.find("Cultivations, etc")
         
-            
         content = str(content)[cutStart:cutEnd]
         content = content.strip()
     if data:
