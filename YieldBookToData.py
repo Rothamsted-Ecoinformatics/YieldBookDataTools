@@ -51,16 +51,17 @@ def startsWithSection(line, sectionNames):
     lline = removePunctuation(line.lower(),[])
     for name in sectionNames:
         if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
+            line = line.replace(".","").replace(",","")
             return name, line[len(name):]    
     return "",line
 
 #this is redundant... rework for leys ...check then go to end of line
-def checkForSection(line, sectionNames):
-    lline = removePunctuation(line.lower(),[])
-    for name in sectionNames:
-        if lline.startswith(name):
-            return True, lline#name
-    return False, None
+#def checkForSection(line, sectionNames):
+#    lline = removePunctuation(line.lower(),[])
+#    for name in sectionNames:
+#        if lline.startswith(name):
+#            return True, lline#name
+#    return False, None
 
 def formatDate(day,month,year):
     if day in months: # check day and months right way around and if not swap.
