@@ -117,13 +117,13 @@ def startsWithBlock(line):
     else:
         return None,None        
         
-def setYear(tmonth, lyear, year):
+def setYear(tmonth, year):
+    global lyear
     if (lyear == "" or lyear == str(int(year)-1)) and tmonth in ("Jan","Feb","Mar","April","Apr","May","June","July","Aug"):
-        return year
+        lyear = year
     elif lyear == "": 
-        return str(int(year)-1)
-    else:
-        return lyear
+        lyear = str(int(year)-1) 
+    
 #this method is about subsectioning the cultivations then writing them             
 def processCultivations(cultivationsSegment):   #cultivationSections = cultivationxsSegment.split("\n\n")
     # we should already have the cultivations etc removed, but need to test for sections.
@@ -202,10 +202,11 @@ def processSections(subsections):
                     expectEndDate = True
                 elif looksLikeYear(word):
                     print("3: " + word)
+                    lyear = word.replace(".","").replace(",","").replace(":","")
                     for jdx in range(len(curDates)):
                         curDate = curDates[jdx]
-                        curDate.syear = word.replace(".","")
-                        curDate.eyear = word.replace(".","")
+                        curDate.syear = lyear
+                        curDate.eyear = lyear
                         curDates[jdx] = curDate
                     written = writeJob(sname,curDates,curOp, prevOp)
                     testYear = False
@@ -221,7 +222,7 @@ def processSections(subsections):
                     # check year for the previous date
                     curDate = curDates.pop()
                     if (curDate):
-                        lyear = setYear(curDate.smonth,lyear,year)
+                        setYear(curDate.smonth,year)
                         curDate.syear = lyear
                         curDates.append(curDate)
                     # start the new date
@@ -233,7 +234,7 @@ def processSections(subsections):
                     #no year has been set - get the year
                     for jdx in range(len(curDates)):
                         curDate = curDates[jdx]
-                        lyear = setYear(curDate.smonth,lyear,year)
+                        setYear(curDate.smonth,year)
                         curDate.syear = lyear
                         curDate.eyear = lyear
                         curDates[jdx] = curDate
@@ -302,7 +303,7 @@ def processSections(subsections):
         if not written:
             if curDates:
                 curDate = curDates.pop()
-                lyear = setYear(curDate.smonth,lyear,year)
+                setYear(curDate.smonth,year)
                 curDate.syear = lyear
                 curDates.append(curDate)
             writeJob(sname,curDates,curOp, prevOp)
@@ -327,7 +328,7 @@ with open(srcdoc) as fd:
 
 for rep in doc["reports"]["report"]:
     year = rep["year"]  
-    if int(year) >=1948 and int(year) <= 1967:
+    if int(year) >=1938 and int(year) <= 1967:
         print("start processing year: " + str(year))
         content = rep["rawcontent"]
         print(content)

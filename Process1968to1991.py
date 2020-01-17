@@ -24,6 +24,10 @@ class ObsDate():
     
     def endDate(self):
         if self.eday != "":
+            if self.emonth == "":
+                self.emonth = self.smonth
+            if self.eyear == "":
+                self.eyear = self.syear 
             return "-".join([self.eday,self.emonth,self.eyear])
         else:
             return ""
@@ -40,6 +44,14 @@ def looksLikeDay(word):
         if numCount >= 1:
             return True
     return False
+
+def setYear(tyear):
+    global lyear
+    if tyear:
+        tyear = removePunctuation(tyear,["&","%","}"])
+        lyear = tyear
+    elif lyear == "":
+        lyear = year    
 
 # this method is all about finding the end of a cultivations segment. If no end is found by the end of the page then carries through to the next page    
 def getOperations(content):
@@ -64,7 +76,6 @@ def getOperations(content):
     processCultivations(cultivationsSegment)
 
 def writeJob(sname,opDates,curOp,prevOp):
-    #print(opDate + " : " + curOp)
     if not curOp:   
         curOp = prevOp
     curOp = curOp.strip()
@@ -82,11 +93,6 @@ def writeJob(sname,opDates,curOp,prevOp):
         outfile.write("|".join([str(experiment),str(year),str(sname).strip(),"","","",curOp]))
         outfile.write("\n")
     return True
-
-def writeJob_old(sname,opDate,op):
-    sDate, eDate = cleanDate(opDate,year)
-    outfile.write("|".join([str(experiment),str(year),str(sname),str(sDate),str(eDate),"diary record",op]))
-    outfile.write("\n")    
 
 def applyCorrections(content):
     # Note this preserves lines as they provide structural cues to help with processing
@@ -113,7 +119,7 @@ def processCultivations(cultivationsSegment):   #cultivationSections = cultivati
     sectionName = ""
     subsections = {}
     subsectionText = ""
-
+    print(cultivationsSegment)
     for idx, line in enumerate(cultivationsSegment):
         newSection, newLine = startsWithSection(line,sectionNames) 
         
@@ -125,7 +131,7 @@ def processCultivations(cultivationsSegment):   #cultivationSections = cultivati
             line = newLine
         elif idx == 0 and not sectionName: # for blank starting sections
             sectionName = "Not stated"
-        print(sectionName + " : " + newLine)
+        #print(sectionName + " : " + newLine)
         
         if len(line) > 1:
             line = line.strip()
@@ -155,13 +161,13 @@ def processSections(subsections):
     global lyear
     written = True
     for sname, stext in subsections.items():
+        print(">>>>>>>>>>")
+        print(sname)
+        print(">>>>>>>>>>")
         print(stext)
         rawwords = applyCorrections(stext).split(" ")
-        print("rawwords\==============")
-        print(rawwords)
         
         words = list(filter(filterPunctuation,rawwords)) #removes stray punctuation marks 
-        print(words)
         lyear = ""
         curDates = []
         expectDay = False
@@ -175,18 +181,18 @@ def processSections(subsections):
         for idx, tword in enumerate(words):
             written = False
             word, punc = stripLastPunctuation(tword)
-            print(tword + " " + word  + " " + punc) # + ": next word : " + nextword)
             if word == "variety":
-                print("12")
-                curDates, lyear = checkCurDateYears(curDates,lyear)
+                print("12: " + word)
+                curDates = checkCurDateYears(curDates)
                 written = writeJob(sname,curDates,curOp, prevOp)
                 curDates = ["variety"]
                 curOp = ""
                 expectDay = False
                 testYear = False
             elif testYear:
+                setYear("") # this forces a year if the first record has no year in the date
                 if looksLikeDay(word):
-                    print("0")
+                    print("0 " + word)
                     newDate = ObsDate()
                     newDate.sday = word
                     curDates.append(newDate)
@@ -194,20 +200,21 @@ def processSections(subsections):
                     expectMonth = True
                     testYear = False
                 elif word == "and":
-                    print("1")
+                    print("1 " + word)
                     expectDay = True
                     testYear = False
                 elif word in ("-","—","="):
-                    print("2")
+                    print("2 " + word)
                     testYear = False
                     expectDayOrMonth = True
                     expectEndDate = True
                 elif looksLikeYear(word):
-                    print("3")
+                    print("3 " + word)
+                    setYear(word)
                     for jdx in range(len(curDates)):
                         curDate = curDates[jdx]
-                        curDate.syear = word.replace(".","")
-                        curDate.eyear = word.replace(".","")
+                        curDate.syear = lyear
+                        curDate.eyear = lyear
                         curDates[jdx] = curDate
                     written = writeJob(sname,curDates,curOp, prevOp)
                     testYear = False
@@ -217,38 +224,35 @@ def processSections(subsections):
                     curDates = []
                     curOp = ""
                 elif word in months: # same operation, different date
-                    print("4")
+                    print("4 " + word)
                     expectDay = False#True
                     testYear = True#False
                     curDate = ObsDate()
                     curDate.smonth = word
                     curDates.append(curDate)
                 else: # new operation
-                    print("5")
+                    print("5 " + word)
                     #no year has been set - get the year
                     for jdx in range(len(curDates)):
                         curDate = curDates[jdx]
-                        lyear = checkYear(curDate,lyear)
                         curDate.syear = lyear
                         curDate.eyear = lyear
                         curDates[jdx] = curDate
                     written = writeJob(sname,curDates,curOp, prevOp)
-                    print(str(curDates[0].startDate()) + " :  " + curOp)
                     curDates = []
                     prevOp = curOp if curOp else prevOp
                     curOp = word + punc
                     expectDay = False
                     testYear = False
             elif expectDayOrMonth:# this case is for after a dash
-                print("6")
                 if word in ("-","—","="):
-                    print("6.2")
+                    print("6.2 " + word)
                     testYear = False
                     expectDayOrMonth = True
                     expectEndDate = True
                 elif word in months:
                     testYear = True
-                    print("7")
+                    print("7 " + word)
                     curDate = curDates.pop()
                     if expectEndDate:
                         curDate.emonth = word
@@ -259,7 +263,7 @@ def processSections(subsections):
                     curDates.append(curDate)
                     expectDayOrMonth = False
                 else: 
-                    print("8")
+                    print("8 " + word)
                     expectMonth = True
                     testYear = False
                     curDate = ""
@@ -273,183 +277,57 @@ def processSections(subsections):
                     expectDay = False
                     expectDayOrMonth = False
             elif expectMonth:
-                print("9")
+                print("9 " + word)
                 for jdx in range(len(curDates)):
+                    tmonth = word.replace(".","").replace(",","")
                     curDate = curDates[jdx]
                     if expectEndDate:
-                        curDate.emonth = word.replace(".","")
+                        curDate.emonth = tmonth
                         if curDate.smonth == "":
-                            curDate.smonth = word
+                            curDate.smonth = tmonth
+                        expectEndDate = False
                     else:
                         if curDate.smonth == "":
-                            curDate.smonth = word.replace(".","")
+                            curDate.smonth = tmonth
                     curDates[jdx] = curDate
                 testYear = True
-                expectEndDate = False
                 expectMonth = False
             elif looksLikeDay(word) and idx+1 < len(words) and (words[idx+1] in ("-","=","~") or stripLastPunctuation(words[idx+1])[0] in months or looksLikeDay(stripLastPunctuation(words[idx+1])[0])):
-                print("10")
+                print("10 " + word)
                 expectDayOrMonth = True
                 testYear = False
                 curDate = ObsDate()
                 curDate.sday = word
                 curDates.append(curDate)
             else:
-                print("11")
+                print("11 " + word)
                 expectDay = False
                 testYear = False
                 word = word + punc
                 curOp = " ".join([curOp,word])
-                print(curOp)
-            
+                            
         if curDates and curDates[0] == "variety":
-            print("POINT13")
+            print("POINT13 " + word)
             written = writeJob(sname,curDates,curOp, prevOp)
             curDates = []
             curOp = ""
         if not written:
-            curDates, lyear = checkCurDateYears(curDates,lyear)
+            curDates = checkCurDateYears(curDates)
             writeJob(sname,curDates,curOp, prevOp)
             curOp = ""  
 
-def checkCurDateYears(tCurDates,tyear):
+def checkCurDateYears(tCurDates):
+    #global lyear
     for jdx in range(len(tCurDates)): # Probably won't have the year included
         tCurDate = tCurDates[jdx]
-        tyear = checkYear(tCurDate,tyear)
+        #setYear(tCurDate.smonth,tCurDate.syear)
         if tCurDate.syear == "" or tCurDate == None:
-            tCurDate.syear = tyear
-            tCurDate.eyear = tyear
+            tCurDate.syear = lyear
+            tCurDate.eyear = lyear
             tCurDates[jdx] = tCurDate
             print(tCurDate.startDate())
-    return tCurDates, tyear
-
-def checkYear(tCurDate,tyear):
-    global year
-    print(str(tyear) + " : " + str(year))
-    if ((tyear == None or tyear == "") or tyear == str(int(year)-1)) and tCurDate.smonth in ("Jan","Feb","Mar","April","Apr","May","June","July","Aug","Sept"):
-        print("a")
-        return year
-    elif tyear == None or tyear == "": 
-        print("b: " + str(int(year)-1))
-        return str(int(year)-1)
-    else: 
-        return tyear
-
-def processSections_old(subsections):
-    for sname, stext in subsections.items():
-        rawwords = applyCorrections(stext).split(" ")
-        words = list(filter(filterPunctuation,rawwords)) #removes stray punctuation marks 
-        wordCount = len(words)
-        opDate = ""
-        curOp = ""
-        prevOp = ""
-        opCount=0
-        idx = 0
-        backupOp = ""
-        while idx < wordCount:
-            word = words[idx]
-            
-            cleanWord = removePunctuation(word,["-","~", "="]) 
-            trimCount = 0
-            if cleanWord in months:                
-                # check prev
-                fd = words[idx-3]
-                dash = words[idx-2]
-                ld = words[idx-1]
-                if looksLikeDay(ld):
-                    if looksLikeDay(fd) and dash in ["-", "~","="]:
-                        opDate = "-".join([fd,ld])
-                        trimCount = 2 #? 
-                    else:
-                        opDate = ld
-                        trimCount = 1
-                    opDate = " ".join([opDate,cleanWord])
-                    year = ""
-                    base = 0
-                    if idx+1 < wordCount and looksLikeYear(words[idx+1]):
-                        year = removePunctuation(words[idx+1],[]) 
-                        opDate = " ".join([opDate,year])
-                        base = 1
-                    
-                    if idx+(3+base) < wordCount and words[idx+(1+base)] in ["-","~","="] and looksLikeDay(words[idx+2]) and removePunctuation(words[idx+(3+base)],[]) in months:
-                        opDate = " ".join([opDate," - ", str(words[idx+(2+base)]), str(removePunctuation(words[idx+(3+base)],[]))])
-                        base +=3
-                    idx = idx+base
-                    if opCount == 0:
-                        flashCurOp = curOp.split(" ")
-                        opPart = flashCurOp[:len(flashCurOp)-trimCount]
-                        curOp = " ".join(opPart)
-                        curOp = curOp.replace(":", "").strip()
-                        if(len(curOp) <= 2):
-                            curOp = backupOp
-                        if curOp == "and":
-                            curOp = backupOp
-                        opCount = 1
-                    writeJob(sname,opDate,curOp)
-                    opDate = None
-                else:
-                    curOp = " ".join([curOp,word])
-            elif opCount == 1 and looksLikeDay(cleanWord) or looksLikeYear(word) or word in ["-", "~", "="]:
-                pass
-            else:
-                if opCount == 1:
-                    backupOp = curOp
-                    curOp = word
-                else: 
-                    curOp = " ".join([curOp,word])
-                opCount = 0
-                    
-            idx+=1    
-        if opDate:
-            if curOp == "and":
-                curOp = backupOp
-            writeJob(sname,opDate,curOp,experiment)
+    return tCurDates
      
-def cleanDate(dirtyDate, year):
-    global lyear
-    sDate = ""
-    eDate = ""
-
-    if dirtyDate:
-        dirtyDate = dirtyDate.replace("=","-").replace("—","-")
-        dirtyDate = removePunctuation(str(dirtyDate), ("-"))
-        dirtyDate = dirtyDate.replace(" and ",", ")
-        dirtyDate = re.sub(r"(\d)-(\d)",r"\1 - \2",dirtyDate)
-
-        parts = dirtyDate.split(" ")
-        if re.match(r"\d{1,2} \w{3,5} - \d{1,2} \w{3,5} \d{4}",str(dirtyDate)):
-            lyear = parts[5]
-            sDate = "-".join([parts[0],parts[1],lyear])
-            eDate = "-".join([parts[3],parts[4],lyear])
-        elif re.match(r"\d{1,2} - \d{1,2} \w{3,5} \d{4}",str(dirtyDate)):
-            lyear = parts[4]
-            month = parts[3]
-            sDate = "-".join([parts[0],month,lyear])
-            eDate = "-".join([parts[2],month,lyear])
-        elif re.match(r"\d{1,2} - \d{1,2} \w{3,5}",str(dirtyDate)):
-            month = parts[3]
-            sDate = "-".join([parts[0],month,lyear])
-            eDate = "-".join([parts[2],month,lyear])
-        elif re.match(r"\d{1,2} \w{3,5} \d{1,4}",str(dirtyDate)):
-            lyear = parts[2]
-            month = parts[1]
-            sDate = "-".join([parts[0],month,lyear])        
-        elif re.match(r"\d{1,2} \w{3,5}",str(dirtyDate)):
-            if lyear == "":
-                lyear = str(int(year)-1)
-            month = parts[1]
-            if (lyear == "" or lyear == str(int(year)-1)) and month in ("Jan","Feb","Mar","April","Apr","May","June","July"):
-                lyear = year
-            elif lyear == "":
-                lyear = str(int(year)-1)
-
-            sDate = "-".join([parts[0],month,lyear])
-        else:
-            sDate = "UNKNOWN"
-            eDate = dirtyDate
-            
-    return sDate,eDate
-
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
@@ -460,9 +338,8 @@ sectionNames = strSections.split(",")
 print(sectionNames)
 print("starting " + experiment)
 
-year = ""
 lyear = ""
-
+year = ""
 with open(srcdoc) as fd:
     doc = xmltodict.parse(fd.read())
 

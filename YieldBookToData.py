@@ -51,7 +51,7 @@ def startsWithSection(line, sectionNames):
     lline = removePunctuation(line.lower(),[])
     for name in sectionNames:
         if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
-            line = line.replace(".","").replace(",","")
+            line = line.replace(":","")
             return name, line[len(name):]    
     return "",line
 
