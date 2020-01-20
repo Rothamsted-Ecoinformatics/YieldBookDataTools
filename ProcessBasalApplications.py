@@ -110,7 +110,7 @@ experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['sa_outfile'], "w+", 1)
 srcdoc = config['EXPERIMENT']['raw_xml']
 crops = config['EXPERIMENT']['crops'].split(",")
-sections = ["weedkiller","fungicide","nematicide","insecticide","manures","weedkillers"]
+sections = ["weedkiller","fungicides","fungicide","nematicide","insecticide","manures","weedkillers"]
 
 with open(srcdoc) as fd:
     doc = xmltodict.parse(fd.read())
