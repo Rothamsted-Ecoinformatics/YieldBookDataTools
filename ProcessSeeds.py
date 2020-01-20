@@ -4,7 +4,7 @@ Created on 8 Feb 2019
 @author: ostlerr
 '''
 import os
-from YieldBookToData import correctWords, removePunctuation
+from YieldBookToData import correctWords, removePunctuation, startsWithSection
 import configparser
 import re
 import xmltodict
@@ -28,8 +28,8 @@ with open(srcdoc) as fd:
 
 for rep in doc["reports"]["report"]:
     year = rep["year"]
-
-    if int(year) >= 1972 and int(year) <= 1991: 
+    print(year)
+    if int(year) >= 1968 and int(year) <= 1991: 
         content = rep["rawcontent"]
         data = False
         if content.find("Seed:") > -1:# or page.find("$$Seed") > -1:
@@ -39,35 +39,27 @@ for rep in doc["reports"]["report"]:
             if content.find("Cultivations") > -1:
                 content = content[:content.find("Cultivations")]
             content = content.strip() 
-            
-            content = content.replace("\n"," ")
+        
         if data:
-            words = content.split(" ")
-            words = list(filter(None,words))
-            cropSection = None
-            curinfo = ""
-            #print(words)
-            #print(crops)
-            for idx, word in enumerate(words):
-                #print(word + " : " + curinfo)
-                testWord = removePunctuation(word.lower(),[])
-                if crops[0] != "" and testWord in crops:
-                    print("<<<<<<<<<<<<<is crop")
-                    #test the previous word - This will be handy for standard applications
-                    if idx > 0:
-                        testPrevWord = removePunctuation(words[idx-1].lower(),[])
-                        if testPrevWord in ["spring","winter","w","forage"]:
-                            testWord = " ".join([testPrevWord,testWord])
-                            curinfo = curinfo[:curinfo.find(testPrevWord)]
-                    if curinfo and cropSection:
-                        outfile.write(experiment + "|" + str(year) + "|" + cropSection + "|" + curinfo.strip()) 
-                        outfile.write("\n")
-                    cropSection = testWord
-                    curinfo = ""
-                    print(">>>>>>>>>>>>" + testWord)
-                else:
-                    curinfo = " ".join([curinfo,word])
-            print("**************")
-            print (curinfo)        
-            outfile.write(experiment + "|" + str(year) + "|" + str(cropSection) + "|" + curinfo.strip()) 
-            outfile.write("\n")        
+            cropList = {}
+            cropText = ""
+            cropName = ""
+            lines = content.split("\n")
+            for line in lines:
+                newCrop, newLine = startsWithSection(line,crops) 
+                
+                if newCrop:
+                    cropList[cropName] = cropText
+                    cropText = "" #set up the new section text
+                    cropName = newCrop
+                    line = newLine
+                if len(line) > 1:
+                    line = line.strip()
+                    cropText = " ".join([str(cropText),line])    
+            cropList[cropName] = cropText
+            for crop, text in cropList.items():
+                if text:
+                    outfile.write(experiment + "|" + str(year) + "|" + crop + "|" + text.strip()) 
+                    outfile.write("\n")
+
+            

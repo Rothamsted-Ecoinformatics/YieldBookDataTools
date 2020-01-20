@@ -6,7 +6,7 @@ Created on 7 Feb 2019
 Used to extract Basal Applications sections from documents 1974 to 1991. These sections capture information on manures and pesticides applied
 '''
 import os
-from YieldBookToData import correctWords, removeBlankLines
+from YieldBookToData import correctWords, removeBlankLines, removePunctuation
 import configparser
 import xmltodict
 import re
@@ -47,7 +47,7 @@ def processCropSections(content):
 def writeApplication(cropSection, application, applicationText):
     allApplications = applicationText.split(". ")
     for singleApplication in allApplications:
-        singleApplication = singleApplication.replace(":","").strip()
+        singleApplication = singleApplication.replace(": "," ").replace(" :"," ").strip()
         if len(singleApplication)>1:
             outfile.write("|".join([str(experiment),str(year),cropSection.cropName,application,singleApplication]))
             outfile.write("\n")
@@ -92,10 +92,13 @@ def process(content):
             application = ""
             applicationText = ""
             for word in rawwords:
-                if word.lower() in sections:
+                tword = removePunctuation(word,[]).lower()
+                print(tword)
+                if tword in sections: 
+                    print("is new section")
                     if len(application) > 0:
                         writeApplication(cropSection, application, applicationText)
-                    application = word
+                    application = tword
                     applicationText = ""
                 else:
                     applicationText = " ".join([applicationText,word.strip()])
@@ -107,7 +110,7 @@ experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['sa_outfile'], "w+", 1)
 srcdoc = config['EXPERIMENT']['raw_xml']
 crops = config['EXPERIMENT']['crops'].split(",")
-sections = ["weedkiller","fungicide","insecticide","manures","weedkillers"]
+sections = ["weedkiller","fungicide","nematicide","insecticide","manures","weedkillers"]
 
 with open(srcdoc) as fd:
     doc = xmltodict.parse(fd.read())
