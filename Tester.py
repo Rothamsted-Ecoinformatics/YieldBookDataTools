@@ -6,13 +6,13 @@ Created on 18 Jun 2019
 import re
 
 
-test = "Barclay Gallup 360 4.00 V200 I/ha"
+test = "Barclay Gallup 360 4.00 V200 I/ha "
 parts = test.split(" ")
 l = len(parts)
 print(parts[l-1])
 print(parts[l-2])
 print(parts[l-3])
-
+print(re.match(r"[\d]+\.?[\d]?",parts[l-3]))
 print (str.isnumeric("1.0"))
 
 

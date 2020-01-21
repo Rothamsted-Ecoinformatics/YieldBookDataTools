@@ -12,7 +12,7 @@ from YieldBookToData import *
 import configparser
 import xmltodict
 
-class job():
+class Job():
     def __init__(self):
         self.date = None
         self.description = None
@@ -21,36 +21,30 @@ class job():
         self.rate = None
         self.rateUnit = None
 
-def tidyUp(messyPage):
-    messyPage = messyPage.replace("\n\n","\n")
-    messyPage = re.sub("[0-9]{1,2}- ?[\w]+- ?[0-9]{2}",clearSpace, messyPage) # this cleans up spaces from dates
-    messyPage = messyPage.replace("{","f") # Doesn't always do a good job with f)
-    return messyPage            
+def applyCorrections(content):
+    # Note this preserves lines as they provide structural cues to help with processing
+    # some special force replacements - these could be applied to the whole doc
+    content = re.sub(r"tm\)([\w])",r"tm \1",content).strip().replace("tm ","tm) ")
+    #content = content.replace("~","-")
+    return correctWords(content)
 
-def printJobs(jobs):
-    
-    for job in jobs:
-        outfile.write("|".join([str(experiment),str(year),str(job.date),str(job.jobType),str(job.section),str(job.description),str(job.rate),str(job.rateUnit)]))
-        outfile.write("\n")
-
-def checkForSection(line):
-    lline = removePunctuation(line.lower(),[])
-    for name in sectionNames:
-        if lline.startswith(name):
-            return line
-    return None
+def writeJob(job):    
+    outfile.write("|".join([str(experiment),str(year),str(job.date),str(job.jobType),str(job.section),str(job.description),str(job.rate),str(job.rateUnit)]))
+    outfile.write("\n")
         
-def testLast(job, parts):
+def testLast(job):
+    parts = job.description.split(" ")
+    #print(parts)
     if (len(parts)-1) > 0:
-        #testUnit = parts[len(parts)-1]
         testlen = len(parts)
         p2 = parts[testlen-2].replace(".","")
         p3 = parts[testlen-3].replace(".","")
-        if p2.isdigit():
+        print(p2 + " : " + p3)
+        if re.match(r"[\d]+\.?[\d]?",p2):
             job.rate = parts[testlen-2]
             job.rateUnit = parts[testlen-1]
             job.description = " ".join(parts[:testlen-2])
-        elif p3.isdigit():
+        elif re.match(r"[\d]+\.?[\d]?",p3):
             job.rate = parts[testlen-3]
             job.rateUnit = " ".join([parts[testlen-2],parts[testlen-1]])
             job.description = " ".join(parts[:len(parts)-3])
@@ -61,89 +55,36 @@ def testLast(job, parts):
 config = configparser.ConfigParser()
 config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
-outfile = open(config['EXPERIMENT']['od_outfile'], "w+", 1)
+outfile = open(config['EXPERIMENT']['oe_outfile'], "w+", 1)
 srcdoc = config['EXPERIMENT']['raw_xml']
-strSections = config['EXPERIMENT']['sections']
-sectionNames = strSections.split(",")
-sectionStarts = ()
-specialSection = ""
 year = ""
-print(sectionNames)
-jobs = []
 section = ""
-curJob = None
-year = ""
+
 with open(srcdoc) as fd:
     doc = xmltodict.parse(fd.read())
 
 for rep in doc["reports"]["report"]:
     
     year = rep["year"]
-    #if int(nyear) >= 2007 and fname.endswith(".jpg"): 
     if int(year) >= 2007:
-        content = rep["rawcontent"]       
-        
-        jobs = []
-        #year = nyear
-    
-        if content.find("Experimental Diary") > -1:
-            content = content[content.find("Experimental Diary")+19:] # this should stop everything before the Cultivations from being processed
-            section = ""
-        if content.find("YIELDS") > -1:
-            content = content[:content.find("YIELDS")]  
-        elif content.find("Grain and straw tonnes") > -1:
-            content = content[:content.find("Grain and straw tonnes")]        
-        content = tidyUp(content)
-        dirtyJobs = content.split("\n")
-            
-        curDate = ""
-        
-        curJob = None
-        for line in dirtyJobs:
-            print("original : " + line)
-            isNewSection = checkForSection(line)
-            if isNewSection:
-                print("b")
-                section = isNewSection
-                if curJob:
-                    jobs.append(curJob)
-                    curJob = None
-            elif not line or len(line) == 0 or line.find("Cropped sections") > 1 or line.lower().find("rate unit") > 1:
-                pass
-            else:
-                parts = line.split(" ")
-                dateMatch = re.search("\d{1,2}[-|\/][\w\d]+[-|\/]\d{2,4}",parts[0])
-                #isMix = False # Not going to worry about this as only affects  2012/13
-                #if line.find("@") > -1: # this is a bit tedious, ideally want to get each in as a new row
-                #    isMix = True
+        print("start processing year: " + str(year))
+        content = rep["rawcontent"]        
+        content = applyCorrections(content)
                 
-                if dateMatch:
-                    if curJob:
-                        jobs.append(curJob)
-                    curJob = job()
-                    curJob.date = parts[0]
-                    curDate = parts[0]
-                    tjobtype = parts[1].strip()
-                    if len(tjobtype)> 0:
-                        curJob.jobType = tjobtype[0]
-                    else:
-                        curJob.jobType = "x"
-                    curJob = testLast(curJob,parts[2:]) #2 for 2007+
-                    curJob.section = section        
+        curSection = ""
+        lines = content.split("\n")
+        for line in lines:
+            # this only has operations data so no need to find the diary records. Each record is single line
+            # if the first character is a digit then it is a date otherwise a section heading 
+            if line[0].isdigit():
+                parts = line.split(" ",2)
+                job = Job()
+                job.date = parts[0]
+                job.jobType = parts[1]
+                job.description = parts[2].strip()
+                job.section = curSection
+                job = testLast(job)
+                writeJob(job)
+            else:
+                curSection = line.strip() 
                     
-                elif len(parts[0]) <=2 and parts[0][0] in ("a","s","p","f"):
-                    if curJob:
-                        jobs.append(curJob)
-                    curJob = job()
-                    curJob.date = curDate
-                    curJob.jobType = parts[0][0]
-                    curJob = testLast(curJob,parts[1:])
-                    curJob.section = section
-                else:
-                    if curJob:
-                        curJob.description = curJob.description + " " + line
-        printJobs(jobs)
-        
-#if curJob:
-#    jobs.append(curJob)
-printJobs(jobs)                        
