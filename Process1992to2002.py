@@ -38,7 +38,7 @@ with open(srcdoc) as fd:
 for rep in doc["reports"]["report"]:
     
     year = rep["year"]
-    if int(year) >=1992 and int(year) <= 2002: # need to check formats before running this    
+    if int(year) >=1992 and int(year) <= 2006: # need to check formats before running this    
         print("start processing year: " + str(year))
         content = rep["rawcontent"]        
         content = applyCorrections(content)
