@@ -47,13 +47,18 @@ def startCultivations(line):
         return True
     return False
 
-def startsWithSection(line, sectionNames):
-    lline = removePunctuation(line.lower(),[])
-    for name in sectionNames:
-        if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
+def startsWithSection(line):
+    if line.startswith("##"):
+        return True, line.replace("#","")
+    else:
+        return False, line
+##def startsWithSection(line, sectionNames):
+##    lline = removePunctuation(line.lower(),[])
+##    for name in sectionNames:
+##        if lline.startswith(name): # or fuzz.token_set_ratio(name,lline) > 80:
             #line = line.replace(":","")
-            return name, line[len(name):]    
-    return "",line
+##            return name, line[len(name):]    
+##    return "",line
 
 def formatDate(day,month,year):
     if day in months: # check day and months right way around and if not swap.

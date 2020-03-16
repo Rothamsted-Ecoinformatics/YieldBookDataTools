@@ -41,7 +41,7 @@ def looksLikeDay(word):
         for c in nword:
             if c.isdigit():
                 numCount += 1
-        if numCount >= 1:
+        if numCount == len(nword):
             return True
     return False
 
@@ -112,28 +112,19 @@ def applyCorrections(content):
     return correctWords(content)
 
 #this method is about subsectioning the cultivations then writing them             
-def processCultivations(cultivationsSegment):   #cultivationSections = cultivationsSegment.split("\n\n")
-    # we should already have the cultivations etc removed, but need to test for sections.
-    # possible patterns are short lines (<=2 words) and 'section' as second word
-    # The text is formatted as a single block of text with no line breaks
+def processCultivations(content):   #cultivationSections = cultivationsSegment.split("\n\n")
     sectionName = ""
     subsections = {}
     subsectionText = ""
-    print(cultivationsSegment)
-    for idx, line in enumerate(cultivationsSegment):
-        newSection, newLine = startsWithSection(line,sectionNames) 
+    lines = content.split("\n") 
+    for line in lines:
         
-        if newSection:
-            if sectionName: # add the old section name to the dictionary. Length check is for misidentifications - sub sections should be short
+        if line.startswith("##"):
+            if sectionName: # add the old section name to the dictionary. 
                 subsections[sectionName] = subsectionText
             subsectionText = "" #set up the new section text
-            sectionName = newSection
-            line = newLine
-        elif idx == 0 and not sectionName: # for blank starting sections
-            sectionName = "Not stated"
-        #print(sectionName + " : " + newLine)
-        
-        if len(line) > 1:
+            sectionName = line.replace("##","")
+        elif len(line) > 1:
             line = line.strip()
             if subsectionText[-1:] == "-":
                 subsectionText = "".join([str(subsectionText),line])    
@@ -181,15 +172,7 @@ def processSections(subsections):
         for idx, tword in enumerate(words):
             written = False
             word, punc = stripLastPunctuation(tword)
-            if word == "variety":
-                print("12: " + word)
-                curDates = checkCurDateYears(curDates)
-                written = writeJob(sname,curDates,curOp, prevOp)
-                curDates = ["variety"]
-                curOp = ""
-                expectDay = False
-                testYear = False
-            elif testYear:
+            if testYear:
                 setYear("") # this forces a year if the first record has no year in the date
                 if looksLikeDay(word):
                     print("0 " + word)
@@ -333,9 +316,6 @@ config.read('config.ini')
 experiment = config['EXPERIMENT']['name']
 outfile = open(config['EXPERIMENT']['ob_outfile'], "w+", 1)
 srcdoc = config['EXPERIMENT']['raw_xml']
-strSections = config['EXPERIMENT']['sections']
-sectionNames = strSections.split(",")
-print(sectionNames)
 print("starting " + experiment)
 
 lyear = ""
@@ -349,7 +329,7 @@ for rep in doc["reports"]["report"]:
         print("start processing year: " + str(year))
         content = rep["rawcontent"]
         content = removeBlankLines(content)
-        getOperations(content)
+        processCultivations(content)
         
         
 outfile.close()        
