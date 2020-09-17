@@ -63,12 +63,10 @@ def writeJob(sname,opDates,curOp,prevOp):
             outfile.write("|".join([str(experiment),str(year),str(sname).strip(),"","","note",cleanCurOp]))
             outfile.write("\n")
         else:
-            print(opDates)
             for opDate in opDates:
                 #sDate, eDate = cleanDate(opDate,year)
                 outfile.write("|".join([str(experiment),str(year),str(sname).strip(),opDate.startDate(),opDate.endDate(),"diary record",cleanCurOp]))
                 outfile.write("\n") 
-        print("out: " + cleanCurOp)
     return True   
     
     
@@ -100,10 +98,7 @@ def processCultivations(content):   #cultivationSections = cultivationxsSegment.
     subsectionText = ""
     lines = content.split("\n")
     for line in lines:
-        ##print (line)
         if line.startswith("##"):
-    #        print("current section: " + sectionName)
-            print(subsections)
             if sectionName: # add the old section name to the dictionary. 
                 subsections[sectionName] = subsectionText
             subsectionText = "" #set up the new section text
@@ -118,7 +113,6 @@ def processCultivations(content):   #cultivationSections = cultivationxsSegment.
 def processSections(subsections):
     global lyear
     written = True
-    print(subsections)
     for sname, stext in subsections.items():
         
         rawwords = applyCorrections(stext).split(" ")

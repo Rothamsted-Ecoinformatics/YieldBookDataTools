@@ -138,7 +138,7 @@ def correctWords(content):
         words = line.split(" ") # chunk everything into words
         for word in words:
             # some special force replacements 
-            word = word.replace("0ct","Oct").replace("Mey","May").replace("Aua","Aug").replace("et","at")
+            word = word.replace("0ct","Oct").replace("Mey","May").replace("Aua","Aug").replace(" et "," at ")
             mword = ""
             lastChar = ""
             firstChar = ""

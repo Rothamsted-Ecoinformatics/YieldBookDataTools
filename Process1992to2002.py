@@ -15,7 +15,7 @@ import xmltodict
 
 def writeJob(sname,curOpDate,curOp):
     if len(curOp) > 1:
-        outfile.write("|".join([str(experiment),str(year),sname.strip(),curOpDate.strip(),curOp.strip()]))
+        outfile.write("|".join([str(experiment),str(year),sname.strip(),curOpDate.strip(),"",curOp.strip()]))
         outfile.write("\n")
 
 def applyCorrections(content):
